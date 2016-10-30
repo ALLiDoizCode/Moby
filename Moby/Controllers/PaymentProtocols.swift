@@ -14,6 +14,10 @@ import Braintree
 extension ViewController:BTDropInViewControllerDelegate {
     public func drop(_ viewController: BTDropInViewController, didSucceedWithTokenization paymentMethodNonce: BTPaymentMethodNonce){
         
+        client.makeCustomer(firstName: "Jonathan", lastName: "Green", email: "di3twater@gmail.com", phone: "555-555-5555")
+        
+        print("got payment")
+        
     }
     
     

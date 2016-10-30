@@ -9,5 +9,7 @@ pod 'SwiftEventBus', :tag => '2.1.2', :git => 'https://github.com/cesarferreira/
 pod 'IQKeyboardManagerSwift'
 pod 'GoogleMaps'
 pod 'Braintree'
+pod 'SwiftyJSON'
+pod 'Alamofire'
 
 
