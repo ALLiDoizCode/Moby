@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473551B661F814799B4E70BC /* Pods_Moby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323CF8F0686BB4E8C8BE1455 /* Pods_Moby.framework */; };
 		AB0BA4AC1DC15F5D003F7802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4AB1DC15F5D003F7802 /* AppDelegate.swift */; };
 		AB0BA4AE1DC15F5D003F7802 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4AD1DC15F5D003F7802 /* ViewController.swift */; };
 		AB0BA4B11DC15F5D003F7802 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0BA4AF1DC15F5D003F7802 /* Main.storyboard */; };
@@ -14,6 +15,12 @@
 		AB0BA4B61DC15F5D003F7802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0BA4B41DC15F5D003F7802 /* LaunchScreen.storyboard */; };
 		AB0BA4C11DC15F5D003F7802 /* MobyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4C01DC15F5D003F7802 /* MobyTests.swift */; };
 		AB0BA4CC1DC15F5D003F7802 /* MobyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4CB1DC15F5D003F7802 /* MobyUITests.swift */; };
+		AB3AA2791DC2CE4C000FC168 /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2781DC2CE4C000FC168 /* Boat.swift */; };
+		AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27A1DC2CE62000FC168 /* Captin.swift */; };
+		AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */; };
+		AB3AA2801DC2E633000FC168 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27F1DC2E633000FC168 /* Cloud.swift */; };
+		AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2811DC2E63C000FC168 /* Client.swift */; };
+		AB7F12731DC5CB7C001EC977 /* PaymentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F12721DC5CB7C001EC977 /* PaymentProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D7EEC2D08EC49F43296277A /* Pods-Moby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moby/Pods-Moby.release.xcconfig"; sourceTree = "<group>"; };
+		323CF8F0686BB4E8C8BE1455 /* Pods_Moby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BA4A81DC15F5C003F7802 /* Moby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BA4AB1DC15F5D003F7802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB0BA4AD1DC15F5D003F7802 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +56,13 @@
 		AB0BA4C71DC15F5D003F7802 /* MobyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BA4CB1DC15F5D003F7802 /* MobyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobyUITests.swift; sourceTree = "<group>"; };
 		AB0BA4CD1DC15F5D003F7802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB3AA2781DC2CE4C000FC168 /* Boat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
+		AB3AA27A1DC2CE62000FC168 /* Captin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captin.swift; sourceTree = "<group>"; };
+		AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fishermen.swift; sourceTree = "<group>"; };
+		AB3AA27F1DC2E633000FC168 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		AB3AA2811DC2E63C000FC168 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		AB7F12721DC5CB7C001EC977 /* PaymentProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentProtocols.swift; sourceTree = "<group>"; };
+		DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moby/Pods-Moby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473551B661F814799B4E70BC /* Pods_Moby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1984ABDEF9EBDC417B5B0A9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */,
+				1D7EEC2D08EC49F43296277A /* Pods-Moby.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AB0BA49F1DC15F5C003F7802 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +107,8 @@
 				AB0BA4BF1DC15F5D003F7802 /* MobyTests */,
 				AB0BA4CA1DC15F5D003F7802 /* MobyUITests */,
 				AB0BA4A91DC15F5C003F7802 /* Products */,
+				1984ABDEF9EBDC417B5B0A9C /* Pods */,
+				CA639CC877607399EEC15DD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +125,9 @@
 		AB0BA4AA1DC15F5C003F7802 /* Moby */ = {
 			isa = PBXGroup;
 			children = (
+				AB7F12711DC5CB55001EC977 /* Controllers */,
+				AB3AA27E1DC2E61C000FC168 /* Client */,
+				AB3AA2771DC2CE2C000FC168 /* Models */,
 				AB0BA4AB1DC15F5D003F7802 /* AppDelegate.swift */,
 				AB0BA4AD1DC15F5D003F7802 /* ViewController.swift */,
 				AB0BA4AF1DC15F5D003F7802 /* Main.storyboard */,
@@ -125,6 +156,41 @@
 			path = MobyUITests;
 			sourceTree = "<group>";
 		};
+		AB3AA2771DC2CE2C000FC168 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB3AA2781DC2CE4C000FC168 /* Boat.swift */,
+				AB3AA27A1DC2CE62000FC168 /* Captin.swift */,
+				AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB3AA27E1DC2E61C000FC168 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				AB3AA27F1DC2E633000FC168 /* Cloud.swift */,
+				AB3AA2811DC2E63C000FC168 /* Client.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		AB7F12711DC5CB55001EC977 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB7F12721DC5CB7C001EC977 /* PaymentProtocols.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CA639CC877607399EEC15DD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				323CF8F0686BB4E8C8BE1455 /* Pods_Moby.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB0BA4D01DC15F5D003F7802 /* Build configuration list for PBXNativeTarget "Moby" */;
 			buildPhases = (
+				64D69A03B495C9589717F2E2 /* [CP] Check Pods Manifest.lock */,
 				AB0BA4A41DC15F5C003F7802 /* Sources */,
 				AB0BA4A51DC15F5C003F7802 /* Frameworks */,
 				AB0BA4A61DC15F5C003F7802 /* Resources */,
+				3AE2F210B46546499695BF18 /* [CP] Embed Pods Frameworks */,
+				559D293D553D2D2D5F891CA7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,12 +326,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AE2F210B46546499695BF18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moby/Pods-Moby-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		559D293D553D2D2D5F891CA7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moby/Pods-Moby-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64D69A03B495C9589717F2E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB0BA4A41DC15F5C003F7802 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3AA2791DC2CE4C000FC168 /* Boat.swift in Sources */,
+				AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */,
+				AB3AA2801DC2E633000FC168 /* Cloud.swift in Sources */,
 				AB0BA4AE1DC15F5D003F7802 /* ViewController.swift in Sources */,
+				AB7F12731DC5CB7C001EC977 /* PaymentProtocols.swift in Sources */,
+				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,
+				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
 				AB0BA4AC1DC15F5D003F7802 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +536,7 @@
 		};
 		AB0BA4D11DC15F5D003F7802 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2K5QEB378V;
@@ -426,6 +550,7 @@
 		};
 		AB0BA4D21DC15F5D003F7802 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D7EEC2D08EC49F43296277A /* Pods-Moby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2K5QEB378V;
@@ -514,6 +639,7 @@
 				AB0BA4D21DC15F5D003F7802 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB0BA4D31DC15F5D003F7802 /* Build configuration list for PBXNativeTarget "MobyTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +648,7 @@
 				AB0BA4D51DC15F5D003F7802 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB0BA4D61DC15F5D003F7802 /* Build configuration list for PBXNativeTarget "MobyUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +657,7 @@
 				AB0BA4D81DC15F5D003F7802 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

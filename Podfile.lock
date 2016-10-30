@@ -1,0 +1,70 @@
+PODS:
+  - Bolts/Tasks (1.8.4)
+  - Braintree (4.7.1):
+    - Braintree/Card (= 4.7.1)
+    - Braintree/Core (= 4.7.1)
+    - Braintree/PayPal (= 4.7.1)
+    - Braintree/UI (= 4.7.1)
+  - Braintree/Card (4.7.1):
+    - Braintree/Core
+  - Braintree/Core (4.7.1)
+  - Braintree/PayPal (4.7.1):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.7.1):
+    - Braintree/Core
+    - Braintree/PayPalUtils
+  - Braintree/PayPalOneTouch (4.7.1):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+    - Braintree/PayPalUtils
+  - Braintree/PayPalUtils (4.7.1)
+  - Braintree/UI (4.7.1):
+    - Braintree/Card
+    - Braintree/Core
+  - Cartography (1.0.1)
+  - GoogleMaps (2.1.0):
+    - GoogleMaps/Maps (= 2.1.0)
+  - GoogleMaps/Base (2.1.0)
+  - GoogleMaps/Maps (2.1.0):
+    - GoogleMaps/Base (= 2.1.0)
+  - IQKeyboardManagerSwift (4.0.7)
+  - Material (2.2.5):
+    - Material/Core (= 2.2.5)
+  - Material/Core (2.2.5)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
+  - SwiftEventBus (2.1.0)
+
+DEPENDENCIES:
+  - Braintree
+  - Cartography (~> 1.0.1)
+  - GoogleMaps
+  - IQKeyboardManagerSwift
+  - Material (~> 2.2)
+  - Parse (~> 1.14)
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `2.1.2`)
+
+EXTERNAL SOURCES:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 2.1.2
+
+CHECKOUT OPTIONS:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 2.1.2
+
+SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Braintree: c57bcb7983412530ea6d71cee4b99a4ba316c4ef
+  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
+  GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
+  Material: 9d1d084759d908a5bddc37e6e9d22874da296621
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
+  SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
+
+PODFILE CHECKSUM: 673be44adf84734ddc4198c8af08d51e9e36e797
+
+COCOAPODS: 1.1.1

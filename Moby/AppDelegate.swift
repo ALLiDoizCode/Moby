@@ -7,15 +7,39 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+import GoogleMaps
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let Map_Key = "AIzaSyBaLOj0HCkZ1fleUs-1ej-gtsZM97Mivmg"
+    
+    let APP_ID = "mobyserver"
+    let MASTER_KEY = "mobyserver4876414986fewfs24125324324e"
+    let SERVER = "https://moby-server.herokuapp.com/parse"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
+        GMSServices.provideAPIKey(Map_Key)
+        
+        Parse.enableLocalDatastore()
+        
+        let parseConfiguration = ParseClientConfiguration { (ParseMutableClientConfiguration) -> Void in
+            
+            ParseMutableClientConfiguration.applicationId = self.APP_ID
+            ParseMutableClientConfiguration.clientKey = self.MASTER_KEY
+            ParseMutableClientConfiguration.server = self.SERVER
+        }
+        Parse.initialize(with: parseConfiguration)
+        
         return true
     }
 
