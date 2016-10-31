@@ -265,7 +265,7 @@
 				TargetAttributes = {
 					AB0BA4A71DC15F5C003F7802 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2K5QEB378V;
+						DevelopmentTeam = KX535D8UZT;
 						ProvisioningStyle = Automatic;
 					};
 					AB0BA4BB1DC15F5D003F7802 = {
@@ -543,9 +543,9 @@
 			baseConfigurationReference = DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2K5QEB378V;
+				DEVELOPMENT_TEAM = KX535D8UZT;
 				INFOPLIST_FILE = Moby/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdhouse.Moby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,9 +558,9 @@
 			baseConfigurationReference = 1D7EEC2D08EC49F43296277A /* Pods-Moby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2K5QEB378V;
+				DEVELOPMENT_TEAM = KX535D8UZT;
 				INFOPLIST_FILE = Moby/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdhouse.Moby;
 				PRODUCT_NAME = "$(TARGET_NAME)";

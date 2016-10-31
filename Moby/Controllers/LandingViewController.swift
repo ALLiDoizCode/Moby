@@ -24,8 +24,7 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.isNavigationBarHidden = true
-        setupFish()
-        
+
         setupViews()
         
         let views = [logo,login,signUp]
@@ -39,9 +38,9 @@ class LandingViewController: UIViewController {
             let bottom = _views[0].superview?.bottom
             
             _views[0].centerX == (superView?.centerX)!
-            _views[0].top == top! + 50
-            _views[0].height == 80
-            _views[0].width == 150
+            _views[0].bottom == top! + 100
+            _views[0].height == 85
+            _views[0].width == 200
             
             _views[1].bottom == bottom! - 100
             _views[1].left == left! + 30
@@ -52,6 +51,8 @@ class LandingViewController: UIViewController {
             _views[2].right == right! - 30
             _views[2].height == 50
             _views[2].width == 120
+            
+            setupFish()
             
         }
     
@@ -66,7 +67,7 @@ class LandingViewController: UIViewController {
     
     func setupViews(){
         
-        self.view.backgroundColor = UIColor.flatTeal().lighten(byPercentage: 4)
+        self.view.backgroundColor = UIColor.flatTeal().lighten(byPercentage: 1.5)
         icon.image = UIImage(named: "fishing")
         icon.contentMode = .scaleAspectFill
         icon.clipsToBounds = true
@@ -85,9 +86,10 @@ class LandingViewController: UIViewController {
         signUp.setTitleColor(signUpColor, for: .normal)
         
         logo.text = "Moby"
-        logo.textColor = signUp.backgroundColor
+        logo.textColor = UIColor.flatWhite()
         logo.textAlignment = .center
-        logo.font = RobotoFont.bold(with: 48)
+        logo.font = RobotoFont.bold(with: 72)
+        //logo.isHidden = true
         
         self.view.addSubview(icon)
         self.view.addSubview(login)
