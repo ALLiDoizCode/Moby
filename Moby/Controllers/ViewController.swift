@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import Braintree
 
+import Material
 /// Point of Interest Item which implements the GMUClusterItem protocol.
 
 class ViewController: UIViewController,GMSMapViewDelegate {
@@ -17,6 +18,8 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     var marker: GMSMarker!
     var londonView: UIImageView!
     var mapView:GMSMapView!
+    
+    let parseClient = ParseClient()
     
     let client = Client.sharedInstance
     

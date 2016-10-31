@@ -41,7 +41,7 @@ class Client {
         }
     }
     
-    func makeCustomer(firstName:String,lastName:String,email:String,phone:String){
+    func makeCustomer(firstName:String,lastName:String,email:String,phone:String,completion:@escaping (_ customerId:String) -> Void){
         
         let params = [
             
@@ -59,6 +59,13 @@ class Client {
             print(response.response) // HTTP URL response
             print(response.data)     // server data
             print(response.result)
+            
+            let json = JSON(response.result.value)
+            
+            let customerId = json["id"].stringValue
+            
+            completion(customerId)
+            
         }
         
     }

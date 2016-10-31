@@ -9,12 +9,16 @@
 import Foundation
 import UIKit
 import Braintree
+import SwiftEventBus
 
 
 extension ViewController:BTDropInViewControllerDelegate {
     public func drop(_ viewController: BTDropInViewController, didSucceedWithTokenization paymentMethodNonce: BTPaymentMethodNonce){
         
-        client.makeCustomer(firstName: "Jonathan", lastName: "Green", email: "di3twater@gmail.com", phone: "555-555-5555")
+        client.makeCustomer(firstName: "Jonathan", lastName: "Green", email: "di3twater@gmail.com", phone: "555-555-5555") { (customerId) in
+            
+            //parseClient.signUp()
+        }
         
         print("got payment")
         

@@ -11,5 +11,8 @@ pod 'GoogleMaps'
 pod 'Braintree'
 pod 'SwiftyJSON'
 pod 'Alamofire'
+pod 'ChameleonFramework/Swift'
+pod 'Animo'
+
 
 

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.0.1)
+  - Animo (1.3.0)
   - Bolts/Tasks (1.8.4)
   - Braintree (4.7.1):
     - Braintree/Card (= 4.7.1)
@@ -24,6 +25,9 @@ PODS:
     - Braintree/Card
     - Braintree/Core
   - Cartography (1.0.1)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - GoogleMaps (2.1.0):
     - GoogleMaps/Maps (= 2.1.0)
   - GoogleMaps/Base (2.1.0)
@@ -40,8 +44,10 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Animo
   - Braintree
   - Cartography (~> 1.0.1)
+  - ChameleonFramework/Swift
   - GoogleMaps
   - IQKeyboardManagerSwift
   - Material (~> 2.2)
@@ -61,9 +67,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Animo: 1d66c0bedb07157cda7dca10f2ddaf97c03959b9
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Braintree: c57bcb7983412530ea6d71cee4b99a4ba316c4ef
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Material: 9d1d084759d908a5bddc37e6e9d22874da296621
@@ -71,6 +79,6 @@ SPEC CHECKSUMS:
   SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 674021345c48facbcb0a8c862a9420e8266e089e
+PODFILE CHECKSUM: 590ec7012800441f3bd23bf61e3c37efd9012883
 
 COCOAPODS: 1.1.1
