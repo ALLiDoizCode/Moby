@@ -12,12 +12,17 @@ import Braintree
 import SwiftEventBus
 
 
-extension ViewController:BTDropInViewControllerDelegate {
+extension Signup:BTDropInViewControllerDelegate {
     public func drop(_ viewController: BTDropInViewController, didSucceedWithTokenization paymentMethodNonce: BTPaymentMethodNonce){
+        
+        self.performSegue(withIdentifier: "Map", sender: self)
+        viewController.dismiss(animated: true, completion: nil)
         
         client.makeCustomer(firstName: "Jonathan", lastName: "Green", email: "di3twater@gmail.com", phone: "555-555-5555") { (customerId) in
             
             //parseClient.signUp()
+            
+            
         }
         
         print("got payment")

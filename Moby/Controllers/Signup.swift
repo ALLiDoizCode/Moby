@@ -11,6 +11,7 @@ import Material
 import Cartography
 import SwiftEventBus
 import ChameleonFramework
+import Braintree
 
 class Signup: UIViewController {
     
@@ -21,6 +22,9 @@ class Signup: UIViewController {
     var password = TextField()
     var contentView = UIView()
     var signUp = FlatButton()
+    
+    let parseClient = ParseClient()
+    let client = Client.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,11 +117,39 @@ class Signup: UIViewController {
             signUp.setTitle("Sign Up", for: .normal)
             signUp.setTitleColor(UIColor.flatWhite(), for: .normal)
             signUp.backgroundColor = UIColor(complementaryFlatColorOf: UIColor.flatTeal())
+            signUp.addTarget(self, action: #selector(Signup.getCard), for: .touchUpInside)
             
             bgView.contentView = contentView
             bgView.contentViewEdgeInsetsPreset = .none
         
         }
+    }
+    
+    
+    func getCard(){
+        
+        client.getToken {
+            
+            self.tappedMyPayButton(braintreeClient: self.client.braintreeClient!)
+        }
+    }
+    
+    
+    func tappedMyPayButton(braintreeClient:BTAPIClient) {
+        
+        // Create a BTDropInViewController
+        let dropInViewController = BTDropInViewController(apiClient: braintreeClient)
+        dropInViewController.delegate = self
+        
+        dropInViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonSystemItem.cancel,
+            target: self, action: #selector(Signup.userDidCancelPayment))
+        let navigationController = UINavigationController(rootViewController: dropInViewController)
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    func userDidCancelPayment() {
+        dismiss(animated: true, completion: nil)
     }
     
     override var prefersStatusBarHidden: Bool {

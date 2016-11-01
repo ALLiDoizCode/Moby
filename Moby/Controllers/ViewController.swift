@@ -19,23 +19,19 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     var londonView: UIImageView!
     var mapView:GMSMapView!
     
-    let parseClient = ParseClient()
+    //let parseClient = ParseClient()
     
-    let client = Client.sharedInstance
+    //let client = Client.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //createMap()
+        createMap()
         
         //Cloud().newCustomer()
         
-        client.getToken {
-            
-            self.tappedMyPayButton(braintreeClient: self.client.braintreeClient!)
-        }
-        
+                
         
     }
 
@@ -44,22 +40,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func tappedMyPayButton(braintreeClient:BTAPIClient) {
-        
-        // Create a BTDropInViewController
-        let dropInViewController = BTDropInViewController(apiClient: braintreeClient)
-        dropInViewController.delegate = self
-        
-        dropInViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: UIBarButtonSystemItem.cancel,
-            target: self, action: #selector(ViewController.userDidCancelPayment))
-        let navigationController = UINavigationController(rootViewController: dropInViewController)
-        present(navigationController, animated: true, completion: nil)
-    }
     
-    func userDidCancelPayment() {
-        dismiss(animated: true, completion: nil)
-    }
     
     func createMap(){
         
