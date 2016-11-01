@@ -17,6 +17,8 @@ class LandingViewController: UIViewController {
     let login = FlatButton()
     let signUp = FlatButton()
     let logo = UILabel()
+    let email = TextField()
+    let password = TextField()
     
     var fishes = ["flounder","perch","pike","piranha","salmon","tuna","zander"]
 
@@ -24,38 +26,90 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.isNavigationBarHidden = true
+        
+        DispatchQueue.main.async {
+            print("main thread dispatch")
+            
+            
+            self.setupViews()
+            
+            let views = [self.logo,self.email,self.password,self.login,self.signUp]
+            
+            constrain(views) { (_views) in
+             
+             let superView = _views[0].superview
+             let left = _views[0].superview?.left
+             let right = _views[0].superview?.right
+             let top = _views[0].superview?.top
+             let bottom = _views[0].superview?.bottom
+             
+             _views[0].centerX == (superView?.centerX)!
+             _views[0].bottom == top! + 150
+             _views[0].height == 85
+             _views[0].width == 200
+             
+             _views[1].centerX == (superView?.centerX)!
+             _views[1].top == _views[0].bottom + 100
+             _views[1].left == left! + 30
+             _views[1].right == right! - 30
+             
+             _views[2].centerX == (superView?.centerX)!
+             _views[2].top == _views[1].bottom + 20
+             _views[2].left == left! + 30
+             _views[2].right == right! - 30
+             
+             _views[3].bottom == bottom! - 100
+             _views[3].left == left! + 30
+             _views[3].height == 50
+             _views[3].width == 120
+             
+             _views[4].bottom == bottom! - 100
+             _views[4].right == right! - 30
+             _views[4].height == 50
+             _views[4].width == 120
+             
+             
+             
+             }
 
-        setupViews()
-        
-        let views = [logo,login,signUp]
-        
-        constrain(views) { (_views) in
-            
-            let superView = _views[0].superview
-            let left = _views[0].superview?.left
-            let right = _views[0].superview?.right
-            let top = _views[0].superview?.top
-            let bottom = _views[0].superview?.bottom
-            
-            _views[0].centerX == (superView?.centerX)!
-            _views[0].bottom == top! + 100
-            _views[0].height == 85
-            _views[0].width == 200
-            
-            _views[1].bottom == bottom! - 100
-            _views[1].left == left! + 30
-            _views[1].height == 50
-            _views[1].width == 120
-            
-            _views[2].bottom == bottom! - 100
-            _views[2].right == right! - 30
-            _views[2].height == 50
-            _views[2].width == 120
-            
-            setupFish()
-            
         }
+        
+        self.setupFish { (fishes) in
+            
+            for fish in fishes {
+                
+                let startRange = [-100, -80, -60, -115, -125]
+                let time = Int(arc4random_uniform(5) + 10)
+                let startY = Int(arc4random_uniform(300) + 10)
+                let endY = Int(arc4random_uniform(500) + 10)
+                let ran = Int(arc4random_uniform(4))
+                
+                let endPoint = CGPoint(x: 600, y: endY)
+                let startPoint = CGPoint(x: startRange[ran], y: startY)
+                
+                print("fish")
     
+                fish.layer.runAnimation(Animo.group(
+                    Animo.wait(TimeInterval(ran)),
+                    Animo.replayForever(
+                        Animo.sequence(
+                            Animo.move(from: startPoint, to: endPoint, duration: TimeInterval(time)),
+                            timingMode: .linear,
+                            options: Options(speed: 1, fillMode: Options.FillMode.both, removedOnCompletion: true)
+                        )
+                    )
+                    ), completion: {
+                    
+                        
+                })
+                
+                /*fish.layer.runAnimation(
+                    
+                )*/
+            }
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -64,10 +118,23 @@ class LandingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func signup(){
+        
+        self.performSegue(withIdentifier: "Signup", sender: self)
+    }
     
     func setupViews(){
         
-        self.view.backgroundColor = UIColor.flatTeal().lighten(byPercentage: 1.5)
+        self.view.backgroundColor = UIColor.flatTeal()
+        
+        email.placeholder = "Email"
+        email.textColor = UIColor.flatWhite()
+        self.view.addSubview(email)
+        password.placeholder = "Password"
+        password.textColor = UIColor.flatWhite()
+        self.view.addSubview(password)
+        
+        
         icon.image = UIImage(named: "fishing")
         icon.contentMode = .scaleAspectFill
         icon.clipsToBounds = true
@@ -81,12 +148,13 @@ class LandingViewController: UIViewController {
         
         signUp.backgroundColor = UIColor(complementaryFlatColorOf: self.view.backgroundColor)
         signUp.setTitle("SignUp", for: .normal)
+        signUp.addTarget(self, action: #selector(LandingViewController.signup), for: .touchUpInside)
         
         let signUpColor = UIColor(contrastingBlackOrWhiteColorOn: signUp.backgroundColor, isFlat: true)
         signUp.setTitleColor(signUpColor, for: .normal)
         
         logo.text = "Moby"
-        logo.textColor = UIColor.flatWhite()
+        logo.textColor = UIColor.flatTeal().lighten(byPercentage: 15)
         logo.textAlignment = .center
         logo.font = RobotoFont.bold(with: 72)
         //logo.isHidden = true
@@ -97,37 +165,28 @@ class LandingViewController: UIViewController {
         self.view.addSubview(logo)
     }
     
-    func setupFish(){
+    func setupFish(completion:@escaping (_ fishes:[UIImageView]) -> Void){
         
-        for fish in fishes {
+        var fishes:[UIImageView] = []
+        
+        DispatchQueue.main.async {
+            print("main thread dispatch")
             
-            let startRange = [-100, -80, -60, -115, -125]
+            for fish in self.fishes {
+                
+                let y = Int(arc4random_uniform(500) + 10)
+                
+                let imageView = UIImageView(frame: CGRect(x: 0, y: y, width: 100, height: 100))
+                imageView.image = UIImage(named: fish)
+                self.view.insertSubview(imageView, belowSubview: self.email)
+                
+                fishes.append(imageView)
+            }
             
-            let time = Int(arc4random_uniform(5) + 10)
-            let y = Int(arc4random_uniform(500) + 10)
-            let ran = Int(arc4random_uniform(4))
-            
-            let endPoint = CGPoint(x: 600, y: y)
-            let startPoint = CGPoint(x: startRange[ran], y: y)
-            
-            let imageView = UIImageView(frame: CGRect(x: 0, y: y, width: 100, height: 100))
-            imageView.image = UIImage(named: fish)
-            self.view.addSubview(imageView)
-            
-            imageView.layer.runAnimation(
-                Animo.sequence(
-                    Animo.wait(TimeInterval(ran)),
-                    Animo.replayForever(
-                        Animo.sequence(
-                            Animo.move(from: startPoint, to: endPoint, duration: TimeInterval(time)),
-                            timingMode: .linear,
-                            options: Options(speed: 1, fillMode: Options.FillMode.forwards, removedOnCompletion: true)
-                        )
-                    )
-                )
-            )
-            
+            completion(fishes)
+
         }
+        
         
         
     }
