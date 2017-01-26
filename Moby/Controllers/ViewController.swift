@@ -8,8 +8,6 @@
 
 import UIKit
 import GoogleMaps
-import Braintree
-
 import Material
 /// Point of Interest Item which implements the GMUClusterItem protocol.
 
