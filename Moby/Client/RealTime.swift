@@ -8,10 +8,13 @@
 
 import Foundation
 import SendBirdSDK
+import SwiftEventBus
 
 class RealTime {
     
-    var clientId = "7632C601-2154-46CF-888C-019389F13183"
+    var allChannels:[SBDOpenChannel] = []
+    
+    var clientId = "47DC1295-0075-4793-9604-F09D204F800B"
     
     func auth(){
         
@@ -45,29 +48,83 @@ class RealTime {
         }
     }
     
+    func nextPage(query:SBDOpenChannelListQuery){
+        
+        query.loadNextPage(completionHandler: { (channeles, error) in
+            
+            for channel in channeles! {
+                
+                self.allChannels.append(channel)
+            }
+            
+            if query.hasNext == true {
+                
+                self.nextPage(query: query)
+                
+            }else {
+                
+                SwiftEventBus.post("all")
+            }
+        })
+    }
+    
     func getChannelList(channelName:String,completion:@escaping (_ channel:SBDOpenChannel) -> Void){
         
+        var myChannel:SBDOpenChannel!
+        
         let query = SBDOpenChannel.createOpenChannelListQuery()
-        query?.nameKeyword = channelName
-        query?.loadNextPage(completionHandler: { (channels, error) in
+        
+        SwiftEventBus.onBackgroundThread(self, name: "all") { (result) in
             
-            if channels != nil {
+            if self.allChannels.count != 0 {
                 
-                let channel = channels?[0]
+                print("number of channels is \(self.allChannels.count)")
                 
+                for channel in self.allChannels {
+                    
+                    if channel.name == channelName {
+                        
+                        myChannel = channel
+                    }
+                }
                 
-                channel?.enter(completionHandler: { (error) in
+                guard myChannel != nil else {
+                    
+                    print("no channel found creating channel")
+                    
+                    SBDOpenChannel.createChannel(withName: channelName, coverUrl: nil, data: nil, operatorUserIds: nil) { (channel, error) in
+                        
+                        channel?.enter(completionHandler: { (error) in
+                            if error != nil {
+                                NSLog("Error: %@", error!)
+                                return
+                            }
+                            
+                            completion(channel!)
+                            
+                            // ...
+                        })
+                    }
+                    
+                    return
+                }
+                
+                print("channel found")
+                
+                myChannel?.enter(completionHandler: { (error) in
                     if error != nil {
                         NSLog("Error: %@", error!)
                         return
                     }
                     
-                    completion(channel!)
+                    completion(myChannel!)
+                    
                     // ...
                 })
-
                 
             }else {
+                
+                print("no channel found creating channel")
                 
                 SBDOpenChannel.createChannel(withName: channelName, coverUrl: nil, data: nil, operatorUserIds: nil) { (channel, error) in
                     
@@ -83,7 +140,9 @@ class RealTime {
                     })
                 }
             }
-        })
+        }
+        
+        self.nextPage(query: query!)
     }
     
     func joinChannel(channel:SBDOpenChannel){
@@ -116,7 +175,7 @@ class RealTime {
             
             if error == nil {
                 
-                print("sent message \(message)")
+                print("sent message \(message?.message)")
                 
             }else {
                 

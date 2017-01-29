@@ -19,9 +19,16 @@ class ParseClient {
     let currentObjectId = PFUser.current()?.objectId
     let currentUserName = PFUser.current()?.username
     
-    private var subscription: Subscription<PFObject>!
+    func signIn(completion:@escaping () -> Void) {
+        
+        PFUser.logInWithUsername(inBackground: "jon@jon.com", password: "123") { (user, error) in
+            
+            completion()
+        }
+    }
     
-    func signUp(fishermen:Fishermen,password:String) {
+    func signUp(fishermen:Fishermen,password:String,completion:@escaping () ->Void) {
+        
         let user = PFUser()
         user.username = fishermen.email
         user.password = password
@@ -31,52 +38,15 @@ class ParseClient {
         
         user.signUpInBackground { (success, error) in
             
-            
+            if error == nil {
+                
+                 completion()
+                
+            }else{
+                print("signup error is \(error)")
+            }
         }
         
     }
     
-    func saveTest(){
-        
-        let currentFishermen = Fishermen()
-        
-        currentFishermen.firstName = "Jonathan"
-        currentFishermen.lastName = "Green"
-        currentFishermen.email = "test@test.com"
-        currentFishermen.status = true
-        currentFishermen.customerId = "test"
-        currentFishermen.phone = "test"
-        currentFishermen.image = "test"
-        
-        currentFishermen.saveInBackground { (success, error) in
-            
-            
-        }
-    }
-    
-    func liveQuery(){
-        
-        print("subscribing to live query")
-        
-        let msgQuery = PFQuery(className:"Fishermen").whereKeyExists("status")
-        
-        
-        self.subscription = liveQueryClient.subscribe(msgQuery).handleError({ (query, error) in
-            
-            print("error is \(error)")
-        })
-        
-        self.subscription = liveQueryClient.subscribe(msgQuery).handleEvent({ (query, event) in
-            
-            print("event was \(event)")
-        })
-        
-        self.subscription = liveQueryClient.subscribe(msgQuery).handle(Event.updated) { _, message in
-            // This is where we handle the event
-            
-            print("created new fishermen")
-        }
-        
-    }
-
 }

@@ -20,15 +20,33 @@ class MainViewController: UIViewController, SBDChannelDelegate {
     var logo = UILabel()
     var instructions = UILabel()
     var profile = FlatButton()
-    
     var views:[UIView] = []
+    
+    var currentChannel:SBDOpenChannel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        joinChannel()
         
-        //SBDMain.add(self as SBDChannelDelegate, identifier: ParseClient().currentUserName!)
+        let currentFishermen = Fishermen()
+        
+        currentFishermen.firstName = "Jonathan"
+        currentFishermen.lastName = "Green"
+        currentFishermen.email = "test@test.com"
+        currentFishermen.status = true
+        currentFishermen.customerId = "test"
+        currentFishermen.phone = "test"
+        currentFishermen.image = "test"
+        
+        ParseClient().signIn {
+            
+            RealTime().auth()
+            RealTime().connect(objectId: ParseClient().currentObjectId!, userName: ParseClient().currentUserName!, imageUrl: "", competion: { (user) in
+                
+                SBDMain.add(self as SBDChannelDelegate, identifier: ParseClient().currentUserName!)
+                self.joinChannel()
+            })
+        }
         
         //SwiftEventBus.post("live")
         
@@ -49,6 +67,15 @@ class MainViewController: UIViewController, SBDChannelDelegate {
             
             let city = address["City"] as! String
             let state = address["State"] as! String
+            
+            let channelName = "\(city) \(state)"
+            
+            RealTime().getChannelList(channelName: channelName, completion: { (channel) in
+                
+                print("joined channel \(channel.name)")
+                
+                self.currentChannel = channel
+            })
             
             print("address is \(city) \(state)")
         }
@@ -109,6 +136,7 @@ class MainViewController: UIViewController, SBDChannelDelegate {
         fishingBtn.addSubview(fishingImageView)
         fishingBtn.backgroundColor = UIColor(red:0.20, green:0.26, blue:0.37, alpha:1.0)
         fishingBtn.shapePreset = .circle
+        fishingBtn.addTarget(self, action: #selector(MainViewController.sendMsg), for: .touchUpInside)
         views.append(fishingImageView)
         
         let cruiseImage = UIImage(named: "cruise")
@@ -186,13 +214,15 @@ class MainViewController: UIViewController, SBDChannelDelegate {
     
     func sendMsg(){
         
-        //RealTime().sendMessage(channel: <#T##SBDOpenChannel#>, myMessage: "Hello Mo-B")
+        RealTime().sendMessage(channel: currentChannel, myMessage: "Hello Mo-B")
     }
     
     
     func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage) {
         
-        print("message is \(message._IQDescription())")
+        let currentMessage = message as! SBDUserMessage
+        
+        print("message is \(currentMessage.message)")
     }
     /*
     // MARK: - Navigation

@@ -7,19 +7,16 @@
 //
 
 import Foundation
-import Parse
 
-class Fishermen:PFObject, PFSubclassing {
+class Fishermen {
     
-    @NSManaged var firstName:String!
-    @NSManaged var lastName:String!
-    @NSManaged var image:String!
-    @NSManaged var email:String!
-    @NSManaged var phone:String!
-    @NSManaged var customerId:String!
-    @NSManaged var status:NSNumber!
+    var firstName:String!
+    var lastName:String!
+    var image:String!
+    var ImageData:NSData!
+    var phone:String!
+    var customerId:String!
+    var status:Bool!
+    var email:String!
     
-    class func parseClassName() -> String {
-        return "Fishermen"
-    }
 }
