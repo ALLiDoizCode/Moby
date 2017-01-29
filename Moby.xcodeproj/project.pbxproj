@@ -15,6 +15,8 @@
 		AB0BA4B61DC15F5D003F7802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0BA4B41DC15F5D003F7802 /* LaunchScreen.storyboard */; };
 		AB0BA4C11DC15F5D003F7802 /* MobyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4C01DC15F5D003F7802 /* MobyTests.swift */; };
 		AB0BA4CC1DC15F5D003F7802 /* MobyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4CB1DC15F5D003F7802 /* MobyUITests.swift */; };
+		AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495B1E3E3CBB000D3E82 /* RealTime.swift */; };
+		AB25495F1E3E675D000D3E82 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495E1E3E675D000D3E82 /* Location.swift */; };
 		AB33136E1E3992DF00F4CD3F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33136D1E3992DF00F4CD3F /* MainViewController.swift */; };
 		AB3AA2791DC2CE4C000FC168 /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2781DC2CE4C000FC168 /* Boat.swift */; };
 		AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27A1DC2CE62000FC168 /* Captin.swift */; };
@@ -58,6 +60,8 @@
 		AB0BA4C71DC15F5D003F7802 /* MobyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BA4CB1DC15F5D003F7802 /* MobyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobyUITests.swift; sourceTree = "<group>"; };
 		AB0BA4CD1DC15F5D003F7802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB25495B1E3E3CBB000D3E82 /* RealTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
+		AB25495E1E3E675D000D3E82 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		AB33136C1E39907800F4CD3F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		AB33136D1E3992DF00F4CD3F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AB3AA2781DC2CE4C000FC168 /* Boat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		AB0BA4AA1DC15F5C003F7802 /* Moby */ = {
 			isa = PBXGroup;
 			children = (
+				AB25495D1E3E673B000D3E82 /* Helpers */,
 				AB7F12711DC5CB55001EC977 /* Controllers */,
 				AB3AA27E1DC2E61C000FC168 /* Client */,
 				AB3AA2771DC2CE2C000FC168 /* Models */,
@@ -161,6 +166,14 @@
 			path = MobyUITests;
 			sourceTree = "<group>";
 		};
+		AB25495D1E3E673B000D3E82 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AB25495E1E3E675D000D3E82 /* Location.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		AB3AA2771DC2CE2C000FC168 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 			children = (
 				AB3AA2811DC2E63C000FC168 /* Client.swift */,
 				ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */,
+				AB25495B1E3E3CBB000D3E82 /* RealTime.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -270,7 +284,7 @@
 				TargetAttributes = {
 					AB0BA4A71DC15F5C003F7802 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = KX535D8UZT;
+						DevelopmentTeam = 2K5QEB378V;
 						ProvisioningStyle = Automatic;
 					};
 					AB0BA4BB1DC15F5D003F7802 = {
@@ -389,6 +403,7 @@
 			files = (
 				AB3AA2791DC2CE4C000FC168 /* Boat.swift in Sources */,
 				AB41EE4F1DC7FCD100B2D71D /* Signup.swift in Sources */,
+				AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */,
 				AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */,
 				AB0BA4AE1DC15F5D003F7802 /* ViewController.swift in Sources */,
 				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,
@@ -396,6 +411,7 @@
 				ABF3DC5B1DC6B9D0009D09CC /* ParseClient.swift in Sources */,
 				ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */,
 				AB0BA4AC1DC15F5D003F7802 /* AppDelegate.swift in Sources */,
+				AB25495F1E3E675D000D3E82 /* Location.swift in Sources */,
 				AB33136E1E3992DF00F4CD3F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,7 +565,7 @@
 			baseConfigurationReference = DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KX535D8UZT;
+				DEVELOPMENT_TEAM = 2K5QEB378V;
 				INFOPLIST_FILE = Moby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -564,7 +580,7 @@
 			baseConfigurationReference = 1D7EEC2D08EC49F43296277A /* Pods-Moby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KX535D8UZT;
+				DEVELOPMENT_TEAM = 2K5QEB378V;
 				INFOPLIST_FILE = Moby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

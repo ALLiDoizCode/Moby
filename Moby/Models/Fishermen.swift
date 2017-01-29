@@ -7,22 +7,19 @@
 //
 
 import Foundation
+import Parse
 
-
-class Fishermen {
+class Fishermen:PFObject, PFSubclassing {
     
-    var firstName:String!
-    var lastName:String!
-    var image:String!
-    var email:String!
-    var phone:String!
-    var customerId:String!
+    @NSManaged var firstName:String!
+    @NSManaged var lastName:String!
+    @NSManaged var image:String!
+    @NSManaged var email:String!
+    @NSManaged var phone:String!
+    @NSManaged var customerId:String!
+    @NSManaged var status:NSNumber!
     
-    init(_firstName:String,_lastName:String,_email:String,_Phone:String) {
-        
-        firstName = _firstName
-        lastName = _lastName
-        email = _email
-        phone = _Phone
+    class func parseClassName() -> String {
+        return "Fishermen"
     }
 }

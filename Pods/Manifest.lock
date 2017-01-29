@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.0.1)
   - Animo (1.3.0)
+  - Bolts-Swift (1.3.0)
   - Bolts/Tasks (1.8.4)
   - CardIO (5.4.1)
   - Cartography (1.0.1)
@@ -18,7 +19,13 @@ PODS:
   - Material/Core (2.2.5)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
+  - ParseLiveQuery (1.1.0):
+    - Bolts-Swift (~> 1.3)
+    - Parse (~> 1.14.2)
+    - SocketRocket (~> 0.5)
   - PlaidClient (0.6)
+  - SendBirdSDK (3.0.28)
+  - SocketRocket (0.5.1)
   - Stripe (9.3.0)
   - SVProgressHUD (2.1.2)
   - SwiftEventBus (2.1.0)
@@ -33,8 +40,10 @@ DEPENDENCIES:
   - GoogleMaps
   - IQKeyboardManagerSwift
   - Material (~> 2.2)
-  - Parse (~> 1.14)
+  - Parse
+  - ParseLiveQuery
   - PlaidClient (from `https://github.com/natemann/PlaidClient.git`)
+  - SendBirdSDK
   - Stripe
   - SVProgressHUD
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `2.1.2`)
@@ -59,6 +68,7 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Animo: 1d66c0bedb07157cda7dca10f2ddaf97c03959b9
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Bolts-Swift: fa98d1b59fc1acea9b21a21306dcdca1c85e3737
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
@@ -66,12 +76,15 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Material: 9d1d084759d908a5bddc37e6e9d22874da296621
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
+  ParseLiveQuery: 4c0f3f571ba0f358a4e592cd7d4b55c95ab9655e
   PlaidClient: 9afd1cb35fa3a273b2c3e25f0b7b240d0368ca60
+  SendBirdSDK: ea3ee1a1219da90a8f54894a54224b615855fdb8
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   Stripe: 0f41a33a6fa3ac76ee668d7df3e2680c28b8ab1a
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 30a1fa4f968f5ad09d569293dfc4acaef4f2f2cf
+PODFILE CHECKSUM: 030537a2f6d0297f72b3e0cf70c3d01ec422e4a2
 
 COCOAPODS: 1.1.1

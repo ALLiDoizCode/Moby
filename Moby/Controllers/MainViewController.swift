@@ -10,8 +10,10 @@ import UIKit
 import Material
 import Cartography
 import Animo
+import SwiftEventBus
+import SendBirdSDK
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, SBDChannelDelegate {
     
     var fishingBtn = FlatButton()
     var cruiseBtn = FlatButton()
@@ -24,6 +26,12 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        joinChannel()
+        
+        //SBDMain.add(self as SBDChannelDelegate, identifier: ParseClient().currentUserName!)
+        
+        //SwiftEventBus.post("live")
+        
         self.view.backgroundColor = UIColor(red:0.43, green:0.84, blue:0.85, alpha:1.0)
         
         self.navigationController?.isNavigationBarHidden = true
@@ -33,6 +41,17 @@ class MainViewController: UIViewController {
         boatAnimo()
         
         // Do any additional setup after loading the view.
+    }
+    
+    func joinChannel(){
+        
+        Location().getAdress { (address) in
+            
+            let city = address["City"] as! String
+            let state = address["State"] as! String
+            
+            print("address is \(city) \(state)")
+        }
     }
     
     func boatAnimo(){
@@ -164,7 +183,17 @@ class MainViewController: UIViewController {
         
         return true
     }
-
+    
+    func sendMsg(){
+        
+        //RealTime().sendMessage(channel: <#T##SBDOpenChannel#>, myMessage: "Hello Mo-B")
+    }
+    
+    
+    func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage) {
+        
+        print("message is \(message._IQDescription())")
+    }
     /*
     // MARK: - Navigation
 
