@@ -20,6 +20,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var timeBtn = FlatButton()
     var profileBtn = FlatButton()
     var giftBtn = FlatButton()
+    var estimateView = UIView()
+    var amountLabel = UILabel()
+    var durationLabel = UILabel()
+    var cardLabel = UILabel()
+    var amount = UILabel()
+    var duration = UILabel()
+    var card = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +72,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             }
             
             self.buildView()
+            self.buildEstimate()
         }
         
         
@@ -82,8 +90,83 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
     }
     
+    func buildEstimate(){
+        
+        estimateView.addSubview(amountLabel)
+        estimateView.addSubview(durationLabel)
+        estimateView.addSubview(cardLabel)
+        estimateView.addSubview(amount)
+        estimateView.addSubview(duration)
+        estimateView.addSubview(card)
+        
+        amountLabel.numberOfLines = 0
+        amountLabel.textAlignment = .center
+        amountLabel.text = "Total"
+        amount.textColor = Color.grey.darken1
+        
+        durationLabel.numberOfLines = 0
+        durationLabel.textAlignment = .center
+        durationLabel.text = "Duration"
+        durationLabel.textColor = Color.grey.darken1
+        
+        cardLabel.numberOfLines = 0
+        cardLabel.textAlignment = .center
+        cardLabel.text = "Payment"
+        cardLabel.textColor = Color.grey.darken1
+        
+        amount.numberOfLines = 0
+        amount.textAlignment = .center
+        amount.text = "$50.35"
+        
+        duration.numberOfLines = 0
+        duration.textAlignment = .center
+        duration.text = "3hrs"
+        
+        card.numberOfLines = 0
+        card.textAlignment = .center
+        card.text = "*1111"
+        
+        
+        let views:[UIView] = [amountLabel,durationLabel,cardLabel,amount,duration,card]
+        
+        constrain(views) { (_views) in
+            
+            let superView = _views[0].superview
+            let left = _views[0].superview?.left
+            let right = _views[0].superview?.right
+            let top = _views[0].superview?.top
+            let bottom = _views[0].superview?.bottom
+            
+            _views[0].centerX == (superView?.centerX)!
+            _views[0].top == (top)! + 10
+            _views[0].width == (superView?.width)!
+            
+            _views[3].centerX == (superView?.centerX)!
+            _views[3].top == _views[0].bottom
+            _views[3].width == (superView?.width)!
+            
+            _views[1].right == (right)!
+            _views[1].left == (superView?.centerX)! + 50
+            _views[1].bottom == (superView?.centerY)! + 10
+            
+            _views[4].right == (right)!
+            _views[4].left == (superView?.centerX)! + 50
+            _views[4].bottom ==  _views[1].top
+            
+            _views[2].left == (left)!
+            _views[2].right == (superView?.centerX)! - 50
+            _views[2].bottom == (superView?.centerY)! + 10
+            
+            _views[5].left == (left)!
+            _views[5].right == (superView?.centerX)! - 50
+            _views[5].bottom ==  _views[2].top
+
+        }
+    }
+    
     func buildView() {
         
+        self.view.addSubview(estimateView)
         self.view.addSubview(goFishBtn)
         self.view.addSubview(locationBtn)
         self.view.addSubview(tripBtn)
@@ -91,7 +174,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.view.addSubview(profileBtn)
         self.view.addSubview(giftBtn)
         
-        goFishBtn.setTitle("Set Trip", for: .normal)
+        estimateView.backgroundColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
+        estimateView.cornerRadius = 3
+        
+        goFishBtn.setTitle("Set Location", for: .normal)
         goFishBtn.backgroundColor = UIColor(complementaryFlatColorOf: self.view.backgroundColor)
         
         locationBtn.setTitle("             1 Infinite Loop", for: .normal)
@@ -130,7 +216,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         giftBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
         
         
-        let views:[UIView] = [goFishBtn,locationBtn,tripBtn,timeBtn,profileBtn,giftBtn]
+        let views:[UIView] = [goFishBtn,locationBtn,tripBtn,timeBtn,profileBtn,giftBtn,estimateView]
         
         constrain(views) { (_views) in
             
@@ -172,8 +258,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             _views[5].height == 50
             _views[5].width == 50
             
+            _views[6].left == (left)! + 10
+            _views[6].right == (right)! - 10
+            _views[6].bottom == _views[1].bottom
+            _views[6].height == _views[1].height * 3
+            
             
         }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
