@@ -9,6 +9,8 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - EasyPeasy (1.4)
+  - FoldingCell (2.0.3)
   - GoogleMaps (2.1.0):
     - GoogleMaps/Maps (= 2.1.0)
   - GoogleMaps/Base (2.1.0)
@@ -39,6 +41,8 @@ DEPENDENCIES:
   - CardIO
   - Cartography (~> 1.0.1)
   - ChameleonFramework/Swift
+  - EasyPeasy (~> 1.4)
+  - FoldingCell
   - GoogleMaps
   - IQKeyboardManagerSwift
   - Material (~> 2.2)
@@ -75,6 +79,8 @@ SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
+  FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
   GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Material: 9d1d084759d908a5bddc37e6e9d22874da296621
@@ -88,6 +94,6 @@ SPEC CHECKSUMS:
   SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 8453bc5776b049999d79d84ac66949d86a2622a8
+PODFILE CHECKSUM: 8fddd1c8dd4071957dd58586d74e404ad248907c
 
 COCOAPODS: 1.1.1

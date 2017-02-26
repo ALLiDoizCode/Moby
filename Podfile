@@ -20,3 +20,4 @@ pod 'ParseLiveQuery'
 pod 'SendBirdSDK'
 pod 'BubbleTransition', '~> 2.0.0'
 
+

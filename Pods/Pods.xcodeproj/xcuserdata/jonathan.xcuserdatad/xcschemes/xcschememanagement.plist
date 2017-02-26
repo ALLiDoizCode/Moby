@@ -39,6 +39,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EasyPeasy.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FoldingCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -142,7 +152,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1B55D0B4FF5E62E815A019C082BE1DD7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>223C952D3CD291DE22488C1F159F503B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C8AA1BAF35413BDB954A1DF93576ED1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A82D0442029A667645E6F4D562DACFC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44D04613A7591446E9F604C26C55657F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,7 +182,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>625C98556CDCB6DBEDCD6077DA24C29D</key>
+		<key>636C687288977295F1567DDF3CCEB2B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>697EA908A917774FD0F46D7622DE6F85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,37 +212,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>86B3ABAF73A9498870F5193402AEA74B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8BAA0742E25D8338BD994ACFB93665FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B5AA70972E00E0B2B5D3BAC3F49EFEC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A7830603D6DB8C7947515805200ECB5E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AC9C9FE440984B1D2F4296AAEAC96A09</key>
+		<key>B3298826677A1446F7453724088FFD59</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>BA71D51147B8A72A588BFCC03DB91086</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DF07DA52A8CC25B7A588BA6FAA1FE9D7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EF70EC7977C0A6C6C2108BA839C08AB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

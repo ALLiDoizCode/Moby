@@ -11,6 +11,4 @@
 
 
 #endif /* Header_h */
-
-#endif /* Header_h */
 #import <CardIO/CardIO.h>

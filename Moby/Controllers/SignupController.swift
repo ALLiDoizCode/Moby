@@ -160,7 +160,7 @@ class SignupController: UIViewController {
             signUp.setTitle("Sign Up", for: .normal)
             signUp.setTitleColor(UIColor.flatWhite(), for: .normal)
             signUp.backgroundColor = UIColor(complementaryFlatColorOf: UIColor.flatTeal())
-            //signUp.addTarget(self, action: #selector(signUp.getCard), for: .touchUpInside)
+            signUp.addTarget(self, action: #selector(SignupController.getCard), for: .touchUpInside)
             
             back.setImage(UIImage(named:"back"), for: UIControlState.normal)
             back.addTarget(self, action: #selector(LoginViewController.goBack), for: .touchUpInside)
@@ -183,10 +183,10 @@ class SignupController: UIViewController {
     
     func getCard(){
         
+        let controller = ScanCardViewController()
+        self.navigationController?.pushViewController(controller, animated: false)
     }
     
-    
- 
     
     func userDidCancelPayment() {
         dismiss(animated: true, completion: nil)

@@ -149,7 +149,7 @@ class LoginViewController: UIViewController {
             login.setTitle("Login", for: .normal)
             login.setTitleColor(UIColor.flatWhite(), for: .normal)
             login.backgroundColor = UIColor(complementaryFlatColorOf: UIColor.flatTeal())
-            //login.addTarget(self, action: #selector(LoginViewController.getCard), for: .touchUpInside)
+            login.addTarget(self, action: #selector(LoginViewController.didLogin), for: .touchUpInside)
             
             
             back.setImage(UIImage(named:"back"), for: UIControlState.normal)
@@ -159,6 +159,12 @@ class LoginViewController: UIViewController {
             bgView.contentViewEdgeInsetsPreset = .none
             
         }
+    }
+    
+    func didLogin(){
+    
+        let controller = ViewController()
+        self.present(controller, animated: true, completion: nil)
     }
     
     func goBack(){

@@ -26,6 +26,8 @@
 		AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2811DC2E63C000FC168 /* Client.swift */; };
 		AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */; };
 		AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */; };
+		ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */; };
+		ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */; };
 		ABF3DC5B1DC6B9D0009D09CC /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */; };
 		ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3DC5C1DC6BF54009D09CC /* LandingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		AB3AA2811DC2E63C000FC168 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCardViewController.swift; sourceTree = "<group>"; };
+		ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptinCell.swift; sourceTree = "<group>"; };
 		ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		ABF3DC5C1DC6BF54009D09CC /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moby/Pods-Moby.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		AB0BA4AA1DC15F5C003F7802 /* Moby */ = {
 			isa = PBXGroup;
 			children = (
+				ABBD9E6E1E63528700BB6AA1 /* Cells */,
 				AB25495D1E3E673B000D3E82 /* Helpers */,
 				AB7F12711DC5CB55001EC977 /* Controllers */,
 				AB3AA27E1DC2E61C000FC168 /* Client */,
@@ -205,6 +210,7 @@
 		AB7F12711DC5CB55001EC977 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */,
 				AB0BA4AD1DC15F5D003F7802 /* ViewController.swift */,
 				ABF3DC5C1DC6BF54009D09CC /* LandingViewController.swift */,
 				AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */,
@@ -212,6 +218,14 @@
 				AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ABBD9E6E1E63528700BB6AA1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		CA639CC877607399EEC15DD3 /* Frameworks */ = {
@@ -415,7 +429,9 @@
 				AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */,
 				AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */,
 				AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */,
+				ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */,
 				AB0BA4AE1DC15F5D003F7802 /* ViewController.swift in Sources */,
+				ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */,
 				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
 				AB20BCD71E63299B007DADCA /* FishGenerator.swift in Sources */,
@@ -583,6 +599,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdhouse.Moby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathan/Documents/Projects/Moby/Moby/Header.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -598,6 +616,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdhouse.Moby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathan/Documents/Projects/Moby/Moby/Header.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

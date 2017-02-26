@@ -124,7 +124,7 @@ class LandingViewController: UIViewController,UIViewControllerTransitioningDeleg
         let controller = SignupController()
         controller.transitioningDelegate = self
         controller.modalPresentationStyle = .custom
-        self.present(controller, animated: false, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: false)
     }
     
     func goTologin(){
@@ -132,7 +132,7 @@ class LandingViewController: UIViewController,UIViewControllerTransitioningDeleg
         let controller = LoginViewController()
         controller.transitioningDelegate = self
         controller.modalPresentationStyle = .custom
-        self.present(controller, animated: false, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: false)
     }
     
     func setupViews(){

@@ -25,6 +25,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>NSCameraUsageDescription</key>
+    <string>Camera usage description</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>We need To find boats in your area</string>
 	<key>UILaunchStoryboardName</key>

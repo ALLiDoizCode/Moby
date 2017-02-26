@@ -9,3 +9,5 @@
 import Foundation
 
 let fishes = ["flounder","perch","pike","piranha","salmon","tuna","zander"]
+
+let captinCellID = "CaptinCell"
