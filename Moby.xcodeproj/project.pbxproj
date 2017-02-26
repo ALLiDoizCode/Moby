@@ -24,7 +24,8 @@
 		AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27A1DC2CE62000FC168 /* Captin.swift */; };
 		AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */; };
 		AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2811DC2E63C000FC168 /* Client.swift */; };
-		AB41EE4F1DC7FCD100B2D71D /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41EE4E1DC7FCD100B2D71D /* Signup.swift */; };
+		AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */; };
+		AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */; };
 		ABF3DC5B1DC6B9D0009D09CC /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */; };
 		ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3DC5C1DC6BF54009D09CC /* LandingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +73,8 @@
 		AB3AA27A1DC2CE62000FC168 /* Captin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captin.swift; sourceTree = "<group>"; };
 		AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fishermen.swift; sourceTree = "<group>"; };
 		AB3AA2811DC2E63C000FC168 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		AB41EE4E1DC7FCD100B2D71D /* Signup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		ABF3DC5C1DC6BF54009D09CC /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moby/Pods-Moby.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,8 +207,9 @@
 			children = (
 				AB0BA4AD1DC15F5D003F7802 /* ViewController.swift */,
 				ABF3DC5C1DC6BF54009D09CC /* LandingViewController.swift */,
-				AB41EE4E1DC7FCD100B2D71D /* Signup.swift */,
+				AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */,
 				AB33136D1E3992DF00F4CD3F /* MainViewController.swift */,
+				AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -408,8 +411,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3AA2791DC2CE4C000FC168 /* Boat.swift in Sources */,
-				AB41EE4F1DC7FCD100B2D71D /* Signup.swift in Sources */,
+				AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */,
 				AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */,
+				AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */,
 				AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */,
 				AB0BA4AE1DC15F5D003F7802 /* ViewController.swift in Sources */,
 				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,

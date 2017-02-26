@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BubbleTransition.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Cartography.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -132,11 +137,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1656AE3E11D1D66AD80843C8EB9D4F4F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1B006392A6DC63E06AC81DE6F08803B1</key>
 		<dict>
 			<key>primary</key>
@@ -147,12 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37971ED40FC23B87D59DF429F8E02D4A</key>
+		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<key>625C98556CDCB6DBEDCD6077DA24C29D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,22 +167,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7372CA79CE92E7AC032175441663EBE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>883F073BAA2CEA62236E23A9C18142AA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8AB421D62644200E3ADD9F02DB49E129</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8AFE5150DEABF889294CBAAB9CC78EAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -192,12 +182,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>94B2F3F99644BF4E34AA69AB65100F82</key>
+		<key>9B5AA70972E00E0B2B5D3BAC3F49EFEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7830603D6DB8C7947515805200ECB5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC9C9FE440984B1D2F4296AAEAC96A09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>BA71D51147B8A72A588BFCC03DB91086</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DF07DA52A8CC25B7A588BA6FAA1FE9D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF70EC7977C0A6C6C2108BA839C08AB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

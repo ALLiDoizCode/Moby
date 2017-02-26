@@ -10,8 +10,9 @@ import UIKit
 import Material
 import Cartography
 import Animo
+import BubbleTransition
 
-class LandingViewController: UIViewController {
+class LandingViewController: UIViewController,UIViewControllerTransitioningDelegate {
     
     let icon = UIImageView()
     let login = FlatButton()
@@ -19,6 +20,7 @@ class LandingViewController: UIViewController {
     let logo = UILabel()
     let email = TextField()
     let password = TextField()
+    let transition = BubbleTransition()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,7 +121,18 @@ class LandingViewController: UIViewController {
     
     func signup(){
         
-        self.performSegue(withIdentifier: "Signup", sender: self)
+        let controller = SignupController()
+        controller.transitioningDelegate = self
+        controller.modalPresentationStyle = .custom
+        self.present(controller, animated: false, completion: nil)
+    }
+    
+    func goTologin(){
+        
+        let controller = LoginViewController()
+        controller.transitioningDelegate = self
+        controller.modalPresentationStyle = .custom
+        self.present(controller, animated: false, completion: nil)
     }
     
     func setupViews(){
@@ -146,6 +159,7 @@ class LandingViewController: UIViewController {
         let loginColor = UIColor(contrastingBlackOrWhiteColorOn: login.backgroundColor, isFlat: true)
         login.setTitleColor(loginColor, for: .normal)
         login.borderWidth = 2
+        login.addTarget(self, action: #selector(LandingViewController.goTologin), for: .touchUpInside)
         
         signUp.backgroundColor = UIColor(complementaryFlatColorOf: self.view.backgroundColor)
         signUp.setTitle("SignUp", for: .normal)
@@ -164,6 +178,24 @@ class LandingViewController: UIViewController {
         self.view.addSubview(login)
         self.view.addSubview(signUp)
         self.view.addSubview(logo)
+    }
+    
+    // MARK: UIViewControllerTransitioningDelegate
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        transition.transitionMode = .present
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = self.view.backgroundColor!
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        transition.transitionMode = .dismiss
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = self.view.backgroundColor!
+        return transition
     }
     
     override var prefersStatusBarHidden: Bool {

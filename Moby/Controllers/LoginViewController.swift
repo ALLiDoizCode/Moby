@@ -1,9 +1,9 @@
 //
-//  Signup.swift
+//  LoginViewController.swift
 //  Moby
 //
-//  Created by Jonathan on 10/31/16.
-//  Copyright © 2016 Jonathan. All rights reserved.
+//  Created by Jonathan on 2/26/17.
+//  Copyright © 2017 Jonathan. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ import SwiftEventBus
 import ChameleonFramework
 import Animo
 
-class Signup: UIViewController {
+class LoginViewController: UIViewController {
     
     var bgView = ImageCard()
     var email = TextField()
@@ -21,7 +21,8 @@ class Signup: UIViewController {
     var lastName = TextField()
     var password = TextField()
     var contentView = UIView()
-    var signUp = FlatButton()
+    var login = FlatButton()
+    var back = FlatButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +66,6 @@ class Signup: UIViewController {
             self.buildViews()
         }
         
-        
-        
         // Do any additional setup after loading the view.
     }
 
@@ -81,13 +80,14 @@ class Signup: UIViewController {
         
         self.view.addSubview(bgView)
         self.view.addSubview(contentView)
+        self.view.addSubview(back)
         self.contentView.addSubview(email)
         self.contentView.addSubview(firstName)
         self.contentView.addSubview(lastName)
         self.contentView.addSubview(password)
-        self.contentView.addSubview(signUp)
-    
-        let views:[UIView] = [bgView,contentView,email,firstName,lastName,password,signUp]
+        self.contentView.addSubview(login)
+        
+        let views:[UIView] = [bgView,contentView,email,password,login,back]
         
         constrain(views) { (_Views) in
             
@@ -102,7 +102,8 @@ class Signup: UIViewController {
             //_Views[1].centerX == (superView?.centerX)!
             //_Views[1].left == (superView?.left)!
             //_Views[1].right == (superView?.right)!
-            _Views[1].height == 350
+            //_Views[1].top == _Views[2].top - 10
+            _Views[1].bottom == _Views[4].bottom + 10
             
             _Views[2].top == (_Views[1].top) + 30
             _Views[2].left == (_Views[1].left) + 20
@@ -117,19 +118,14 @@ class Signup: UIViewController {
             _Views[4].top == _Views[3].bottom + 30
             _Views[4].left == (_Views[1].left) + 20
             _Views[4].width == _Views[0].width - 40
-            //_Views[4].right == (_Views[0].right) - 20
+            _Views[4].height == 50
             
-            _Views[5].top == _Views[4].bottom + 30
-            _Views[5].left == (_Views[1].left) + 20
-            _Views[5].width == _Views[0].width - 40
-            //_Views[5].right == (_Views[0].right) - 20
+            _Views[5].top == (superView?.top)! + 20
+            _Views[5].left == (superView?.left)! + 20
+            _Views[5].width == 30
+            _Views[5].height == 30
             
-            _Views[6].top == _Views[5].bottom + 30
-            _Views[6].left == (_Views[1].left) + 20
-            _Views[6].width == _Views[0].width - 40
-            _Views[6].height == 50
             
-    
             bgView.backgroundColor = UIColor(complementaryFlatColorOf: UIColor.flatTeal())
             bgView.imageView = UIImageView()
             bgView.imageView?.contentMode = .scaleAspectFit
@@ -150,33 +146,34 @@ class Signup: UIViewController {
             password.textColor = UIColor.flatWhite()
             password.placeholder = "Password"
             
-            signUp.setTitle("Sign Up", for: .normal)
-            signUp.setTitleColor(UIColor.flatWhite(), for: .normal)
-            signUp.backgroundColor = UIColor(complementaryFlatColorOf: UIColor.flatTeal())
-            signUp.addTarget(self, action: #selector(Signup.getCard), for: .touchUpInside)
+            login.setTitle("Login", for: .normal)
+            login.setTitleColor(UIColor.flatWhite(), for: .normal)
+            login.backgroundColor = UIColor(complementaryFlatColorOf: UIColor.flatTeal())
+            //login.addTarget(self, action: #selector(LoginViewController.getCard), for: .touchUpInside)
+            
+            
+            back.setImage(UIImage(named:"back"), for: UIControlState.normal)
+            back.addTarget(self, action: #selector(LoginViewController.goBack), for: .touchUpInside)
             
             bgView.contentView = contentView
             bgView.contentViewEdgeInsetsPreset = .none
-        
+            
         }
     }
     
-    
-    func getCard(){
+    func goBack(){
         
-    }
-    
-    
- 
-    
-    func userDidCancelPayment() {
-        dismiss(animated: true, completion: nil)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let controller = storyBoard.instantiateViewController(withIdentifier: "nav") as! UINavigationController
+        
+        self.present(controller, animated: true, completion: nil)
     }
     
     override var prefersStatusBarHidden: Bool {
+    
         return true
     }
-    
 
     /*
     // MARK: - Navigation

@@ -3,6 +3,7 @@ PODS:
   - Animo (1.3.0)
   - Bolts-Swift (1.3.0)
   - Bolts/Tasks (1.8.4)
+  - BubbleTransition (2.0.1)
   - CardIO (5.4.1)
   - Cartography (1.0.1)
   - ChameleonFramework/Default (2.1.0)
@@ -34,6 +35,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Animo
+  - BubbleTransition (~> 2.0.0)
   - CardIO
   - Cartography (~> 1.0.1)
   - ChameleonFramework/Swift
@@ -69,6 +71,7 @@ SPEC CHECKSUMS:
   Animo: 1d66c0bedb07157cda7dca10f2ddaf97c03959b9
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Bolts-Swift: fa98d1b59fc1acea9b21a21306dcdca1c85e3737
+  BubbleTransition: bb24ed389ab672eecf3c87170d0a73f959a8e696
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
@@ -85,6 +88,6 @@ SPEC CHECKSUMS:
   SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 030537a2f6d0297f72b3e0cf70c3d01ec422e4a2
+PODFILE CHECKSUM: 8453bc5776b049999d79d84ac66949d86a2622a8
 
 COCOAPODS: 1.1.1
