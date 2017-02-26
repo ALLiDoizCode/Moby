@@ -11,7 +11,7 @@ import Material
 import Cartography
 import SwiftEventBus
 import ChameleonFramework
-
+import Animo
 
 class Signup: UIViewController {
     
@@ -26,7 +26,46 @@ class Signup: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buildViews()
+        setupFish(view: self.view) { (fishes) in
+            
+            let yRange = Int(self.view.frame.height)
+            
+            for fish in fishes {
+                
+                let startRange = [-100, -80, -60, -115, -125]
+                let time = Int(arc4random_uniform(5) + 10)
+                let startY = Int(arc4random_uniform(UInt32(yRange)) + 10)
+                let endY = Int(arc4random_uniform(UInt32(yRange)) + 10)
+                let ran = Int(arc4random_uniform(4))
+                
+                let endPoint = CGPoint(x: 600, y: endY)
+                let startPoint = CGPoint(x: startRange[ran], y: startY)
+                
+                print("fish")
+                
+                fish.layer.runAnimation(Animo.group(
+                    Animo.wait(TimeInterval(ran)),
+                    Animo.replayForever(
+                        Animo.sequence(
+                            Animo.move(from: startPoint, to: endPoint, duration: TimeInterval(time)),
+                            timingMode: .linear,
+                            options: Options(speed: 1, fillMode: Options.FillMode.both, removedOnCompletion: true)
+                        )
+                    )
+                    ), completion: {
+                        
+                        
+                })
+                
+                /*fish.layer.runAnimation(
+                 
+                 )*/
+            }
+            
+            self.buildViews()
+        }
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -94,7 +133,7 @@ class Signup: UIViewController {
             bgView.backgroundColor = UIColor(complementaryFlatColorOf: UIColor.flatTeal())
             bgView.imageView = UIImageView()
             bgView.imageView?.contentMode = .scaleAspectFit
-            bgView.imageView?.image = UIImage(named: "fishing")?.resize(toHeight: 130)
+            bgView.imageView?.image = UIImage(named: "fishing")?.resize(toHeight: 0)
             
             
             contentView.backgroundColor = UIColor.flatWhite()

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Landing View Controller-->
         <scene sceneID="OrZ-6f-2Di">
             <objects>
-                <viewController id="vQ5-NO-HzT" customClass="MainViewController" customModule="Moby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vQ5-NO-HzT" customClass="LandingViewController" customModule="Moby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e4T-bJ-ZyO"/>
                         <viewControllerLayoutGuide type="bottom" id="ofV-Jq-W9d"/>

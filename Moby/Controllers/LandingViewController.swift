@@ -19,17 +19,51 @@ class LandingViewController: UIViewController {
     let logo = UILabel()
     let email = TextField()
     let password = TextField()
-    
-    var fishes = ["flounder","perch","pike","piranha","salmon","tuna","zander"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.isNavigationBarHidden = true
         
+        setupFish(view: self.view) { (fishes) in
+            
+            let yRange = Int(self.view.frame.height)
+            
+            for fish in fishes {
+                
+                let startRange = [-100, -80, -60, -115, -125]
+                let time = Int(arc4random_uniform(5) + 10)
+                let startY = Int(arc4random_uniform(UInt32(yRange)) + 10)
+                let endY = Int(arc4random_uniform(UInt32(yRange)) + 10)
+                let ran = Int(arc4random_uniform(4))
+                
+                let endPoint = CGPoint(x: 600, y: endY)
+                let startPoint = CGPoint(x: startRange[ran], y: startY)
+                
+                print("fish")
+                
+                fish.layer.runAnimation(Animo.group(
+                    Animo.wait(TimeInterval(ran)),
+                    Animo.replayForever(
+                        Animo.sequence(
+                            Animo.move(from: startPoint, to: endPoint, duration: TimeInterval(time)),
+                            timingMode: .linear,
+                            options: Options(speed: 1, fillMode: Options.FillMode.both, removedOnCompletion: true)
+                        )
+                    )
+                    ), completion: {
+                        
+                        
+                })
+                
+                /*fish.layer.runAnimation(
+                 
+                 )*/
+            }
+        }
+        
         DispatchQueue.main.async {
             print("main thread dispatch")
-            
             
             self.setupViews()
             
@@ -58,55 +92,20 @@ class LandingViewController: UIViewController {
              _views[2].left == left! + 30
              _views[2].right == right! - 30
              
-             _views[3].bottom == bottom! - 100
+             _views[3].bottom == bottom! - 150
+             _views[3].height == 70
              _views[3].left == left! + 30
-             _views[3].height == 50
-             _views[3].width == 120
-             
-             _views[4].bottom == bottom! - 100
+             _views[3].right == right! - 30
+              
+             _views[4].bottom == _views[3].top - 20
+             _views[4].height == 70
+             _views[4].left == left! + 30
              _views[4].right == right! - 30
-             _views[4].height == 50
-             _views[4].width == 120
              
              
              
              }
 
-        }
-        
-        self.setupFish { (fishes) in
-            
-            for fish in fishes {
-                
-                let startRange = [-100, -80, -60, -115, -125]
-                let time = Int(arc4random_uniform(5) + 10)
-                let startY = Int(arc4random_uniform(300) + 10)
-                let endY = Int(arc4random_uniform(500) + 10)
-                let ran = Int(arc4random_uniform(4))
-                
-                let endPoint = CGPoint(x: 600, y: endY)
-                let startPoint = CGPoint(x: startRange[ran], y: startY)
-                
-                print("fish")
-    
-                fish.layer.runAnimation(Animo.group(
-                    Animo.wait(TimeInterval(ran)),
-                    Animo.replayForever(
-                        Animo.sequence(
-                            Animo.move(from: startPoint, to: endPoint, duration: TimeInterval(time)),
-                            timingMode: .linear,
-                            options: Options(speed: 1, fillMode: Options.FillMode.both, removedOnCompletion: true)
-                        )
-                    )
-                    ), completion: {
-                    
-                        
-                })
-                
-                /*fish.layer.runAnimation(
-                    
-                )*/
-            }
         }
         
         
@@ -129,9 +128,11 @@ class LandingViewController: UIViewController {
         
         email.placeholder = "Email"
         email.textColor = UIColor.flatWhite()
+        email.isHidden = true
         self.view.addSubview(email)
         password.placeholder = "Password"
         password.textColor = UIColor.flatWhite()
+        password.isHidden = true
         self.view.addSubview(password)
         
         
@@ -163,32 +164,6 @@ class LandingViewController: UIViewController {
         self.view.addSubview(login)
         self.view.addSubview(signUp)
         self.view.addSubview(logo)
-    }
-    
-    func setupFish(completion:@escaping (_ fishes:[UIImageView]) -> Void){
-        
-        var fishes:[UIImageView] = []
-        
-        DispatchQueue.main.async {
-            print("main thread dispatch")
-            
-            for fish in self.fishes {
-                
-                let y = Int(arc4random_uniform(500) + 10)
-                
-                let imageView = UIImageView(frame: CGRect(x: 0, y: y, width: 100, height: 100))
-                imageView.image = UIImage(named: fish)
-                self.view.insertSubview(imageView, belowSubview: self.email)
-                
-                fishes.append(imageView)
-            }
-            
-            completion(fishes)
-
-        }
-        
-        
-        
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -117,11 +117,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Controllers/LandingViewController.swift"
-            timestampString = "499646741.89584"
+            timestampString = "509815561.76136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -133,11 +133,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Controllers/Signup.swift"
-            timestampString = "507089476.55027"
+            timestampString = "509815770.773565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "buildViews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -149,11 +149,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Controllers/Signup.swift"
-            timestampString = "507089297.807425"
+            timestampString = "509815770.773565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "Signup"
             landmarkType = "3">
          </BreakpointContent>
