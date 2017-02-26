@@ -102,11 +102,33 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let tripImage = UIImage(named: "fishing")
         tripBtn.shapePreset = .circle
         tripBtn.backgroundColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
-        //tripBtn.borderWidth = 5
         tripBtn.borderColor = self.view.backgroundColor
         tripBtn.borderWidthPreset = .border5
         tripBtn.setImage(tripImage, for: .normal)
         tripBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
+        
+        let timeImage = UIImage(named: "clock")
+        timeBtn.shapePreset = .circle
+        timeBtn.backgroundColor = UIColor(red:0.83, green:0.83, blue:0.83, alpha:1.0)
+        timeBtn.borderColor = UIColor(red:0.83, green:0.83, blue:0.83, alpha:1.0)
+        timeBtn.borderWidthPreset = .border3
+        timeBtn.setImage(timeImage, for: .normal)
+        
+        let userImage = UIImage(named: "user")
+        profileBtn.shapePreset = .circle
+        //timeBtn.backgroundColor = UIColor(red:0.83, green:0.83, blue:0.83, alpha:1.0)
+        profileBtn.borderColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
+        profileBtn.borderWidthPreset = .border4
+        profileBtn.setImage(userImage, for: .normal)
+        
+        let giftImage = UIImage(named: "gift")
+        giftBtn.shapePreset = .circle
+        giftBtn.backgroundColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
+        //giftBtn.borderColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
+        //giftBtn.borderWidthPreset = .border4
+        giftBtn.setImage(giftImage, for: .normal)
+        giftBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
+        
         
         let views:[UIView] = [goFishBtn,locationBtn,tripBtn,timeBtn,profileBtn,giftBtn]
         
@@ -134,6 +156,22 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             _views[2].height == 65
             _views[2].width == 65
             
+            //_views[2].left == (left)! + 5
+            _views[3].right == (right)! - 20
+            _views[3].centerY == _views[1].centerY
+            _views[3].height == 35
+            _views[3].width == 35
+            
+            _views[4].left == (left)! + 10
+            _views[4].top == (top)! + 10
+            _views[4].height == 50
+            _views[4].width == 50
+            
+            _views[5].right == (right)! - 10
+            _views[5].top == (top)! + 10
+            _views[5].height == 50
+            _views[5].width == 50
+            
             
         }
     }
@@ -150,6 +188,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return cell!
     }
     
+    override var prefersStatusBarHidden: Bool {
+        
+        return true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
