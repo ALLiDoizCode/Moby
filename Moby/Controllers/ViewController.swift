@@ -27,6 +27,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var amount = UILabel()
     var duration = UILabel()
     var card = UILabel()
+    var greyView = UIView()
+    var serperator = UIView()
+    var typeImage = UIImageView()
+    var editBtn = FlatButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +96,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func buildEstimate(){
         
+        estimateView.addSubview(greyView)
+        estimateView.addSubview(serperator)
         estimateView.addSubview(amountLabel)
         estimateView.addSubview(durationLabel)
         estimateView.addSubview(cardLabel)
@@ -126,8 +132,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         card.textAlignment = .center
         card.text = "*1111"
         
+        greyView.backgroundColor = Color.grey.lighten3
+        serperator.backgroundColor = Color.grey.lighten1
         
-        let views:[UIView] = [amountLabel,durationLabel,cardLabel,amount,duration,card]
+        let views:[UIView] = [amountLabel,durationLabel,cardLabel,amount,duration,card,greyView,serperator]
         
         constrain(views) { (_views) in
             
@@ -160,25 +168,65 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             _views[5].left == (left)!
             _views[5].right == (superView?.centerX)! - 50
             _views[5].bottom ==  _views[2].top
+            
+            _views[6].left == (left)!
+            _views[6].right == (right)!
+            _views[6].top == (top)!
+            _views[6].bottom == _views[1].bottom + 5
+            
+            _views[7].left == (left)!
+            _views[7].right == (right)!
+            _views[7].height == 2.5
+            _views[7].bottom == _views[1].bottom + 5
 
         }
+    }
+    
+    func edit(){
+        
+        estimateView.isHidden = true
+        typeImage.isHidden = true
+        tripBtn.isHidden = false
+        editBtn.isHidden = true
+        goFishBtn.setTitle("Set Location", for: .normal)
+        goFishBtn.backgroundColor = UIColor(complementaryFlatColorOf: self.view.backgroundColor)
+    }
+    
+    func getEst(){
+        
+        guard estimateView.isHidden == true else {
+            
+            return
+        }
+        
+        estimateView.isHidden = false
+        typeImage.isHidden = false
+        tripBtn.isHidden = true
+        editBtn.isHidden = false
+        goFishBtn.setTitle("Go Fish", for: .normal)
+        goFishBtn.backgroundColor = UIColor.flatTeal().lighten(byPercentage: 15)
+        
     }
     
     func buildView() {
         
         self.view.addSubview(estimateView)
         self.view.addSubview(goFishBtn)
+        self.view.addSubview(editBtn)
         self.view.addSubview(locationBtn)
         self.view.addSubview(tripBtn)
         self.view.addSubview(timeBtn)
         self.view.addSubview(profileBtn)
         self.view.addSubview(giftBtn)
+        self.view.addSubview(typeImage)
         
         estimateView.backgroundColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
         estimateView.cornerRadius = 3
+        estimateView.isHidden = true
         
         goFishBtn.setTitle("Set Location", for: .normal)
         goFishBtn.backgroundColor = UIColor(complementaryFlatColorOf: self.view.backgroundColor)
+        goFishBtn.addTarget(self, action: #selector(ViewController.getEst), for: .touchUpInside)
         
         locationBtn.setTitle("             1 Infinite Loop", for: .normal)
         locationBtn.contentHorizontalAlignment = .left
@@ -209,14 +257,27 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         let giftImage = UIImage(named: "gift")
         giftBtn.shapePreset = .circle
-        giftBtn.backgroundColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
+        giftBtn.backgroundColor = UIColor.flatTeal().lighten(byPercentage: 15)
         //giftBtn.borderColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
         //giftBtn.borderWidthPreset = .border4
         giftBtn.setImage(giftImage, for: .normal)
         giftBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
         
+        typeImage.image = tripImage
+        typeImage.contentMode = .scaleAspectFit
+        typeImage.isHidden = true
         
-        let views:[UIView] = [goFishBtn,locationBtn,tripBtn,timeBtn,profileBtn,giftBtn,estimateView]
+        let editImage = UIImage(named: "edit")
+        editBtn.shapePreset = .circle
+        //timeBtn.backgroundColor = UIColor(red:0.83, green:0.83, blue:0.83, alpha:1.0)
+        editBtn.borderColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
+        //editBtn.borderWidthPreset = .border4
+        editBtn.setImage(editImage, for: .normal)
+        editBtn.addTarget(self, action: #selector(ViewController.edit), for: .touchUpInside)
+        editBtn.isHidden = true
+        
+        
+        let views:[UIView] = [goFishBtn,locationBtn,tripBtn,timeBtn,profileBtn,giftBtn,estimateView,typeImage,editBtn]
         
         constrain(views) { (_views) in
             
@@ -263,6 +324,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             _views[6].bottom == _views[1].bottom
             _views[6].height == _views[1].height * 3
             
+            _views[7].left == (left)! + 30
+            //_views[2].right == (right)! - 10
+            _views[7].centerY == _views[1].centerY - 10
+            _views[7].height == 40
+            _views[7].width == 40
+            
+            _views[8].left == (left)! + 10
+            _views[8].bottom ==  _views[6].top - 10
+            _views[8].height == 50
+            _views[8].width == 50
             
         }
         
