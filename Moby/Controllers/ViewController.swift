@@ -10,6 +10,7 @@ import UIKit
 import Material
 import Cartography
 import Animo
+import NVActivityIndicatorView
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
@@ -31,6 +32,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var serperator = UIView()
     var typeImage = UIImageView()
     var editBtn = FlatButton()
+    var loader = NVActivityIndicatorView(frame: .zero)
+    var loadingLbl = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -181,6 +185,34 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
         }
     }
+    func goFish(){
+        
+        guard loader.isAnimating != true else {
+            
+            loader.stopAnimating()
+            loadingLbl.isHidden = true
+            goFishBtn.setTitle("Go Fish", for: .normal)
+            editBtn.isHidden = false
+            locationBtn.isUserInteractionEnabled = true
+            tripBtn.isUserInteractionEnabled = true
+            timeBtn.isUserInteractionEnabled = true
+            profileBtn.isUserInteractionEnabled = true
+            giftBtn.isUserInteractionEnabled = true
+            
+            return
+        }
+        
+        loader.startAnimating()
+        loadingLbl.isHidden = false
+        goFishBtn.setTitle("Cancle", for: .normal)
+        editBtn.isHidden = true
+        locationBtn.isUserInteractionEnabled = false
+        tripBtn.isUserInteractionEnabled = false
+        timeBtn.isUserInteractionEnabled = false
+        profileBtn.isUserInteractionEnabled = false
+        giftBtn.isUserInteractionEnabled = false
+        
+    }
     
     func edit(){
         
@@ -190,6 +222,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         editBtn.isHidden = true
         goFishBtn.setTitle("Set Location", for: .normal)
         goFishBtn.backgroundColor = UIColor(complementaryFlatColorOf: self.view.backgroundColor)
+        goFishBtn.removeTarget(self, action: #selector(ViewController.goFish), for: .touchUpInside)
+        goFishBtn.addTarget(self, action: #selector(ViewController.getEst), for: .touchUpInside)
     }
     
     func getEst(){
@@ -205,6 +239,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         editBtn.isHidden = false
         goFishBtn.setTitle("Go Fish", for: .normal)
         goFishBtn.backgroundColor = UIColor.flatTeal().lighten(byPercentage: 15)
+        goFishBtn.removeTarget(self, action: #selector(ViewController.getEst), for: .touchUpInside)
+        goFishBtn.addTarget(self, action: #selector(ViewController.goFish), for: .touchUpInside)
         
     }
     
@@ -219,6 +255,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.view.addSubview(profileBtn)
         self.view.addSubview(giftBtn)
         self.view.addSubview(typeImage)
+        self.view.addSubview(loader)
+        self.view.addSubview(loadingLbl)
         
         estimateView.backgroundColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
         estimateView.cornerRadius = 3
@@ -277,7 +315,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         editBtn.isHidden = true
         
         
-        let views:[UIView] = [goFishBtn,locationBtn,tripBtn,timeBtn,profileBtn,giftBtn,estimateView,typeImage,editBtn]
+        loader.type = .ballScale
+        loader.color = UIColor.flatTeal().lighten(byPercentage: 15)
+        
+        loadingLbl.text = "Finding Captin"
+        loadingLbl.font = RobotoFont.bold(with: 24)
+        loadingLbl.textAlignment = .center
+        loadingLbl.textColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
+        loadingLbl.isHidden = true
+        
+        let views:[UIView] = [goFishBtn,locationBtn,tripBtn,timeBtn,profileBtn,giftBtn,estimateView,typeImage,editBtn,loader,loadingLbl]
         
         constrain(views) { (_views) in
             
@@ -334,6 +381,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             _views[8].bottom ==  _views[6].top - 10
             _views[8].height == 50
             _views[8].width == 50
+            
+            //_views[9].left == (left)! + 50
+            _views[9].bottom == _views[6].top - 10
+            _views[9].height == 300
+            _views[9].width == 300
+            _views[9].centerX == (superView?.centerX)!
+            
+            //_views[9].left == (left)! + 50
+            _views[10].bottom == _views[9].top - 5
+            //_views[10].height == 300
+            _views[10].width == _views[9].width
+            _views[10].centerX == (superView?.centerX)!
             
         }
         

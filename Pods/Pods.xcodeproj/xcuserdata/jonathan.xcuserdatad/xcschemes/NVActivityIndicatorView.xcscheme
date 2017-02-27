@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '432970B9C48A97DC1E092F85CBB05177'
-               BlueprintName = 'Stripe'
+               BlueprintIdentifier = '070374204E491EF7E794313D14C6950B'
+               BlueprintName = 'NVActivityIndicatorView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Stripe.framework'>
+               BuildableName = 'NVActivityIndicatorView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
