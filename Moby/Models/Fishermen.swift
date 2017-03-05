@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class Fishermen {
+    
+    var firstName:String!
+    var lastName:String!
+    var image:String!
+    var ImageData:NSData!
+    var phone:String!
+    var customerId:String!
+    var status:Bool!
+    var email:String!
+    
+}

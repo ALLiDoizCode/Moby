@@ -10,7 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import GoogleMaps
 import Parse
-import Bolts
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,11 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let Map_Key = "AIzaSyBaLOj0HCkZ1fleUs-1ej-gtsZM97Mivmg"
     
-    let APP_ID = "mobyserver"
-    let MASTER_KEY = "mobyserver4876414986fewfs24125324324e"
-    let SERVER = "https://moby-server.herokuapp.com/parse"
+    let APP_ID = "mlhn1mCdj1aJvr32aTsHNwiJ2NqM0Nmoyp7AZlMz"
+    let Client_KEY = "3POz5oRMO9VOPVa5eHiudtWscK7YOrQmhMnKyVHQ"
+    let SERVER = "https://parseapi.back4app.com/"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
         
         IQKeyboardManager.sharedManager().enable = true
@@ -32,13 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.enableLocalDatastore()
         
-        let parseConfiguration = ParseClientConfiguration { (ParseMutableClientConfiguration) -> Void in
-            
-            ParseMutableClientConfiguration.applicationId = self.APP_ID
-            ParseMutableClientConfiguration.clientKey = self.MASTER_KEY
-            ParseMutableClientConfiguration.server = self.SERVER
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = self.APP_ID
+            $0.clientKey = self.Client_KEY
+            $0.server = self.SERVER
         }
-        Parse.initialize(with: parseConfiguration)
+        Parse.initialize(with: configuration)
         
         return true
     }

@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftEventBus
+import SwiftyJSON
+
+
+class Client {
+
+    
+}
