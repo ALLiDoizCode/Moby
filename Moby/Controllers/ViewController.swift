@@ -42,10 +42,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var captainnView = View()
     var captainNameLbl = UILabel()
     var locationLbl = UILabel()
+    var locationNameLbl = UILabel()
     var boatImage = UIImageView()
     var boat2Image = UIImage(named: "boat2")
     var boatModelLbl = UILabel()
     var departureLbl = UILabel()
+    var timeLbl = UILabel()
     
     
     
@@ -444,17 +446,20 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         //Captain Info Views
         self.view.addSubview(captainView)
-        self.view.addSubview(captainLbl)
-        self.view.addSubview(captainnView)
-        self.view.addSubview(captainNameLbl)
-        self.view.addSubview(locationLbl)
-        self.view.addSubview(boatImage)
-        self.view.addSubview(boatModelLbl)
-        self.view.addSubview(departureLbl)
+        self.captainView.addSubview(captainLbl)
+        self.captainView.addSubview(captainnView)
+        self.captainView.addSubview(captainNameLbl)
+        self.captainView.addSubview(locationLbl)
+        self.captainView.addSubview(locationNameLbl)
+        self.captainView.addSubview(boatImage)
+        self.captainView.addSubview(boatModelLbl)
+        self.captainView.addSubview(departureLbl)
+        self.captainView.addSubview(timeLbl)
         
         // Captain Info View build
         
         captainView.backgroundColor = UIColor.flatWhite()
+        captainnView.cornerRadius = 3
         
         captainLbl.text = "Hook"
         captainLbl.font = RobotoFont.bold(with: 26)
@@ -468,21 +473,40 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         captainnView.shapePreset = .circle
         captainnView.image = theImage
         
-        locationLbl.text = "Boston Harbor"
-        locationLbl.font = RobotoFont.bold(with: 16)
+        locationLbl.text = "Location"
+        locationLbl.font = RobotoFont.bold(with: 20)
         locationLbl.textColor = UIColor.flatBlack()
         locationLbl.textAlignment = .center
         //locationLbl.backgroundColor = UIColor.flatPink()
         
+        locationNameLbl.textAlignment = .left
+        locationNameLbl.font = RobotoFont.bold(with: 24)
+        //locationNameLbl.textColor
+        
         boatImage.image = UIImage(named: "boat2")
         
-        boatModelLbl.textAlignment = .center
+        
+        boatModelLbl.textAlignment = .left
         boatModelLbl.textColor = UIColor.flatBlack()
-        boatModelLbl.text = "2002 Fountain 38 Express Cruiser"
+        boatModelLbl.text = "Fountain 38 Express Cruiser"
         boatModelLbl.font = RobotoFont.bold(with: 16)
         //boatModelLbl.backgroundColor = UIColor.flatPink()
         
-        let views:[UIView] = [captainView,captainLbl,captainnView,locationLbl,boatImage,boatModelLbl]
+        //departureLbl.backgroundColor = UIColor.flatPink()
+        departureLbl.text = "Departure"
+        departureLbl.font = RobotoFont.bold(with:20)
+        departureLbl.textColor = UIColor.flatBlack()
+        departureLbl.textAlignment = .center
+        
+        //timeLbl.backgroundColor = UIColor.flatPink()
+        timeLbl.text = "10:00AM"
+        timeLbl.font = RobotoFont.bold(with:24)
+        timeLbl.textColor = UIColor.flatBlack()
+        timeLbl.textAlignment = .center
+        
+        //captainView.isHidden = true
+        
+        let views:[UIView] = [captainView,captainLbl,captainnView,locationLbl,boatImage,boatModelLbl,departureLbl,timeLbl]
         
         constrain(views) { (_views) in
             
@@ -496,31 +520,50 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             _views[0].bottom == (superView?.bottom)! - 150
             
             
-            _views[1].centerX == (_views[0].centerX)
+            //_views[1].centerX == (_views[0].centerX)
+            _views[1].left == (_views[4].right) + 5
             _views[1].top == (_views[0].top) + 5
             _views[1].height == 25
             _views[1].width == 100
             
-            _views[2].centerX == (_views[0].centerX)
+            //_views[2].centerX == (_views[0].centerX)
+            _views[2].left == (_views[4].right) + 5
+            _views[2].right == (_views[0].right) - 5
+            
             _views[2].top == (_views[1].bottom) + 5
             _views[2].height == 80
             _views[2].width == 80
             
-            _views[3].top == (_views[2].bottom) + 10
-            //_views[14].left == (_views[11].left) + 15
-            _views[3].height == 20
-            _views[3].centerX == (superView?.centerX)!
-            _views[3].width == 150
+            _views[3].top == (_views[5].bottom) + 25
+            _views[3].left == (_views[0].left) + 10
+            _views[3].height == 25
+            //_views[3].centerX == (superView?.centerX)!
+            _views[3].width == 110
             
-            _views[4].top == (_views[3].bottom) + 10
-            _views[4].height == 70
-            _views[4].width == 70
-            _views[4].centerX == (superView?.centerX)!
+            _views[4].top == (_views[0].top) + 0
+            _views[4].left == (_views[0].left) + 0
+            _views[4].bottom == (_views[0].bottom) - 150
+            _views[4].right == (_views[0].right) - 110
+            //_views[4].height == 70
+            //_views[4].width == 70
+            //_views[4].centerX == (superView?.centerX)!
             
-            _views[5].top == (_views[4].bottom) + 5
-            _views[5].height == 25
+            _views[5].top == (_views[4].bottom) + 2
+            _views[5].height == 15
             _views[5].width == 250
-            _views[5].centerX == (superView?.centerX)!
+            _views[5].left == (_views[0].left) + 3
+            
+            //_views[6].centerX == (superView?.centerX)!
+            _views[6].top == (_views[5].bottom) + 25
+            _views[6].height == 25
+            _views[6].width == 250
+            _views[6].right == (_views[0].right) - 10
+            
+            _views[7].centerX == (_views[6].centerX)
+            _views[7].top == (_views[6].bottom) + 5
+            _views[7].height == 25
+            _views[7].width == 110
+            _views[7].right == (_views[0].right) - 10
             
         }
         
