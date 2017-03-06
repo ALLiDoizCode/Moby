@@ -35,9 +35,25 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var loader = NVActivityIndicatorView(frame: .zero)
     var loadingLbl = UILabel()
     
+    //CAPTAIN INFO VARs
+    
+    var captainView = UIView()
+    var captainLbl = UILabel()
+    var captainnView = View()
+    var captainNameLbl = UILabel()
+    var locationLbl = UILabel()
+    var boatImage = UIImageView()
+    var boat2Image = UIImage(named: "boat2")
+    var boatModelLbl = UILabel()
+    var departureLbl = UILabel()
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.view.backgroundColor = UIColor.flatTeal()
         
@@ -81,6 +97,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             
             self.buildView()
             self.buildEstimate()
+            self.captainViews()
         }
         
         
@@ -258,6 +275,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.view.addSubview(loader)
         self.view.addSubview(loadingLbl)
         
+        
         estimateView.backgroundColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
         estimateView.cornerRadius = 3
         estimateView.isHidden = true
@@ -323,6 +341,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         loadingLbl.textAlignment = .center
         loadingLbl.textColor = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.0)
         loadingLbl.isHidden = true
+        
+        
+        
         
         let views:[UIView] = [goFishBtn,locationBtn,tripBtn,timeBtn,profileBtn,giftBtn,estimateView,typeImage,editBtn,loader,loadingLbl]
         
@@ -394,7 +415,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             _views[10].width == _views[9].width
             _views[10].centerX == (superView?.centerX)!
             
+            
+            
+    
         }
+        
         
     }
     
@@ -413,6 +438,92 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     override var prefersStatusBarHidden: Bool {
         
         return true
+    }
+    
+    func captainViews(){
+        
+        //Captain Info Views
+        self.view.addSubview(captainView)
+        self.view.addSubview(captainLbl)
+        self.view.addSubview(captainnView)
+        self.view.addSubview(captainNameLbl)
+        self.view.addSubview(locationLbl)
+        self.view.addSubview(boatImage)
+        self.view.addSubview(boatModelLbl)
+        self.view.addSubview(departureLbl)
+        
+        // Captain Info View build
+        
+        captainView.backgroundColor = UIColor.flatWhite()
+        
+        captainLbl.text = "Hook"
+        captainLbl.font = RobotoFont.bold(with: 26)
+        captainLbl.textColor = UIColor.flatBlack()
+        //captainLbl.backgroundColor = UIColor.flatPink()
+        captainLbl.textAlignment = .center
+        
+        
+        let theImage = UIImage(named: "joe")
+        
+        captainnView.shapePreset = .circle
+        captainnView.image = theImage
+        
+        locationLbl.text = "Boston Harbor"
+        locationLbl.font = RobotoFont.bold(with: 16)
+        locationLbl.textColor = UIColor.flatBlack()
+        locationLbl.textAlignment = .center
+        //locationLbl.backgroundColor = UIColor.flatPink()
+        
+        boatImage.image = UIImage(named: "boat2")
+        
+        boatModelLbl.textAlignment = .center
+        boatModelLbl.textColor = UIColor.flatBlack()
+        boatModelLbl.text = "2002 Fountain 38 Express Cruiser"
+        boatModelLbl.font = RobotoFont.bold(with: 16)
+        //boatModelLbl.backgroundColor = UIColor.flatPink()
+        
+        let views:[UIView] = [captainView,captainLbl,captainnView,locationLbl,boatImage,boatModelLbl]
+        
+        constrain(views) { (_views) in
+            
+            let superView = _views[0].superview
+            
+        
+            _views[0].centerX == (superView?.centerX)!
+            _views[0].top == (superView?.top)! + 100
+            _views[0].left == (superView?.left)! + 10
+            _views[0].right == (superView?.right)! - 10
+            _views[0].bottom == (superView?.bottom)! - 150
+            
+            
+            _views[1].centerX == (_views[0].centerX)
+            _views[1].top == (_views[0].top) + 5
+            _views[1].height == 25
+            _views[1].width == 100
+            
+            _views[2].centerX == (_views[0].centerX)
+            _views[2].top == (_views[1].bottom) + 5
+            _views[2].height == 80
+            _views[2].width == 80
+            
+            _views[3].top == (_views[2].bottom) + 10
+            //_views[14].left == (_views[11].left) + 15
+            _views[3].height == 20
+            _views[3].centerX == (superView?.centerX)!
+            _views[3].width == 150
+            
+            _views[4].top == (_views[3].bottom) + 10
+            _views[4].height == 70
+            _views[4].width == 70
+            _views[4].centerX == (superView?.centerX)!
+            
+            _views[5].top == (_views[4].bottom) + 5
+            _views[5].height == 25
+            _views[5].width == 250
+            _views[5].centerX == (superView?.centerX)!
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
