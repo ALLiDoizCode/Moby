@@ -26,6 +26,8 @@
 		AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2811DC2E63C000FC168 /* Client.swift */; };
 		AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */; };
 		AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */; };
+		AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65030E1E7EB1E600127E9F /* CardCell.swift */; };
+		AB6503111E7EB93700127E9F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ListViewController.swift */; };
 		ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */; };
 		ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */; };
 		ABF3DC5B1DC6B9D0009D09CC /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */; };
@@ -77,6 +79,8 @@
 		AB3AA2811DC2E63C000FC168 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB65030E1E7EB1E600127E9F /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		AB6503101E7EB93700127E9F /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCardViewController.swift; sourceTree = "<group>"; };
 		ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptinCell.swift; sourceTree = "<group>"; };
 		ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */,
 				AB33136D1E3992DF00F4CD3F /* MainViewController.swift */,
 				AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */,
+				AB6503101E7EB93700127E9F /* ListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */,
+				AB65030E1E7EB1E600127E9F /* CardCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -427,10 +433,12 @@
 				AB3AA2791DC2CE4C000FC168 /* Boat.swift in Sources */,
 				AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */,
 				AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */,
+				AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */,
 				AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */,
 				AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */,
 				ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */,
 				AB0BA4AE1DC15F5D003F7802 /* ViewController.swift in Sources */,
+				AB6503111E7EB93700127E9F /* ListViewController.swift in Sources */,
 				ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */,
 				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
@@ -599,7 +607,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdhouse.Moby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathan/Documents/Projects/Moby/Moby/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jonathan/Documents/Projects/Moby Project/Moby/Moby/Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -616,7 +624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdhouse.Moby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathan/Documents/Projects/Moby/Moby/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jonathan/Documents/Projects/Moby Project/Moby/Moby/Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};

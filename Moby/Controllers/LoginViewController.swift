@@ -27,6 +27,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Client().upload()
+        
         setupFish(view: self.view) { (fishes) in
             
             let yRange = Int(self.view.frame.height)

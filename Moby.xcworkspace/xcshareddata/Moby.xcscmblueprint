@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CB6CF9AD-901E-4F54-8C92-94929C053669",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "4214F8028779D522AD7A7D5F9ED0E8083E554B3C" : "",
+    "4214F8028779D522AD7A7D5F9ED0E8083E554B3C" : "..",
     "1EA5EED21A34D9720051B4C7E34B41133FF51426" : "Moby\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Moby",
