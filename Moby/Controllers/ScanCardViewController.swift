@@ -19,6 +19,7 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
                 
         //open cardIO controller to scan the card
         let cardIOVC = CardIOPaymentViewController(paymentDelegate: self)
@@ -43,10 +44,11 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
         card.expMonth = info.expiryMonth
         card.expYear = info.expiryYear
         card.cvc = info.cvv
-        
+        card.currency = "USD"
+            
         //Send to Stripe
             
-            /*STPAPIClient.shared().createToken(withCard: card, completion: { (token, error) in
+            STPAPIClient.shared().createToken(withCard: card, completion: { (token, error) in
                 
                 if error == nil {
                     
@@ -62,7 +64,7 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
                 }
                 
                 
-            })*/
+            })
         }
     }
     
