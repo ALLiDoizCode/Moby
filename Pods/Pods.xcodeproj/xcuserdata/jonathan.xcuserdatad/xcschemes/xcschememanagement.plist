@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AWSCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSS3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -142,6 +152,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0C81C802D8F6AEBCA97D9E63AE95D76E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14899DD2DE4794A659D6E3A53A2FE532</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1520003FEBEC114D6C84F832AFEDB994</key>
 		<dict>
 			<key>primary</key>
@@ -152,32 +172,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2912AD5F3956650B2735E9B2DF861AD0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2C8AA1BAF35413BDB954A1DF93576ED1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>34074DE0D036E878FE3667CF7C642174</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>39C9DE7DAEE8FDFF8E0461F3652E5675</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>432970B9C48A97DC1E092F85CBB05177</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>563FF373266F070D66B0B3096D9CAFAD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>66878B3DDB1D59C5EBAB87EC17785BB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -212,7 +222,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E6DAB278E0DEDC8FE1B880946B850FE5</key>
+		<key>D531694F8768BA7E3A9DA9841D47E43B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0976117EE3D2BAF4BA15284CFCFF40F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF93DFD45A9E534E951E516DA5059483</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -222,7 +242,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FAFA69EF099500CCBBD719F242167F4D</key>
+		<key>F8242C9AF152A4711F193B793CB9B16D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

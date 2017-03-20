@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Client().upload()
+        Client().newUser()
         
         setupFish(view: self.view) { (fishes) in
             

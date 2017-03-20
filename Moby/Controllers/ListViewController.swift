@@ -19,6 +19,8 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Client().newUser()
+        
         setupFish(view: self.view) { (fishes) in
             
             let yRange = Int(self.view.frame.height)
