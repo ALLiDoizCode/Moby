@@ -195,12 +195,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Client/Client.swift"
-            timestampString = "511728892.7883"
+            timestampString = "511829729.090855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "upload(path:)"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "upload(path:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Moby/Client/Client.swift"
+            timestampString = "511829729.090855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "upload(path:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Moby/Client/Client.swift"
+            timestampString = "511829729.090855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "upload(path:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

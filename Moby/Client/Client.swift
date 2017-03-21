@@ -15,38 +15,84 @@ import AWSCore
 
 class Client {
     
-    let accessKey = "AKIAIGOX2DGD7LBX7I7Q"
-    let secretKey = "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"
+    let awsAccessKey = "AKIAIGOX2DGD7LBX7I7Q"
+    let awsSecretKey = "UyTAGhTZ35hKcyP8pyqkf0oDK7LCcJK1uCLFbhv2"
+    
+    // Add default headers if needed.(As per your web-service requirement)
+    let headers: HTTPHeaders = [
+        "Accept": "text/html",
+        "Content-Type" : "application/x-www-form-urlencoded"
+    ]
+
+    
+    func token(){
+        
+        Alamofire.request("https://mo-b.herokuapp.com/account/token", method: .get,encoding: JSONEncoding.default).responseString{ (response) in
+            
+            let json = JSON(response.result.value!).stringValue
+            
+            self.auth(token:json )
+            
+            print("token is \(json)")
+            
+            
+        }
+        
+    }
+
+    func auth(token:String){
+            
+        let parameters = [
+                
+                "token": token
+                
+                ]
+            
+        Alamofire.request("https://mo-b.herokuapp.com/account/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+            
+            let json = JSON(response.result.value!).boolValue
+            
+            print("success is \(json)")
+            
+           
+
+            
+        }
+        
+    }
 
     func newUser() {
         
         if let img = UIImage(named: "guy") {
             //let data = UIImagePNGRepresentation(img) as Data?
-            saveImageDocumentDirectory(image: img, path: "guy.jpg")
-            let url = upload(path: "guy.jpg")
-            let parameters = [
-                "firstName": "Jonathan",
-                "lastName": "Green",
-                "phone": "5555555555",
-                "email": "email@email.com",
-                "password": "password",
-                "connectId": "test",
-                "customerId": "test",
-                "rating": 5,
-                "active": false,
-                "rules": "no rules",
-                "url": url,
+            saveImageDocumentDirectory(image: img, path: "guy2.jpg")
+            let url = upload(path: "guy2.jpg", completion: { (url) in
                 
-                ] as [String : Any]
-            
-            
-            Alamofire.request("http://192.168.1.153:8080/account/user", method: HTTPMethod.post, parameters: parameters).responseJSON(completionHandler: { (response) in
+                let parameters = [
+                    "firstName": "Jonathan",
+                    "lastName": "Green",
+                    "phone": "5555555555",
+                    "email": "email@email.com",
+                    "password": "password",
+                    "connectId": "test",
+                    "customerId": "test",
+                    "rating": 5.0,
+                    "active": true,
+                    "rules": "no rules",
+                    "Image": url,
+                    
+                    ] as [String : Any]
                 
-                let json = JSON(data: response.data!)
+                Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+                    
+                    let json = JSON(data: response.data!)
+                    
+                    print("response is \(response)")
+                    
+                }
                 
-                print("response is \(json)")
             })
-        
+            
         }
     }
     
@@ -84,20 +130,20 @@ class Client {
         }
     }*/
     
-    func upload(path:String) -> String{
+    func upload(path:String,completion:@escaping (_ url:String) -> Void){
         
-
+        var urlString = ""
      
         let fm = FileManager.default
         let docsurl = try! fm.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         let myurl = docsurl.appendingPathComponent(path)
         
-        let credentialsProvider = AWSStaticCredentialsProvider(accessKey: accessKey, secretKey: secretKey)
+        let credentialsProvider = AWSStaticCredentialsProvider(accessKey: awsAccessKey, secretKey: awsSecretKey)
         let configuration = AWSServiceConfiguration(region: AWSRegionType.USWest2, credentialsProvider: credentialsProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
         
         let url = myurl
-        let remoteName = "image"
+        let remoteName = path
         let S3BucketName = "mo-b"
         let uploadRequest = AWSS3TransferManagerUploadRequest()!
         uploadRequest.body = url
@@ -116,14 +162,13 @@ class Client {
             if task.result != nil {
                 let url = AWSS3.default().configuration.endpoint.url
                 let publicURL = url?.appendingPathComponent(uploadRequest.bucket!).appendingPathComponent(uploadRequest.key!)
+                urlString = (publicURL?.absoluteString)!
                 print("Uploaded to:\(publicURL?.absoluteString)")
             }
-            return publicURL?.absoluteString
+            
+            completion(urlString)
+            
+            return urlString
         }
-        
-        
-        
-        
-        return""
     }
 }
