@@ -38,16 +38,7 @@ class MainViewController: UIViewController, SBDChannelDelegate {
         currentFishermen.phone = "test"
         currentFishermen.image = "test"
         
-        ParseClient().signIn {
-            
-            RealTime().auth()
-            RealTime().connect(objectId: ParseClient().currentObjectId!, userName: ParseClient().currentUserName!, imageUrl: "", competion: { (user) in
-                
-                SBDMain.add(self as SBDChannelDelegate, identifier: ParseClient().currentUserName!)
-                self.joinChannel()
-            })
-        }
-        
+    
         //SwiftEventBus.post("live")
         
         self.view.backgroundColor = UIColor(red:0.43, green:0.84, blue:0.85, alpha:1.0)

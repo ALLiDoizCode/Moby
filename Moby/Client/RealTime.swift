@@ -186,6 +186,6 @@ class RealTime {
     
     func removeChannelDelegate() {
         
-        SBDMain.removeChannelDelegate(forIdentifier: ParseClient().currentUserName!)
+        
     }
 }

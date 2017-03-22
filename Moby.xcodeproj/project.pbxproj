@@ -15,11 +15,13 @@
 		AB0BA4B61DC15F5D003F7802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0BA4B41DC15F5D003F7802 /* LaunchScreen.storyboard */; };
 		AB0BA4C11DC15F5D003F7802 /* MobyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4C01DC15F5D003F7802 /* MobyTests.swift */; };
 		AB0BA4CC1DC15F5D003F7802 /* MobyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4CB1DC15F5D003F7802 /* MobyUITests.swift */; };
+		AB10DF241E8230F20075133D /* IDScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10DF231E8230F20075133D /* IDScannerViewController.swift */; };
 		AB20BCD51E632843007DADCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20BCD41E632843007DADCA /* Constants.swift */; };
 		AB20BCD71E63299B007DADCA /* FishGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20BCD61E63299B007DADCA /* FishGenerator.swift */; };
 		AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495B1E3E3CBB000D3E82 /* RealTime.swift */; };
 		AB25495F1E3E675D000D3E82 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495E1E3E675D000D3E82 /* Location.swift */; };
 		AB33136E1E3992DF00F4CD3F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33136D1E3992DF00F4CD3F /* MainViewController.swift */; };
+		AB33AF081E824A83005AFA6F /* MultiPartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33AF071E824A83005AFA6F /* MultiPartUpload.swift */; };
 		AB3AA2791DC2CE4C000FC168 /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2781DC2CE4C000FC168 /* Boat.swift */; };
 		AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27A1DC2CE62000FC168 /* Captin.swift */; };
 		AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */; };
@@ -30,7 +32,6 @@
 		AB6503111E7EB93700127E9F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ListViewController.swift */; };
 		ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */; };
 		ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */; };
-		ABF3DC5B1DC6B9D0009D09CC /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */; };
 		ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3DC5C1DC6BF54009D09CC /* LandingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,12 +68,14 @@
 		AB0BA4C71DC15F5D003F7802 /* MobyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BA4CB1DC15F5D003F7802 /* MobyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobyUITests.swift; sourceTree = "<group>"; };
 		AB0BA4CD1DC15F5D003F7802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB10DF231E8230F20075133D /* IDScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDScannerViewController.swift; sourceTree = "<group>"; };
 		AB20BCD41E632843007DADCA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB20BCD61E63299B007DADCA /* FishGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishGenerator.swift; sourceTree = "<group>"; };
 		AB25495B1E3E3CBB000D3E82 /* RealTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
 		AB25495E1E3E675D000D3E82 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		AB33136C1E39907800F4CD3F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		AB33136D1E3992DF00F4CD3F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AB33AF071E824A83005AFA6F /* MultiPartUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPartUpload.swift; sourceTree = "<group>"; };
 		AB3AA2781DC2CE4C000FC168 /* Boat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
 		AB3AA27A1DC2CE62000FC168 /* Captin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captin.swift; sourceTree = "<group>"; };
 		AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fishermen.swift; sourceTree = "<group>"; };
@@ -83,7 +86,6 @@
 		AB6503101E7EB93700127E9F /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCardViewController.swift; sourceTree = "<group>"; };
 		ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptinCell.swift; sourceTree = "<group>"; };
-		ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		ABF3DC5C1DC6BF54009D09CC /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moby/Pods-Moby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,8 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				AB3AA2811DC2E63C000FC168 /* Client.swift */,
-				ABF3DC5A1DC6B9D0009D09CC /* ParseClient.swift */,
 				AB25495B1E3E3CBB000D3E82 /* RealTime.swift */,
+				AB33AF071E824A83005AFA6F /* MultiPartUpload.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -221,6 +223,7 @@
 				AB33136D1E3992DF00F4CD3F /* MainViewController.swift */,
 				AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */,
 				AB6503101E7EB93700127E9F /* ListViewController.swift */,
+				AB10DF231E8230F20075133D /* IDScannerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */,
 				AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */,
 				AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */,
+				AB33AF081E824A83005AFA6F /* MultiPartUpload.swift in Sources */,
 				AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */,
 				ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */,
 				AB0BA4AE1DC15F5D003F7802 /* ViewController.swift in Sources */,
@@ -444,7 +448,7 @@
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
 				AB20BCD71E63299B007DADCA /* FishGenerator.swift in Sources */,
 				AB20BCD51E632843007DADCA /* Constants.swift in Sources */,
-				ABF3DC5B1DC6B9D0009D09CC /* ParseClient.swift in Sources */,
+				AB10DF241E8230F20075133D /* IDScannerViewController.swift in Sources */,
 				ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */,
 				AB0BA4AC1DC15F5D003F7802 /* AppDelegate.swift in Sources */,
 				AB25495F1E3E675D000D3E82 /* Location.swift in Sources */,

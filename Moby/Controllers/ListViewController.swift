@@ -19,7 +19,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Client().token()
+        Client().testAuth()
         
         setupFish(view: self.view) { (fishes) in
             

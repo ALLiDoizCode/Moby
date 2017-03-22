@@ -25,6 +25,7 @@ class Client {
     ]
 
     
+    
     func token(){
         
         Alamofire.request("https://mo-b.herokuapp.com/account/token", method: .get,encoding: JSONEncoding.default).responseString{ (response) in
@@ -39,7 +40,7 @@ class Client {
         }
         
     }
-
+    
     func auth(token:String){
             
         let parameters = [

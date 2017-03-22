@@ -195,13 +195,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Client/Client.swift"
-            timestampString = "511829729.090855"
+            timestampString = "511860784.916624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "upload(path:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "Client"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Moby.Client.upload (path : Swift.String, completion : (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Moby"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project%20Drive/Projects/Moby%20Project/Moby/Moby/Client/Client.swift"
+                  timestampString = "511849479.581352"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Moby.Client.(upload (path : Swift.String, completion : (Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Moby"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project%20Drive/Projects/Moby%20Project/Moby/Moby/Client/Client.swift"
+                  timestampString = "511849479.582512"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -211,13 +243,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Client/Client.swift"
-            timestampString = "511829729.090855"
+            timestampString = "511860784.916624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "upload(path:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "Client"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -227,13 +259,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Client/Client.swift"
-            timestampString = "511829729.090855"
+            timestampString = "511860784.916624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "upload(path:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "Client"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
