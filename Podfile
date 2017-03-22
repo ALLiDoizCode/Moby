@@ -21,5 +21,6 @@ pod 'SendBirdSDK'
 pod 'BubbleTransition', '~> 2.0.0'
 pod 'NVActivityIndicatorView'
 pod 'AWSS3'
+pod 'RSBarcodes_Swift', '~> 3.0.3'
 
 
