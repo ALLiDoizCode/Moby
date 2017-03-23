@@ -29,12 +29,12 @@ PODS:
     - Parse (~> 1.14.2)
     - SocketRocket (~> 0.5)
   - PlaidClient (0.6)
-  - RSBarcodes_Swift (3.0.3)
   - SendBirdSDK (3.0.28)
   - SocketRocket (0.5.1)
   - Stripe (9.3.0)
   - SVProgressHUD (2.1.2)
   - SwiftEventBus (2.1.0)
+  - SwiftHTTP (2.0.2)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
@@ -52,11 +52,11 @@ DEPENDENCIES:
   - Parse
   - ParseLiveQuery
   - PlaidClient (from `https://github.com/natemann/PlaidClient.git`)
-  - RSBarcodes_Swift (~> 3.0.3)
   - SendBirdSDK
   - Stripe
   - SVProgressHUD
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `2.1.2`)
+  - SwiftHTTP (~> 2.0.2)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -92,14 +92,14 @@ SPEC CHECKSUMS:
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseLiveQuery: 4c0f3f571ba0f358a4e592cd7d4b55c95ab9655e
   PlaidClient: 9afd1cb35fa3a273b2c3e25f0b7b240d0368ca60
-  RSBarcodes_Swift: 3b4a9c2e81fe9f435a26f18a1b8b826665e7cf89
   SendBirdSDK: ea3ee1a1219da90a8f54894a54224b615855fdb8
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   Stripe: 0f41a33a6fa3ac76ee668d7df3e2680c28b8ab1a
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
+  SwiftHTTP: faa1a5f7670568ffc9361898229dbe84a6088468
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 1a021b749b89bfce7b0352790f9cbc9ba7660930
+PODFILE CHECKSUM: 5170ab2f72950e907115a0b01595f5ffec1877ba
 
 COCOAPODS: 1.1.1

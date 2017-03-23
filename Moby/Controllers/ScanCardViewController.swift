@@ -62,21 +62,12 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
                                 
                                 if let token2 = token2 {
                                     
-                                    Client().token(completion: { (authToken) in
-                                        
-                                        Client().auth(token: authToken, completion: { (success) in
-                                            
-                                            if success == true {
-                                                
-                                                StripeClient().connectAccount(firstName: "Jonathan", lastName: "Green", token: token.stripeID, completion: { (conectId) in
-                                                    
-                                                    StripeClient().customer(email: "email@email.com", token: token2.stripeID, completion: { (customerId) in
-                                                        
-                                                    })
-                                                })
-                                            }
-                                        })
-                                    })
+                                    let image = UIImage(named: "guy")
+                                    
+                                    print("card1\(token.stripeID)")
+                                    print("card2\(token2.stripeID)")
+                                    
+                                    /*Client().newUser(firstName: "Jonathan", lastName: "Green", phone: "5555555555", email: "mike@mike", password: "123", rating: 4.2, active: false, rules: "no rules", Image: image!, card1: token.stripeID, card2: token2.stripeID)*/
                                 }
                                 
                             }else {

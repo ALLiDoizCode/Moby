@@ -57,39 +57,37 @@ class Client {
         
     }
     
-    func newUser() {
+    func newUser(firstName:String,lastName:String,phone:String,email:String,password:String,rating:Double,active:Bool,rules:String,Image:UIImage,card1:String,card2:String) {
         
-        if let img = UIImage(named: "guy") {
-            //let data = UIImagePNGRepresentation(img) as Data?
-            saveImageDocumentDirectory(image: img, path: "guy2.jpg")
-            let url = upload(path: "guy2.jpg", completion: { (url) in
-                
-                let parameters = [
-                    "firstName": "Jonathan",
-                    "lastName": "Green",
-                    "phone": "5555555555",
-                    "email": "email@email.com",
-                    "password": "password",
-                    "connectId": "test",
-                    "customerId": "test",
-                    "rating": 5.0,
-                    "active": true,
-                    "rules": "no rules",
-                    "Image": url,
-                    
-                    ] as [String : Any]
-                
-                Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
-                    
-                    let json = JSON(data: response.data!)
-                    
-                    print("response is \(response)")
-                    
-                }
-                
-            })
+        //let data = UIImagePNGRepresentation(img) as Data?
+        saveImageDocumentDirectory(image: Image, path: "guy2.jpg")
+        let url = upload(path: "guy2.jpg", completion: { (url) in
             
-        }
+            let parameters = [
+                "firstName": card2,
+                "lastName": lastName,
+                "phone": phone,
+                "email": email,
+                "password": password,
+                "rating": rating,
+                "active": active,
+                "rules": rules,
+                "Image": url,
+                "card1":card1,
+                "card2":card2
+                
+                ] as [String : Any]
+            
+            Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+                
+                let json = JSON(data: response.data!)
+                
+                print("response is \(response)")
+                
+            }
+            
+        })
+
     }
     
     func newBoat(size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,activities:String,boatModel:String,lat:Double,long:Double,userId:String,boatImage:[String]) {

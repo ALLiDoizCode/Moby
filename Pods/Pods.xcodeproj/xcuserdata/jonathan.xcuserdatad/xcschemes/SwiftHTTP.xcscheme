@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A96AD7F091B5348189652E235D4B98EA'
-               BlueprintName = 'RSBarcodes_Swift'
+               BlueprintIdentifier = '916D6B18627A53A9F40C0A31EF6CE9A6'
+               BlueprintName = 'SwiftHTTP'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RSBarcodes_Swift.framework'>
+               BuildableName = 'SwiftHTTP.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -99,11 +99,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Parse/Parse.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ParseLiveQuery/ParseLiveQuery.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PlaidClient/PlaidClient.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/RSBarcodes_Swift/RSBarcodes_Swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SocketRocket/SocketRocket.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Stripe/Stripe.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftEventBus/SwiftEventBus.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftHTTP/SwiftHTTP.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -122,10 +122,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Parse/Parse.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ParseLiveQuery/ParseLiveQuery.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PlaidClient/PlaidClient.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/RSBarcodes_Swift/RSBarcodes_Swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SocketRocket/SocketRocket.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Stripe/Stripe.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftEventBus/SwiftEventBus.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftHTTP/SwiftHTTP.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi

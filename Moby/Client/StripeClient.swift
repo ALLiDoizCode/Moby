@@ -10,12 +10,13 @@ import Foundation
 import Alamofire
 import SwiftEventBus
 import SwiftyJSON
+import SwiftHTTP
 
 class StripeClient {
     
     let headers: HTTPHeaders = [
         "Accept": "text/html",
-        "Content-Type" : "application/x-www-form-urlencoded"
+        "Content-Type" : "text/plain"
     ]
     
     func customer(email:String,token:String,completion:@escaping (_ id:String) -> Void){
@@ -37,19 +38,41 @@ class StripeClient {
         
     }
     
-    func connectAccount(firstName:String,lastName:String,token:String,completion:@escaping (_ id:String) -> Void){
+    func connectAccount(email:String,firstName:String,lastName:String,token:String,completion:@escaping (_ id:String) -> Void){
         
         let parameters = [
+            "email":email,
             "firstName": firstName,
             "lastName": lastName,
             "card":token
         ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/stripe/connect", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        /*var json:JSON!
+        var theResponse:Response!
+    
+        do {
+            let opt = try HTTP.POST("https://mo-b.herokuapp.com/stripe/connect", parameters: parameters)
+            opt.start { response in
+                //do things...
+                
+                json = JSON(data: response.data)
+                theResponse = response
+                
+                print("connectAccount json is \(response.error)")
+                print("connectAccount response is \(theResponse.text)")
+                print("connectAccount json is \(json)")
+            }
+        } catch let error {
+            print("got an error creating the request: \(error)")
+        }*/
+        
+        
+        Alamofire.request("https://mo-b.herokuapp.com/stripe/connect", method: .post, parameters: parameters).response{ (response) in
             
-            let json = JSON(response.result.value as Any)
+            let json = JSON(response.data)
             
-            print("connectAccount response is \(json)")
+            print("connectAccount response is \(response)")
+            print("connectAccount json is \(json)")
             
             completion("")
             
