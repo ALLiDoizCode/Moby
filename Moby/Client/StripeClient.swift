@@ -29,9 +29,9 @@ class StripeClient {
         
         Alamofire.request("https://mo-b.herokuapp.com/stripe/customer", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             
-            //let json = JSON(response!)
+            let json = JSON(response.result.value as Any)
             
-            print("customer response is \(response)")
+            print("customer response is \(json)")
             completion("")
         }
         
@@ -47,9 +47,9 @@ class StripeClient {
         
         Alamofire.request("https://mo-b.herokuapp.com/stripe/connect", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             
-            //let json = JSON(response!)
+            let json = JSON(response.result.value as Any)
             
-            print("connectAccount response is \(response)")
+            print("connectAccount response is \(json)")
             
             completion("")
             
