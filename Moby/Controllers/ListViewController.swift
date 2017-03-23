@@ -19,7 +19,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Client().testAuth()
+        MultiPartUpload().UploadRequest()
         
         setupFish(view: self.view) { (fishes) in
             

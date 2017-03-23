@@ -25,17 +25,15 @@ class Client {
     ]
 
     
-    
     func token(){
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/token", method: .get,encoding: JSONEncoding.default).responseString{ (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/token", method: .get,encoding: JSONEncoding.default).responseString{ (response) in
             
             let json = JSON(response.result.value!).stringValue
             
             self.auth(token:json )
             
             print("token is \(json)")
-            
             
         }
         
@@ -49,19 +47,16 @@ class Client {
                 
                 ]
             
-        Alamofire.request("https://mo-b.herokuapp.com/account/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
             let json = JSON(response.result.value!).boolValue
             
             print("success is \(json)")
-            
-           
-
-            
+    
         }
         
     }
-
+    
     func newUser() {
         
         if let img = UIImage(named: "guy") {
@@ -93,6 +88,72 @@ class Client {
                 }
                 
             })
+            
+        }
+    }
+    
+    func newBoat(size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,activities:String,boatModel:String,lat:Double,long:Double,userId:String,boatImage:[String]) {
+        
+        let parameters = [
+            "size": size,
+            "type": type,
+            "year": year,
+            "price": price,
+            "passengers": passengers,
+            "location": location,
+            "description": description,
+            "activities": activities,
+            "boatModel": boatModel,
+            "lat": lat,
+            "long": long,
+            "userId": userId,
+            "boatImage": boatImage
+            
+            ] as [String : Any]
+        
+        Alamofire.request("https://mo-b.herokuapp.com/account/addBoat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            
+            let json = JSON(data: response.data!)
+            
+            print("response is \(response)")
+            
+        }
+    }
+    
+    func newTrip(captin:String,boat:String,charge:String,duration:Int) {
+        
+        let parameters = [
+            
+            "captin": captin,
+            "boat": boat,
+            "charge": charge,
+            "duration": duration
+            
+            ] as [String : Any]
+        
+        Alamofire.request("https://mo-b.herokuapp.com/account/addTrip", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            
+            let json = JSON(data: response.data!)
+            
+            print("response is \(response)")
+            
+        }
+    }
+    
+    func newCharge(customer:String,charge:String) {
+        
+        let parameters = [
+            
+            "captin": customer,
+            "charge": charge
+            
+            ]
+        
+        Alamofire.request("https://mo-b.herokuapp.com/account/addCharge", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            
+            let json = JSON(data: response.data!)
+            
+            print("response is \(response)")
             
         }
     }

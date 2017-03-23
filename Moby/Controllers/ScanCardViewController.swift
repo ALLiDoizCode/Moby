@@ -54,7 +54,23 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
                     
                     if let token = token {
                         
-                       
+                        STPAPIClient.shared().createToken(withCard: card, completion: { (token2, error) in
+                            
+                            if error == nil {
+                                
+                                if let token2 = token2 {
+                                    
+                                    
+                                }
+                                
+                            }else {
+                                
+                                
+                                print(error)
+                            }
+                            
+                            
+                        })
                     }
                     
                 }else {

@@ -195,11 +195,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Client/Client.swift"
-            timestampString = "511860784.916624"
+            timestampString = "511901799.578916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "Client"
             landmarkType = "3">
             <Locations>
@@ -243,11 +243,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Client/Client.swift"
-            timestampString = "511860784.916624"
+            timestampString = "511901799.578916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "Client"
             landmarkType = "3">
          </BreakpointContent>
@@ -259,13 +259,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Client/Client.swift"
-            timestampString = "511860784.916624"
+            timestampString = "511901799.578916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "Client"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Moby/Client/StripeClient.swift"
+            timestampString = "511922806.368188"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "transfer(account:amount:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
