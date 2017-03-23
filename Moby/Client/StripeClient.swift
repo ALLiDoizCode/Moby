@@ -18,7 +18,7 @@ class StripeClient {
         "Content-Type" : "application/x-www-form-urlencoded"
     ]
     
-    func customer(email:String,token:String){
+    func customer(email:String,token:String,completion:@escaping (_ id:String) -> Void){
         
         let parameters = [
             
@@ -29,15 +29,15 @@ class StripeClient {
         
         Alamofire.request("https://mo-b.herokuapp.com/stripe/customer", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             
-            let json = JSON(data: response.data!)
+            //let json = JSON(response!)
             
-            print("response is \(response)")
-            
+            print("customer response is \(response)")
+            completion("")
         }
         
     }
     
-    func connectAccount(firstName:String,lastName:String,token:String){
+    func connectAccount(firstName:String,lastName:String,token:String,completion:@escaping (_ id:String) -> Void){
         
         let parameters = [
             "firstName": firstName,
@@ -47,9 +47,11 @@ class StripeClient {
         
         Alamofire.request("https://mo-b.herokuapp.com/stripe/connect", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             
-            let json = JSON(data: response.data!)
+            //let json = JSON(response!)
             
-            print("response is \(response)")
+            print("connectAccount response is \(response)")
+            
+            completion("")
             
         }
     }

@@ -25,21 +25,20 @@ class Client {
     ]
 
     
-    func token(){
+    func token(completion:@escaping (_ token:String) -> Void){
         
         Alamofire.request("https://mo-b.herokuapp.com/token", method: .get,encoding: JSONEncoding.default).responseString{ (response) in
             
             let json = JSON(response.result.value!).stringValue
             
-            self.auth(token:json )
-            
             print("token is \(json)")
             
+            completion(json)
         }
         
     }
     
-    func auth(token:String){
+    func auth(token:String,completion:@escaping (_ success:Bool) -> Void){
             
         let parameters = [
                 
@@ -52,7 +51,8 @@ class Client {
             let json = JSON(response.result.value!).boolValue
             
             print("success is \(json)")
-    
+            
+            completion(json)
         }
         
     }

@@ -14,8 +14,8 @@ import Stripe
 
 class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelegate {
     
-    var email:String!
-    var password:String!
+    //var email:String!
+    //var password:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,19 +48,35 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
             
         //Send to Stripe
             
-            STPAPIClient.shared().createToken(withCard: card, completion: { (token, error) in
+           let STP = STPAPIClient(publishableKey: "pk_test_mZhuo10GuRr7kztp40vrBe8m")
+            
+            STP.createToken(withCard: card, completion: { (token, error) in
                 
                 if error == nil {
                     
                     if let token = token {
                         
-                        STPAPIClient.shared().createToken(withCard: card, completion: { (token2, error) in
+                        STP.createToken(withCard: card, completion: { (token2, error) in
                             
                             if error == nil {
                                 
                                 if let token2 = token2 {
                                     
-                                    
+                                    Client().token(completion: { (authToken) in
+                                        
+                                        Client().auth(token: authToken, completion: { (success) in
+                                            
+                                            if success == true {
+                                                
+                                                StripeClient().connectAccount(firstName: "Jonathan", lastName: "Green", token: token.stripeID, completion: { (conectId) in
+                                                    
+                                                    StripeClient().customer(email: "email@email.com", token: token2.stripeID, completion: { (customerId) in
+                                                        
+                                                    })
+                                                })
+                                            }
+                                        })
+                                    })
                                 }
                                 
                             }else {
