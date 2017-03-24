@@ -22,5 +22,7 @@ pod 'BubbleTransition', '~> 2.0.0'
 pod 'NVActivityIndicatorView'
 pod 'AWSS3'
 pod 'SwiftHTTP', '~> 2.0.2'
+pod 'plaid-ios-sdk'
+pod 'plaid-ios-link'
 
 

@@ -27,6 +27,7 @@
 		AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */; };
 		AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2811DC2E63C000FC168 /* Client.swift */; };
 		AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */; };
+		AB4691C11E85A7DD00266C1E /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4691C01E85A7DD00266C1E /* BankViewController.swift */; };
 		AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */; };
 		AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65030E1E7EB1E600127E9F /* CardCell.swift */; };
 		AB6503111E7EB93700127E9F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ListViewController.swift */; };
@@ -82,6 +83,7 @@
 		AB3AA27C1DC2CE7D000FC168 /* Fishermen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fishermen.swift; sourceTree = "<group>"; };
 		AB3AA2811DC2E63C000FC168 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		AB4691C01E85A7DD00266C1E /* BankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB65030E1E7EB1E600127E9F /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		AB6503101E7EB93700127E9F /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */,
 				AB6503101E7EB93700127E9F /* ListViewController.swift */,
 				AB10DF231E8230F20075133D /* IDScannerViewController.swift */,
+				AB4691C01E85A7DD00266C1E /* BankViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */,
 				AB0BA4AC1DC15F5D003F7802 /* AppDelegate.swift in Sources */,
 				AB25495F1E3E675D000D3E82 /* Location.swift in Sources */,
+				AB4691C11E85A7DD00266C1E /* BankViewController.swift in Sources */,
 				AB33136E1E3992DF00F4CD3F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

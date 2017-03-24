@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Scan Card View Controller-->
+        <!--Bank View Controller-->
         <scene sceneID="OrZ-6f-2Di">
             <objects>
-                <viewController id="vQ5-NO-HzT" customClass="ScanCardViewController" customModule="Moby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vQ5-NO-HzT" customClass="BankViewController" customModule="Moby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e4T-bJ-ZyO"/>
                         <viewControllerLayoutGuide type="bottom" id="ofV-Jq-W9d"/>
