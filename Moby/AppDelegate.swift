@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         
-        Plaid.sharedInstance().setPublicKey("c2aef4bd8b20d50c52f286bf399db7")
+       
         IQKeyboardManager.sharedManager().enable = true
        
     

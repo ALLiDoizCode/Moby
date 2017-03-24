@@ -13,5 +13,3 @@
 #endif /* Header_h */
 #import <CardIO/CardIO.h>
 
-#import <plaid_ios_sdk/Plaid-Swift.h>
-#import <plaid_ios_link/plaid-ios-link-umbrella.h>
