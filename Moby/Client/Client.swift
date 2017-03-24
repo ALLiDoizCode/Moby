@@ -12,6 +12,7 @@ import SwiftEventBus
 import SwiftyJSON
 import AWSS3
 import AWSCore
+import SwiftHTTP
 
 class Client {
     
@@ -20,8 +21,8 @@ class Client {
     
     // Add default headers if needed.(As per your web-service requirement)
     let headers: HTTPHeaders = [
-        "Accept": "text/html",
-        "Content-Type" : "application/x-www-form-urlencoded"
+        "Content-Length": "68",
+        "Content-Type" : "application/json"
     ]
 
     
@@ -46,7 +47,7 @@ class Client {
                 
                 ]
             
-        Alamofire.request("https://mo-b.herokuapp.com/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             
             let json = JSON(response.result.value!).boolValue
             
@@ -61,32 +62,58 @@ class Client {
         
         //let data = UIImagePNGRepresentation(img) as Data?
         saveImageDocumentDirectory(image: Image, path: "guy2.jpg")
-        let url = upload(path: "guy2.jpg", completion: { (url) in
+        let url = upload(path: "guy2.jpg", completion: { (imageUrl) in
             
             let parameters = [
-                "firstName": card2,
+                "firstName": firstName,
                 "lastName": lastName,
                 "phone": phone,
                 "email": email,
                 "password": password,
-                "rating": rating,
-                "active": active,
+                "rating": "\(rating)",
+                "active": "\(active)",
                 "rules": rules,
-                "Image": url,
+                "Image": imageUrl,
                 "card1":card1,
                 "card2":card2
                 
                 ] as [String : Any]
             
-            Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            /*do {
+                let opt = try HTTP.POST("https://mo-b.herokuapp.com/account/user", parameters: parameters)
+                opt.start { response in
+                    //do things...
+                    
+                    let json = JSON(data: response.data)
+                    let theResponse = response
+                    
+                    print("user headers is \(response.headers)")
+                    print("user description is \(response.description)")
+                    print("user error is \(response.error)")
+                    print("user response is \(theResponse.text)")
+                    print("user json is \(json)")
+                }
+            } catch let error {
+                print("got an error creating the request: \(error)")
+            }*/
+
+            
+            Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseString{ (response) in
                 
-                let json = JSON(data: response.data!)
+                //let json = JSON(response.result.value!)
+                
+                //print("response JSON is \(json)")
                 
                 print("response is \(response)")
+                print("response degub is \(response.debugDescription)")
+                print("response request is \(response.request)")
+                print("response reponse is \(response.response)")
                 
             }
             
         })
+        
+        print("works")
 
     }
     

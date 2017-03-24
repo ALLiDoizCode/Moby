@@ -19,7 +19,7 @@ class StripeClient {
         "Content-Type" : "text/plain"
     ]
     
-    func customer(email:String,token:String,completion:@escaping (_ id:String) -> Void){
+    /*func customer(email:String,token:String,completion:@escaping (_ id:String) -> Void){
         
         let parameters = [
             
@@ -77,7 +77,7 @@ class StripeClient {
             completion("")
             
         }
-    }
+    }*/
     
     func charge(customer:String,account:String,amount:String){
         
@@ -117,7 +117,7 @@ class StripeClient {
         let parameters = [
             
             "account": account,
-            "amount": amount
+            "amount": "\(amount)"
 
         ] as [String : Any]
         

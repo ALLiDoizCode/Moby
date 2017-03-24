@@ -67,7 +67,16 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
                                     print("card1\(token.stripeID)")
                                     print("card2\(token2.stripeID)")
                                     
-                                    /*Client().newUser(firstName: "Jonathan", lastName: "Green", phone: "5555555555", email: "mike@mike", password: "123", rating: 4.2, active: false, rules: "no rules", Image: image!, card1: token.stripeID, card2: token2.stripeID)*/
+                                    Client().token(completion: { (authToken) in
+                                        
+                                        Client().auth(token: authToken, completion: { (success) in
+                                            
+                                            if success == true {
+                                                
+                                                Client().newUser(firstName: "Jonathan", lastName: "Green", phone: "5555555555", email: "amber@amber.com", password: "123", rating: 4.2, active: false, rules: "no rules", Image: image!, card1: token.stripeID, card2: token2.stripeID)
+                                            }
+                                        })
+                                    })
                                 }
                                 
                             }else {
