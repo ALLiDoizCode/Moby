@@ -13,7 +13,7 @@ class MultiPartUpload {
     
     let publicStripe = "pk_test_mZhuo10GuRr7kztp40vrBe8m"
 
-    func UploadRequest()
+    func UploadRequest(comepletion:@escaping (_ fileId:String) -> Void)
     {
         let url = URL(string: "https://uploads.stripe.com/v1/files")
         
@@ -84,6 +84,7 @@ class MultiPartUpload {
             if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             {
                 print(dataString)
+                comepletion(dataString as String)
             }
             
         })
