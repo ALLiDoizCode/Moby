@@ -11,107 +11,92 @@ import Material
 import Cartography
 import Animo
 import BubbleTransition
+import Player
 
-class LandingViewController: UIViewController,UIViewControllerTransitioningDelegate {
+class LandingViewController: UIViewController,UIViewControllerTransitioningDelegate,PlayerDelegate {
     
-    let icon = UIImageView()
-    let login = FlatButton()
-    let signUp = FlatButton()
+    fileprivate var player: Player!
+    
+    let bgImageView = UIImageView()
+    let blur = UIView()
+    let iconNext = FlatButton()
+    let nextImageView = UIImageView()
     let logo = UILabel()
-    let email = TextField()
-    let password = TextField()
+    let boatLabel = UILabel()
     let transition = BubbleTransition()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var url:URL!
+        
+        if let path = Bundle.main.path(forResource: "video", ofType: "mp4") {
+            url = URL(fileURLWithPath: path)
+            
+        }
+        else {
+            print("Oops, something wrong when playing video.mp4")
+        }
+        
+        
         self.navigationController?.isNavigationBarHidden = true
         
-        setupFish(view: self.view) { (fishes) in
-            
-            let yRange = Int(self.view.frame.height)
-            
-            for fish in fishes {
-                
-                let startRange = [-100, -80, -60, -115, -125]
-                let time = Int(arc4random_uniform(5) + 10)
-                let startY = Int(arc4random_uniform(UInt32(yRange)) + 10)
-                let endY = Int(arc4random_uniform(UInt32(yRange)) + 10)
-                let ran = Int(arc4random_uniform(4))
-                
-                let endPoint = CGPoint(x: 600, y: endY)
-                let startPoint = CGPoint(x: startRange[ran], y: startY)
-                
-                print("fish")
-                
-                fish.layer.runAnimation(Animo.group(
-                    Animo.wait(TimeInterval(ran)),
-                    Animo.replayForever(
-                        Animo.sequence(
-                            Animo.move(from: startPoint, to: endPoint, duration: TimeInterval(time)),
-                            timingMode: .linear,
-                            options: Options(speed: 1, fillMode: Options.FillMode.both, removedOnCompletion: true)
-                        )
-                    )
-                    ), completion: {
-                        
-                        
-                })
-                
-                /*fish.layer.runAnimation(
-                 
-                 )*/
-            }
-        }
         
         DispatchQueue.main.async {
             print("main thread dispatch")
             
             self.setupViews()
             
-            let views = [self.logo,self.email,self.password,self.login,self.signUp]
+            let views:[UIView] = [self.logo,self.bgImageView,self.blur,self.iconNext,self.nextImageView,self.boatLabel]
             
             constrain(views) { (_views) in
              
              let superView = _views[0].superview
              let left = _views[0].superview?.left
              let right = _views[0].superview?.right
-             let top = _views[0].superview?.top
-             let bottom = _views[0].superview?.bottom
+             let top = (_views[0].superview?.top)!
+             let bottom = (_views[0].superview?.bottom)!
              
-             _views[0].centerX == (superView?.centerX)!
-             _views[0].bottom == top! + 150
-             _views[0].height == 85
-             _views[0].width == 200
+             _views[0].top == _views[1].top
+             _views[0].height == (superView?.height)! * 0.15
+             _views[0].width == (superView?.width)! * 0.7
+             _views[0].right == right!
+            
+             _views[1].top == top
+             _views[1].height == (superView?.height)! * 0.8
+             _views[1].left == left!
+             _views[1].right == right! * 1.2
              
-             _views[1].centerX == (superView?.centerX)!
-             _views[1].top == _views[0].bottom + 100
-             _views[1].left == left! + 30
-             _views[1].right == right! - 30
+             _views[2].top == _views[1].top
+             _views[2].bottom == _views[1].bottom
+             _views[2].left == left!
+             _views[2].right == right!
+                
+             _views[3].top == _views[1].bottom + 30
+             _views[3].bottom == (superView?.bottom)! - 30
+             _views[3].centerX == (superView?.centerX)! + 80
+             _views[3].width == _views[3].height
+                
+             _views[4].center == (_views[3].center)
+             _views[4].height == (_views[3].height) * 0.6
+             _views[4].width == _views[4].height
+                
+             _views[5].centerY == _views[3].centerY
+             _views[5].right == _views[3].left - 20
+             _views[5].width == (superView?.width)! * 0.45
              
-             _views[2].centerX == (superView?.centerX)!
-             _views[2].top == _views[1].bottom + 20
-             _views[2].left == left! + 30
-             _views[2].right == right! - 30
-             
-             _views[3].bottom == bottom! - 150
-             _views[3].height == 70
-             _views[3].left == left! + 30
-             _views[3].right == right! - 30
-              
-             _views[4].bottom == _views[3].top - 20
-             _views[4].height == 70
-             _views[4].left == left! + 30
-             _views[4].right == right! - 30
-             
-             
-             
-             }
+            }
 
         }
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //self.player.playFromBeginning()
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,47 +122,43 @@ class LandingViewController: UIViewController,UIViewControllerTransitioningDeleg
     
     func setupViews(){
         
-        self.view.backgroundColor = UIColor.flatTeal()
+        let logoWidth = self.view.frame.width * 0.07
         
-        email.placeholder = "Email"
-        email.textColor = UIColor.flatWhite()
-        email.isHidden = true
-        self.view.addSubview(email)
-        password.placeholder = "Password"
-        password.textColor = UIColor.flatWhite()
-        password.isHidden = true
-        self.view.addSubview(password)
+        self.view.backgroundColor = Color.grey.lighten5
         
+        let nextImage = UIImage(named: "next")
+        nextImageView.image = nextImage
+        nextImageView.contentMode = .scaleAspectFill
         
-        icon.image = UIImage(named: "fishing")
-        icon.contentMode = .scaleAspectFill
-        icon.clipsToBounds = true
+        iconNext.backgroundColor = Color.grey.lighten2
+        iconNext.shapePreset = .circle
+        //iconNext.clipsToBounds = true
+    
         
-        login.backgroundColor = UIColor.clear
-        login.borderColor = UIColor.flatWhite()
-        login.setTitle("Login", for: .normal)
-        let loginColor = UIColor(contrastingBlackOrWhiteColorOn: login.backgroundColor, isFlat: true)
-        login.setTitleColor(loginColor, for: .normal)
-        login.borderWidth = 2
-        login.addTarget(self, action: #selector(LandingViewController.goTologin), for: .touchUpInside)
+        boatLabel.text = "Get Your Boat"
+        boatLabel.font = RobotoFont.bold(with: logoWidth)
+        boatLabel.textColor = Color.grey.lighten2
         
-        signUp.backgroundColor = UIColor(complementaryFlatColorOf: self.view.backgroundColor)
-        signUp.setTitle("SignUp", for: .normal)
-        signUp.addTarget(self, action: #selector(LandingViewController.signup), for: .touchUpInside)
-        
-        let signUpColor = UIColor(contrastingBlackOrWhiteColorOn: signUp.backgroundColor, isFlat: true)
-        signUp.setTitleColor(signUpColor, for: .normal)
-        
-        logo.text = "Moby"
-        logo.textColor = UIColor.flatTeal().lighten(byPercentage: 15)
-        logo.textAlignment = .center
-        logo.font = RobotoFont.bold(with: 72)
+        logo.text = "Where There's Water There's Moby"
+        logo.textColor = Color.grey.lighten5
+        logo.numberOfLines = 0
+        logo.textAlignment = .left
+        logo.font = RobotoFont.bold(with: logoWidth)
         //logo.isHidden = true
         
-        self.view.addSubview(icon)
-        self.view.addSubview(login)
-        self.view.addSubview(signUp)
+        let bgImage = UIImage(named: "man")
+        
+        bgImageView.image = bgImage
+        bgImageView.contentMode = .scaleAspectFill
+        
+        blur.backgroundColor = Color.black.withAlphaComponent(0.2)
+        
+        self.view.addSubview(boatLabel)
+        self.view.addSubview(bgImageView)
+        self.view.addSubview(blur)
         self.view.addSubview(logo)
+        self.view.addSubview(iconNext)
+        iconNext.addSubview(nextImageView)
     }
     
     // MARK: UIViewControllerTransitioningDelegate

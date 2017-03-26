@@ -31,6 +31,7 @@
 		AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */; };
 		AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65030E1E7EB1E600127E9F /* CardCell.swift */; };
 		AB6503111E7EB93700127E9F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ListViewController.swift */; };
+		AB784C081E872ECC00DB88CE /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AB784C071E872ECC00DB88CE /* video.mp4 */; };
 		ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */; };
 		ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */; };
 		ABC010061E834FB900293E6B /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC010051E834FB900293E6B /* StripeClient.swift */; };
@@ -87,6 +88,7 @@
 		AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB65030E1E7EB1E600127E9F /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		AB6503101E7EB93700127E9F /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		AB784C071E872ECC00DB88CE /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCardViewController.swift; sourceTree = "<group>"; };
 		ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptinCell.swift; sourceTree = "<group>"; };
 		ABC010051E834FB900293E6B /* StripeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		AB0BA49F1DC15F5C003F7802 = {
 			isa = PBXGroup;
 			children = (
+				AB784C071E872ECC00DB88CE /* video.mp4 */,
 				AB0BA4AA1DC15F5C003F7802 /* Moby */,
 				AB0BA4BF1DC15F5D003F7802 /* MobyTests */,
 				AB0BA4CA1DC15F5D003F7802 /* MobyUITests */,
@@ -364,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB784C081E872ECC00DB88CE /* video.mp4 in Resources */,
 				AB0BA4B61DC15F5D003F7802 /* LaunchScreen.storyboard in Resources */,
 				AB0BA4B31DC15F5D003F7802 /* Assets.xcassets in Resources */,
 				AB0BA4B11DC15F5D003F7802 /* Main.storyboard in Resources */,

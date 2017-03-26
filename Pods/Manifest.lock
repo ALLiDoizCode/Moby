@@ -29,6 +29,7 @@ PODS:
     - Parse (~> 1.14.2)
     - SocketRocket (~> 0.5)
   - PlaidClient (0.6)
+  - Player (0.2.2)
   - SendBirdSDK (3.0.28)
   - SocketRocket (0.5.1)
   - Stripe (9.3.0)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Parse
   - ParseLiveQuery
   - PlaidClient (from `https://github.com/natemann/PlaidClient.git`)
+  - Player (~> 0.2.0)
   - SendBirdSDK
   - Stripe
   - SVProgressHUD
@@ -92,6 +94,7 @@ SPEC CHECKSUMS:
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseLiveQuery: 4c0f3f571ba0f358a4e592cd7d4b55c95ab9655e
   PlaidClient: 9afd1cb35fa3a273b2c3e25f0b7b240d0368ca60
+  Player: 5cff076cc9f13b51f56b6fb7bed24431569b8102
   SendBirdSDK: ea3ee1a1219da90a8f54894a54224b615855fdb8
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   Stripe: 0f41a33a6fa3ac76ee668d7df3e2680c28b8ab1a
@@ -100,6 +103,6 @@ SPEC CHECKSUMS:
   SwiftHTTP: faa1a5f7670568ffc9361898229dbe84a6088468
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 88125c035847c6f29effbe5ff782347f915e9d38
+PODFILE CHECKSUM: 038dec9611190f56161d3a2cc64787bbd95693c8
 
 COCOAPODS: 1.1.1
