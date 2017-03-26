@@ -195,39 +195,11 @@ class SearchClient {
             switch collection {
                 
             case "user":
-                print("Got User")
+                print("Update User")
                 
-                let id = json["id"].stringValue
-                let connectId = json["connectId"].stringValue
-                let customerId = json["customerId"].stringValue
-                let email = json["email"].stringValue
-                let firstName = json["firstName"].stringValue
-                let lastName = json["lastName"].stringValue
-                let phone = json["phone"].stringValue
-                let profileImage = json["profileImage"].stringValue
-                let rating = json["rating"].stringValue
-                
-                let fishermen = Fishermen(id: id, firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating)
                 
             case "boat":
                 print("Got Boat")
-                
-                
-                
-            case "images":
-                print("Got Boat")
-                
-                
-                
-            case "trip":
-                print("Got Trip")
-                
-                
-                
-            case "charge":
-                print("Got Charge")
-                
-                
                 
             default:
                 break
