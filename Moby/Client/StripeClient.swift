@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftEventBus
 import SwiftyJSON
-import SwiftHTTP
+
 
 class StripeClient {
     
@@ -79,7 +79,7 @@ class StripeClient {
         }
     }*/
     
-    func bankToken(client_id:String,secret:String,public_token:String,accountId:String){
+    func bankToken(client_id:String,secret:String,public_token:String,accountId:String,completion:@escaping (_ Id:String) ->Void){
         
         let parameters = [
             "client_id": client_id,
@@ -114,6 +114,8 @@ class StripeClient {
                 print("json is \(json)")
                 print("bank token is \(banktoken)")
                 
+                completion(banktoken)
+                
                 
                 
             }
@@ -121,7 +123,7 @@ class StripeClient {
         }
     }
     
-    func charge(customer:String,account:String,amount:String){
+    func charge(customer:String,account:String,amount:String,completion:@escaping (_ Id:String) ->Void){
         
         let parameters = [
             "customer": customer,
@@ -129,32 +131,34 @@ class StripeClient {
             "amount":amount
         ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/stripe/charge", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/stripe/charge", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
-            let json = JSON(data: response.data!)
+            //let json = JSON(data: response.data!)
             
-            print("response is \(response)")
+            print("successful charge response is \(response.result.value!)")
             
+            completion(response.result.value!)
         }
     }
     
-    func refund(charge:String){
+    func refund(charge:String,completion:@escaping (_ Id:String) ->Void){
         
         let parameters = [
             
             "charge": charge
         ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/stripe/refund", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/stripe/refund", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
-            let json = JSON(data: response.data!)
+            //let json = JSON(data: response.data!)
             
             print("response is \(response)")
             
+            completion(response.result.value!)
         }
     }
     
-    func transfer(account:String,amount:Int){
+    func transfer(account:String,amount:Int,completion:@escaping (_ Id:String) ->Void){
         
         let parameters = [
             
@@ -163,16 +167,17 @@ class StripeClient {
 
         ] as [String : Any]
         
-        Alamofire.request("https://mo-b.herokuapp.com/stripe/transfer", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/stripe/transfer", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
-            let json = JSON(data: response.data!)
+            //let json = JSON(data: response.data!)
             
             print("response is \(response)")
             
+            completion(response.result.value!)
         }
     }
     
-    func identity(fileId:String,account:String){
+    func identity(fileId:String,account:String,completion:@escaping (_ Id:String) ->Void){
         
         let parameters = [
             

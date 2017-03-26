@@ -17,14 +17,16 @@ class Captin {
     var email:String!
     var phone:String!
     var merchantId:String!
+    var active:Bool!
     var boats:[String]!
     
-    init(_firstName:String,_lastName:String,_email:String,_Phone:String,_merchantId:String) {
+    init(_firstName:String,_lastName:String,_email:String,_Phone:String,_merchantId:String,active:Bool) {
         
-        firstName = _firstName
-        lastName = _lastName
-        email = _email
-        phone = _Phone
-        merchantId = _merchantId
+        self.firstName = _firstName
+        self.lastName = _lastName
+        self.email = _email
+        self.phone = _Phone
+        self.merchantId = _merchantId
+        self.active = active
     }
 }

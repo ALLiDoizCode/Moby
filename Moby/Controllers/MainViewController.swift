@@ -28,15 +28,6 @@ class MainViewController: UIViewController, SBDChannelDelegate {
         super.viewDidLoad()
         
         
-        let currentFishermen = Fishermen()
-        
-        currentFishermen.firstName = "Jonathan"
-        currentFishermen.lastName = "Green"
-        currentFishermen.email = "test@test.com"
-        currentFishermen.status = true
-        currentFishermen.customerId = "test"
-        currentFishermen.phone = "test"
-        currentFishermen.image = "test"
         
     
         //SwiftEventBus.post("live")

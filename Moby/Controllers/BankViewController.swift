@@ -94,8 +94,10 @@ class BankViewController: UIViewController,WKNavigationDelegate {
                 let PUBLIC_TOKEN = queryParams["public_token"]
                 let ACCOUNT_Id = queryParams["account_id"]
                 
-                StripeClient().bankToken(client_id: CLIENT_ID, secret: SECERT, public_token: PUBLIC_TOKEN!,accountId:ACCOUNT_Id!)
-                
+                StripeClient().bankToken(client_id: CLIENT_ID, secret: SECERT, public_token: PUBLIC_TOKEN!, accountId: ACCOUNT_Id!, completion: { (bankToken) in
+                    
+                })
+            
                 break
                 
             case "exit"?:

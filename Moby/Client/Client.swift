@@ -12,7 +12,6 @@ import SwiftEventBus
 import SwiftyJSON
 import AWSS3
 import AWSCore
-import SwiftHTTP
 
 class Client {
     
@@ -21,7 +20,7 @@ class Client {
     
     // Add default headers if needed.(As per your web-service requirement)
     let headers: HTTPHeaders = [
-        "Content-Length": "68",
+        //"Content-Length": "68",
         "Content-Type" : "application/json"
     ]
 
@@ -33,6 +32,8 @@ class Client {
             let json = JSON(response.result.value!).stringValue
             
             print("token is \(json)")
+            
+            DataStore.setToken(ACCESS_TOKEN: json)
             
             completion(json)
         }
@@ -58,6 +59,41 @@ class Client {
         
     }
     
+    func login(email:String,password:String){
+        
+        let parameters = [
+        
+            "email": email,
+            "password": password
+            
+            ] as [String : Any]
+        
+        Alamofire.request("https://mo-b.herokuapp.com/account/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON{ (response) in
+            
+            let json = JSON(response.result.value!)
+            
+            print("user response JSON is \(json)")
+            print("response is \(response)")
+            print("response degub is \(response.debugDescription)")
+            print("response request is \(response.request)")
+            print("response reponse is \(response.response)")
+            
+            let id = json["id"].stringValue
+            let connectId = json["connectId"].stringValue
+            let customerId = json["customerId"].stringValue
+            let email = json["email"].stringValue
+            let firstName = json["firstName"].stringValue
+            let lastName = json["lastName"].stringValue
+            let phone = json["phone"].stringValue
+            let profileImage = json["profileImage"].stringValue
+            let rating = json["rating"].stringValue
+            
+            let fishermen = Fishermen(id: id, firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating)
+            
+            DataStore.setUser(user: fishermen)
+        }
+    }
+    
     func newUser(firstName:String,lastName:String,phone:String,email:String,password:String,rating:Double,active:Bool,rules:String,Image:UIImage,card1:String,card2:String) {
         
         //let data = UIImagePNGRepresentation(img) as Data?
@@ -79,36 +115,29 @@ class Client {
                 
                 ] as [String : Any]
             
-            /*do {
-                let opt = try HTTP.POST("https://mo-b.herokuapp.com/account/user", parameters: parameters)
-                opt.start { response in
-                    //do things...
-                    
-                    let json = JSON(data: response.data)
-                    let theResponse = response
-                    
-                    print("user headers is \(response.headers)")
-                    print("user description is \(response.description)")
-                    print("user error is \(response.error)")
-                    print("user response is \(theResponse.text)")
-                    print("user json is \(json)")
-                }
-            } catch let error {
-                print("got an error creating the request: \(error)")
-            }*/
-
-            
-            Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseString{ (response) in
+            Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON{ (response) in
                 
-                //let json = JSON(response.result.value!)
+                let json = JSON(response.result.value!)
                 
-                //print("response JSON is \(json)")
-                
+                print("user response JSON is \(json)")
                 print("response is \(response)")
                 print("response degub is \(response.debugDescription)")
                 print("response request is \(response.request)")
                 print("response reponse is \(response.response)")
                 
+                let id = json["id"].stringValue
+                let connectId = json["connectId"].stringValue
+                let customerId = json["customerId"].stringValue
+                let email = json["email"].stringValue
+                let firstName = json["firstName"].stringValue
+                let lastName = json["lastName"].stringValue
+                let phone = json["phone"].stringValue
+                let profileImage = json["profileImage"].stringValue
+                let rating = json["rating"].stringValue
+                
+                let fishermen = Fishermen(id: id, firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating)
+                
+                DataStore.setUser(user: fishermen)
             }
             
         })
@@ -117,35 +146,37 @@ class Client {
 
     }
     
-    func newBoat(size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,activities:String,boatModel:String,lat:Double,long:Double,userId:String,boatImage:[String]) {
+    func newBoat(size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,activities:String,boatModel:String,lat:Double,long:Double,userId:String,completion:@escaping (_ Id:String) ->Void) {
         
         let parameters = [
-            "size": size,
+            
+            "size": "\(size)",
             "type": type,
             "year": year,
-            "price": price,
+            "price": "\(price)",
             "passengers": passengers,
             "location": location,
             "description": description,
             "activities": activities,
             "boatModel": boatModel,
-            "lat": lat,
-            "long": long,
-            "userId": userId,
-            "boatImage": boatImage
+            "lat": "\(lat)",
+            "long": "\(long)",
+            "userId": userId
             
-            ] as [String : Any]
+            ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/addBoat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/account/addBoat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
-            let json = JSON(data: response.data!)
+            //let json = JSON(data: response.data!)
             
-            print("response is \(response)")
+            print("new boat response is \(response)")
+            
+            completion(response.result.value!)
             
         }
     }
     
-    func newTrip(captin:String,boat:String,charge:String,duration:Int) {
+    func newTrip(captin:String,boat:String,charge:String,duration:String,completion:@escaping (_ Id:String) ->Void) {
         
         let parameters = [
             
@@ -154,32 +185,61 @@ class Client {
             "charge": charge,
             "duration": duration
             
-            ] as [String : Any]
+            ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/addTrip", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/account/addTrip", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
-            let json = JSON(data: response.data!)
+            //let json = JSON(data: response.data!)
             
-            print("response is \(response)")
+            print(" new trip response is \(response)")
             
+            completion(response.result.value!)
         }
     }
     
-    func newCharge(customer:String,charge:String) {
+    func newCharge(customer:String,charge:String,completion:@escaping (_ Id:String) ->Void) {
         
         let parameters = [
             
-            "captin": customer,
+            "customer": customer,
             "charge": charge
             
             ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/addCharge", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/account/addCharge", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
-            let json = JSON(data: response.data!)
+            //let json = JSON(data: response.data!)
             
-            print("response is \(response)")
+            print("new charge response is \(response.result.value!)")
             
+            completion(response.result.value!)
+        }
+    }
+    
+    func newboatImage(boatId:String,image:UIImage,main:Bool,path:String,completion:@escaping (_ Id:String) ->Void) {
+        
+        let path = "\(path).jpg"
+        
+        saveImageDocumentDirectory(image: image, path: path)
+        
+        upload(path: path) { (url) in
+            
+            let parameters = [
+                
+                "boatId": boatId,
+                "image": url,
+                "main":"\(main)"
+                
+            ]
+            
+            Alamofire.request("https://mo-b.herokuapp.com/account/addBoatImage", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+                
+                //let json = JSON(data: response.data!)
+                
+                print("new charge response is \(response.result.value!)")
+                
+                completion(response.result.value!)
+            }
         }
     }
     

@@ -21,7 +21,6 @@ pod 'SendBirdSDK'
 pod 'BubbleTransition', '~> 2.0.0'
 pod 'NVActivityIndicatorView'
 pod 'AWSS3'
-pod 'SwiftHTTP', '~> 2.0.2'
 pod "Player", "~> 0.2.0"
 
 

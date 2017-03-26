@@ -11,3 +11,9 @@ import Foundation
 let fishes = ["flounder","perch","pike","piranha","salmon","tuna","zander"]
 
 let captinCellID = "CaptinCell"
+
+let USER_COLLECTION = "user"
+let BOAT_COLLECTION = "boat"
+let IMAGES_COLLECTION = "images"
+let TRIP_COLLECTION = "trip"
+let CHARGE_COLLECTION = "charge"

@@ -35,7 +35,6 @@ PODS:
   - Stripe (9.3.0)
   - SVProgressHUD (2.1.2)
   - SwiftEventBus (2.1.0)
-  - SwiftHTTP (2.0.2)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
@@ -58,7 +57,6 @@ DEPENDENCIES:
   - Stripe
   - SVProgressHUD
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `2.1.2`)
-  - SwiftHTTP (~> 2.0.2)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -100,9 +98,8 @@ SPEC CHECKSUMS:
   Stripe: 0f41a33a6fa3ac76ee668d7df3e2680c28b8ab1a
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
-  SwiftHTTP: faa1a5f7670568ffc9361898229dbe84a6088468
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 038dec9611190f56161d3a2cc64787bbd95693c8
+PODFILE CHECKSUM: 3cd5b1f344142ad5e0129e53247e5b4717b5a272
 
 COCOAPODS: 1.1.1

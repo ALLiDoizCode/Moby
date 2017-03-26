@@ -19,44 +19,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupFish(view: self.view) { (fishes) in
-            
-            let yRange = Int(self.view.frame.height)
-            
-            for fish in fishes {
-                
-                let startRange = [-100, -80, -60, -115, -125]
-                let time = Int(arc4random_uniform(5) + 10)
-                let startY = Int(arc4random_uniform(UInt32(yRange)) + 10)
-                let endY = Int(arc4random_uniform(UInt32(yRange)) + 10)
-                let ran = Int(arc4random_uniform(4))
-                
-                let endPoint = CGPoint(x: 600, y: endY)
-                let startPoint = CGPoint(x: startRange[ran], y: startY)
-                
-                print("fish")
-                
-                fish.layer.runAnimation(Animo.group(
-                    Animo.wait(TimeInterval(ran)),
-                    Animo.replayForever(
-                        Animo.sequence(
-                            Animo.move(from: startPoint, to: endPoint, duration: TimeInterval(time)),
-                            timingMode: .linear,
-                            options: Options(speed: 1, fillMode: Options.FillMode.both, removedOnCompletion: true)
-                        )
-                    )
-                    ), completion: {
-                        
-                        
-                })
-                
-                /*fish.layer.runAnimation(
-                 
-                 )*/
-            }
-            
-            self.view.addSubview(self.tableView)
-        }
+        self.view.addSubview(self.tableView)
         
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = Color.grey.lighten5
@@ -110,12 +73,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        //cell.clipsToBounds = true
-        let customCell = cell as! CardCell
-        
-        customCell.card.presenterView?.height = cell.height * 0.5
-        customCell.layoutIfNeeded()
-        print("cell height should be \(customCell.card.height)")
+       
     }
     
     
