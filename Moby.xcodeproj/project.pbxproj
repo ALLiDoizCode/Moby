@@ -20,6 +20,10 @@
 		AB20BCD71E63299B007DADCA /* FishGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20BCD61E63299B007DADCA /* FishGenerator.swift */; };
 		AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495B1E3E3CBB000D3E82 /* RealTime.swift */; };
 		AB25495F1E3E675D000D3E82 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495E1E3E675D000D3E82 /* Location.swift */; };
+		AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEA1E8FFDA400DF97CE /* BarView.swift */; };
+		AB261CED1E8FFFBC00DF97CE /* ExploreExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEC1E8FFFBC00DF97CE /* ExploreExtension.swift */; };
+		AB261CEF1E90273900DF97CE /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEE1E90273900DF97CE /* FilterView.swift */; };
+		AB261CF11E90430900DF97CE /* DefaultBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CF01E90430900DF97CE /* DefaultBar.swift */; };
 		AB33136E1E3992DF00F4CD3F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33136D1E3992DF00F4CD3F /* MainViewController.swift */; };
 		AB33AF081E824A83005AFA6F /* MultiPartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33AF071E824A83005AFA6F /* MultiPartUpload.swift */; };
 		AB3AA2791DC2CE4C000FC168 /* MobyBoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2781DC2CE4C000FC168 /* MobyBoat.swift */; };
@@ -31,7 +35,7 @@
 		AB524D571E880EAB00575BAA /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB524D561E880EAB00575BAA /* DataStore.swift */; };
 		AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */; };
 		AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65030E1E7EB1E600127E9F /* CardCell.swift */; };
-		AB6503111E7EB93700127E9F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ListViewController.swift */; };
+		AB6503111E7EB93700127E9F /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ExploreViewController.swift */; };
 		AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201821E8850760042F1E8 /* SearchClient.swift */; };
 		AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201841E8850D60042F1E8 /* SearchModel.swift */; };
 		AB9201871E8864150042F1E8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201861E8864150042F1E8 /* Trip.swift */; };
@@ -81,6 +85,10 @@
 		AB20BCD61E63299B007DADCA /* FishGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishGenerator.swift; sourceTree = "<group>"; };
 		AB25495B1E3E3CBB000D3E82 /* RealTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
 		AB25495E1E3E675D000D3E82 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		AB261CEA1E8FFDA400DF97CE /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		AB261CEC1E8FFFBC00DF97CE /* ExploreExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreExtension.swift; sourceTree = "<group>"; };
+		AB261CEE1E90273900DF97CE /* FilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		AB261CF01E90430900DF97CE /* DefaultBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBar.swift; sourceTree = "<group>"; };
 		AB33136C1E39907800F4CD3F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		AB33136D1E3992DF00F4CD3F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AB33AF071E824A83005AFA6F /* MultiPartUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPartUpload.swift; sourceTree = "<group>"; };
@@ -93,7 +101,7 @@
 		AB524D561E880EAB00575BAA /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB65030E1E7EB1E600127E9F /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		AB6503101E7EB93700127E9F /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		AB6503101E7EB93700127E9F /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		AB9201821E8850760042F1E8 /* SearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
 		AB9201841E8850D60042F1E8 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		AB9201861E8864150042F1E8 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 		AB0BA4AA1DC15F5C003F7802 /* Moby */ = {
 			isa = PBXGroup;
 			children = (
+				AB261CE91E8FFCA900DF97CE /* Views */,
 				ABBD9E6E1E63528700BB6AA1 /* Cells */,
 				AB25495D1E3E673B000D3E82 /* Helpers */,
 				AB7F12711DC5CB55001EC977 /* Controllers */,
@@ -210,6 +219,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		AB261CE91E8FFCA900DF97CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB261CEA1E8FFDA400DF97CE /* BarView.swift */,
+				AB261CEE1E90273900DF97CE /* FilterView.swift */,
+				AB261CF01E90430900DF97CE /* DefaultBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AB3AA2771DC2CE2C000FC168 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,9 +264,10 @@
 				AB41EE4E1DC7FCD100B2D71D /* SignupController.swift */,
 				AB33136D1E3992DF00F4CD3F /* MainViewController.swift */,
 				AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */,
-				AB6503101E7EB93700127E9F /* ListViewController.swift */,
+				AB6503101E7EB93700127E9F /* ExploreViewController.swift */,
 				AB10DF231E8230F20075133D /* IDScannerViewController.swift */,
 				AB4691C01E85A7DD00266C1E /* BankViewController.swift */,
+				AB261CEC1E8FFFBC00DF97CE /* ExploreExtension.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -462,17 +482,21 @@
 				AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */,
 				AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */,
 				AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */,
+				AB261CF11E90430900DF97CE /* DefaultBar.swift in Sources */,
 				AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */,
 				ABC010061E834FB900293E6B /* StripeClient.swift in Sources */,
 				AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */,
 				AB33AF081E824A83005AFA6F /* MultiPartUpload.swift in Sources */,
+				AB261CED1E8FFFBC00DF97CE /* ExploreExtension.swift in Sources */,
 				AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */,
 				ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */,
 				AB92018B1E8864370042F1E8 /* BoatImages.swift in Sources */,
 				AB0BA4AE1DC15F5D003F7802 /* ViewController.swift in Sources */,
-				AB6503111E7EB93700127E9F /* ListViewController.swift in Sources */,
+				AB6503111E7EB93700127E9F /* ExploreViewController.swift in Sources */,
+				AB261CEF1E90273900DF97CE /* FilterView.swift in Sources */,
 				ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */,
 				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,
+				AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */,
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
 				AB20BCD71E63299B007DADCA /* FishGenerator.swift in Sources */,
 				AB20BCD51E632843007DADCA /* Constants.swift in Sources */,

@@ -202,38 +202,6 @@
             endingLineNumber = "270"
             landmarkName = "Client"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Moby.Client.upload (path : Swift.String, completion : (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Moby"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project%20Drive/Projects/Moby%20Project/Moby/Moby/Client/Client.swift"
-                  timestampString = "511849479.581352"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Moby.Client.(upload (path : Swift.String, completion : (Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "Moby"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project%20Drive/Projects/Moby%20Project/Moby/Moby/Client/Client.swift"
-                  timestampString = "511849479.582512"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -297,6 +265,22 @@
             startingLineNumber = "150"
             endingLineNumber = "150"
             landmarkName = "makeNextView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Moby/Controllers/ExploreViewController.swift"
+            timestampString = "512778077.508685"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

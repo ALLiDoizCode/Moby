@@ -134,7 +134,7 @@ class LandingViewController: UIViewController,UIViewControllerTransitioningDeleg
     
     func goToBoats(){
         
-        let controller = ListViewController()
+        let controller = ExploreViewController()
         controller.transitioningDelegate = self
         controller.modalPresentationStyle = .custom
         self.navigationController?.present(controller, animated: true, completion: nil)
