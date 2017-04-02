@@ -24,6 +24,7 @@
 		AB261CED1E8FFFBC00DF97CE /* ExploreExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEC1E8FFFBC00DF97CE /* ExploreExtension.swift */; };
 		AB261CEF1E90273900DF97CE /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEE1E90273900DF97CE /* FilterView.swift */; };
 		AB261CF11E90430900DF97CE /* DefaultBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CF01E90430900DF97CE /* DefaultBar.swift */; };
+		AB261CF31E9081C700DF97CE /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CF21E9081C700DF97CE /* TabBar.swift */; };
 		AB33136E1E3992DF00F4CD3F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33136D1E3992DF00F4CD3F /* MainViewController.swift */; };
 		AB33AF081E824A83005AFA6F /* MultiPartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33AF071E824A83005AFA6F /* MultiPartUpload.swift */; };
 		AB3AA2791DC2CE4C000FC168 /* MobyBoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA2781DC2CE4C000FC168 /* MobyBoat.swift */; };
@@ -36,6 +37,8 @@
 		AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */; };
 		AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65030E1E7EB1E600127E9F /* CardCell.swift */; };
 		AB6503111E7EB93700127E9F /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ExploreViewController.swift */; };
+		AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D63FB1E9082A200B924F6 /* IconView.swift */; };
+		AB7D63FE1E90A84D00B924F6 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D63FD1E90A84D00B924F6 /* SplashViewController.swift */; };
 		AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201821E8850760042F1E8 /* SearchClient.swift */; };
 		AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201841E8850D60042F1E8 /* SearchModel.swift */; };
 		AB9201871E8864150042F1E8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201861E8864150042F1E8 /* Trip.swift */; };
@@ -67,7 +70,7 @@
 /* Begin PBXFileReference section */
 		1D7EEC2D08EC49F43296277A /* Pods-Moby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moby/Pods-Moby.release.xcconfig"; sourceTree = "<group>"; };
 		323CF8F0686BB4E8C8BE1455 /* Pods_Moby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB0BA4A81DC15F5C003F7802 /* Moby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moby.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0BA4A81DC15F5C003F7802 /* MobyCharters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobyCharters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BA4AB1DC15F5D003F7802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB0BA4AD1DC15F5D003F7802 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB0BA4B01DC15F5D003F7802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		AB261CEC1E8FFFBC00DF97CE /* ExploreExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreExtension.swift; sourceTree = "<group>"; };
 		AB261CEE1E90273900DF97CE /* FilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		AB261CF01E90430900DF97CE /* DefaultBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBar.swift; sourceTree = "<group>"; };
+		AB261CF21E9081C700DF97CE /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		AB33136C1E39907800F4CD3F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		AB33136D1E3992DF00F4CD3F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AB33AF071E824A83005AFA6F /* MultiPartUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPartUpload.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 		AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB65030E1E7EB1E600127E9F /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		AB6503101E7EB93700127E9F /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		AB7D63FB1E9082A200B924F6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		AB7D63FD1E90A84D00B924F6 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AB9201821E8850760042F1E8 /* SearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
 		AB9201841E8850D60042F1E8 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		AB9201861E8864150042F1E8 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -164,7 +170,7 @@
 		AB0BA4A91DC15F5C003F7802 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB0BA4A81DC15F5C003F7802 /* Moby.app */,
+				AB0BA4A81DC15F5C003F7802 /* MobyCharters.app */,
 				AB0BA4BC1DC15F5D003F7802 /* MobyTests.xctest */,
 				AB0BA4C71DC15F5D003F7802 /* MobyUITests.xctest */,
 			);
@@ -225,6 +231,8 @@
 				AB261CEA1E8FFDA400DF97CE /* BarView.swift */,
 				AB261CEE1E90273900DF97CE /* FilterView.swift */,
 				AB261CF01E90430900DF97CE /* DefaultBar.swift */,
+				AB261CF21E9081C700DF97CE /* TabBar.swift */,
+				AB7D63FB1E9082A200B924F6 /* IconView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 				AB10DF231E8230F20075133D /* IDScannerViewController.swift */,
 				AB4691C01E85A7DD00266C1E /* BankViewController.swift */,
 				AB261CEC1E8FFFBC00DF97CE /* ExploreExtension.swift */,
+				AB7D63FD1E90A84D00B924F6 /* SplashViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -309,7 +318,7 @@
 			);
 			name = Moby;
 			productName = Moby;
-			productReference = AB0BA4A81DC15F5C003F7802 /* Moby.app */;
+			productReference = AB0BA4A81DC15F5C003F7802 /* MobyCharters.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AB0BA4BB1DC15F5D003F7802 /* MobyTests */ = {
@@ -496,6 +505,7 @@
 				AB261CEF1E90273900DF97CE /* FilterView.swift in Sources */,
 				ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */,
 				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,
+				AB7D63FE1E90A84D00B924F6 /* SplashViewController.swift in Sources */,
 				AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */,
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
 				AB20BCD71E63299B007DADCA /* FishGenerator.swift in Sources */,
@@ -506,7 +516,9 @@
 				AB0BA4AC1DC15F5D003F7802 /* AppDelegate.swift in Sources */,
 				AB9201891E8864260042F1E8 /* Charge.swift in Sources */,
 				AB25495F1E3E675D000D3E82 /* Location.swift in Sources */,
+				AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */,
 				AB524D571E880EAB00575BAA /* DataStore.swift in Sources */,
+				AB261CF31E9081C700DF97CE /* TabBar.swift in Sources */,
 				AB4691C11E85A7DD00266C1E /* BankViewController.swift in Sources */,
 				AB33136E1E3992DF00F4CD3F /* MainViewController.swift in Sources */,
 			);
@@ -666,10 +678,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdhouse.Moby;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MobyCharters;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/Project Drive/Projects/Moby Project/Moby/Moby/Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -683,10 +696,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdhouse.Moby;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MobyCharters;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/Project Drive/Projects/Moby Project/Moby/Moby/Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

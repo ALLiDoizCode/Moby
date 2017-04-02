@@ -53,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GrX-GC-K6I" id="KR3-dr-WSe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -75,6 +75,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ora-nJ-bBi">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIu-FS-9UT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" id="X6V-mb-No3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WZE-iM-xkF">
@@ -86,7 +87,6 @@
                         <segue destination="vQ5-NO-HzT" kind="relationship" relationship="rootViewController" id="jZo-Be-xZS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EIu-FS-9UT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116" y="106.59670164917542"/>
         </scene>

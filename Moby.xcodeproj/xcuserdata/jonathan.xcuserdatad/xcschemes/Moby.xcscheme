@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AB0BA4A71DC15F5C003F7802"
-               BuildableName = "Moby.app"
+               BuildableName = "MobyCharters.app"
                BlueprintName = "Moby"
                ReferencedContainer = "container:Moby.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB0BA4A71DC15F5C003F7802"
-            BuildableName = "Moby.app"
+            BuildableName = "MobyCharters.app"
             BlueprintName = "Moby"
             ReferencedContainer = "container:Moby.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB0BA4A71DC15F5C003F7802"
-            BuildableName = "Moby.app"
+            BuildableName = "MobyCharters.app"
             BlueprintName = "Moby"
             ReferencedContainer = "container:Moby.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB0BA4A71DC15F5C003F7802"
-            BuildableName = "Moby.app"
+            BuildableName = "MobyCharters.app"
             BlueprintName = "Moby"
             ReferencedContainer = "container:Moby.xcodeproj">
          </BuildableReference>
