@@ -21,6 +21,7 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
     var currentLabel:UILabel!
     var barTopLayout:NSLayoutConstraint!
     var margins:UILayoutGuide!
+    var lastContentOffset: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,13 +108,31 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-       
+        
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return self.view.height * 0.45
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        
+        if (self.lastContentOffset > scrollView.contentOffset.y) {
+            // move up
+            filterAnimation()
+            
+        }
+        else if (self.lastContentOffset < scrollView.contentOffset.y) {
+            // move down
+            defaultBarAnimation()
+            
+        }
+        
+        // update the new position acquired
+        self.lastContentOffset = scrollView.contentOffset.y
     }
     
     /*override var prefersStatusBarHidden: Bool {

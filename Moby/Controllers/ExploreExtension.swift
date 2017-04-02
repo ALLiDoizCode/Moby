@@ -98,11 +98,11 @@ extension ExploreViewController {
         self.defaultSetup()
         
        
-        
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
             
             self.view.layoutIfNeeded()
-             self.filter.isHidden = true
+            
+            self.filter.isHidden = true
             self.defaultBar.isHidden = false
         }, completion: { (success) in
             
@@ -125,17 +125,19 @@ extension ExploreViewController {
         
         barTopLayout.isActive = false
         
-        self.filter.setAnchors()
+        
         self.setup()
+        self.filter.setAnchors()
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
          
-         self.view.layoutIfNeeded()
-        self.defaultBar.isHidden = true
-         self.filter.isHidden = false
-
-        }, completion: { (success) in
+            self.view.layoutIfNeeded()
             
+            self.defaultBar.isHidden = true
+            self.filter.isHidden = false
+            self.filter.alpha = 1
+            
+        }, completion: { (success) in
             
             
         })

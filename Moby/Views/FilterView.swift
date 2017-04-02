@@ -64,9 +64,9 @@ class FilterView: UIView {
         let margins = self.superview?.layoutMarginsGuide
         
         upArrow.translatesAutoresizingMaskIntoConstraints = false
-        upArrow.topAnchor.constraint(equalTo: (margins?.topAnchor)!, constant: 25).isActive = true
+        upArrow.topAnchor.constraint(equalTo: (margins?.topAnchor)!, constant: 40).isActive = true
         upArrow.leftAnchor.constraint(equalTo: (margins?.leftAnchor)!, constant: 20).isActive = true
-        upArrow.widthAnchor.constraint(equalTo: (margins?.widthAnchor)!, multiplier: 0.04).isActive = true
+        upArrow.widthAnchor.constraint(equalTo: (margins?.widthAnchor)!, multiplier: 0.045).isActive = true
         upArrow.heightAnchor.constraint(equalTo: upArrow.widthAnchor, multiplier: 1).isActive = true
         
         anywhereBar.topAnchor.constraint(equalTo: upArrow.bottomAnchor, constant: 20).isActive = true
@@ -98,8 +98,6 @@ class FilterView: UIView {
         label.text = text
         label.textColor = THEME_2
         label.font = RobotoFont.bold(with: fontWidth)
-        icon.image = image
-        icon.contentMode = .scaleAspectFill
         
         self.addSubview(container)
         container.addSubview(label)
@@ -121,6 +119,9 @@ class FilterView: UIView {
         label.rightAnchor.constraint(equalTo: container.rightAnchor, constant: 0).isActive = true
         label.topAnchor.constraint(equalTo: container.topAnchor, constant: 0).isActive = true
         label.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: 0).isActive = true
+        
+        icon.image = image
+        icon.contentMode = .scaleAspectFill
         
         return container
     }

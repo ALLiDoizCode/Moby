@@ -39,7 +39,7 @@ class DefaultBar: UIView {
         
         let margins = self.superview?.layoutMarginsGuide
         
-        bar.topAnchor.constraint(equalTo: (margins?.topAnchor)!, constant: 20).isActive = true
+        bar.topAnchor.constraint(equalTo: (margins?.topAnchor)!, constant: 40).isActive = true
         bar.leftAnchor.constraint(equalTo: (margins?.leftAnchor)!, constant: 0).isActive = true
         bar.rightAnchor.constraint(equalTo: (margins?.rightAnchor)!, constant: 0).isActive = true
         bar.heightAnchor.constraint(equalTo: (margins?.heightAnchor)!, multiplier: 0.065 ).isActive = true
