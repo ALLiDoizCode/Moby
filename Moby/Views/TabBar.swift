@@ -52,7 +52,7 @@ class TabBar: UIView {
     func setup() {
         
         self.backgroundColor = THEME_2
-        self.borderColor = Color.grey.darken2
+        self.borderColor = TEXT_COLOR
         self.borderWidth = 0.5
         
         let margins = self.layoutMarginsGuide
@@ -91,6 +91,9 @@ class TabBar: UIView {
         tab5.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
         tab5.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.2).isActive = true
         //tab5.backgroundColor = Color.red
+        
+        self.setNeedsLayout()
+        self.setNeedsDisplay()
 
     }
 

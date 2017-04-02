@@ -42,7 +42,8 @@
 		ABA1D3CA1E9157BC000719B8 /* BoatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1D3C91E9157BC000719B8 /* BoatDetailViewController.swift */; };
 		ABA1D3CC1E915B3C000719B8 /* DetailImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1D3CB1E915B3C000719B8 /* DetailImageCollectionViewCell.swift */; };
 		ABA1D3CF1E91638F000719B8 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1D3CE1E91638F000719B8 /* TitleView.swift */; };
-		ABA1D3D11E917273000719B8 /* infoBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1D3D01E917273000719B8 /* infoBarView.swift */; };
+		ABA1D3D31E9180E4000719B8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1D3D21E9180E4000719B8 /* AboutView.swift */; };
+		ABA1D3D51E918530000719B8 /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1D3D41E918530000719B8 /* mapView.swift */; };
 		ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */; };
 		ABBD9E701E6352C500BB6AA1 /* CaptinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */; };
 		ABC010061E834FB900293E6B /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC010051E834FB900293E6B /* StripeClient.swift */; };
@@ -110,7 +111,8 @@
 		ABA1D3C91E9157BC000719B8 /* BoatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatDetailViewController.swift; sourceTree = "<group>"; };
 		ABA1D3CB1E915B3C000719B8 /* DetailImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABA1D3CE1E91638F000719B8 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
-		ABA1D3D01E917273000719B8 /* infoBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoBarView.swift; sourceTree = "<group>"; };
+		ABA1D3D21E9180E4000719B8 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		ABA1D3D41E918530000719B8 /* mapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; };
 		ABBD9E6C1E6341C700BB6AA1 /* ScanCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCardViewController.swift; sourceTree = "<group>"; };
 		ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptinCell.swift; sourceTree = "<group>"; };
 		ABC010051E834FB900293E6B /* StripeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
@@ -280,7 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				ABA1D3CE1E91638F000719B8 /* TitleView.swift */,
-				ABA1D3D01E917273000719B8 /* infoBarView.swift */,
+				ABA1D3D21E9180E4000719B8 /* AboutView.swift */,
+				ABA1D3D41E918530000719B8 /* mapView.swift */,
 			);
 			path = BoatDetailViews;
 			sourceTree = "<group>";
@@ -503,8 +506,8 @@
 				ABC010061E834FB900293E6B /* StripeClient.swift in Sources */,
 				AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */,
 				AB33AF081E824A83005AFA6F /* MultiPartUpload.swift in Sources */,
-				ABA1D3D11E917273000719B8 /* infoBarView.swift in Sources */,
 				AB261CED1E8FFFBC00DF97CE /* ExploreExtension.swift in Sources */,
+				ABA1D3D51E918530000719B8 /* mapView.swift in Sources */,
 				AB3AA2821DC2E63C000FC168 /* Client.swift in Sources */,
 				ABBD9E6D1E6341C700BB6AA1 /* ScanCardViewController.swift in Sources */,
 				AB92018B1E8864370042F1E8 /* BoatImages.swift in Sources */,
@@ -520,6 +523,7 @@
 				ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */,
 				AB9201871E8864150042F1E8 /* Trip.swift in Sources */,
 				AB0BA4AC1DC15F5D003F7802 /* AppDelegate.swift in Sources */,
+				ABA1D3D31E9180E4000719B8 /* AboutView.swift in Sources */,
 				AB9201891E8864260042F1E8 /* Charge.swift in Sources */,
 				AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */,
 				AB524D571E880EAB00575BAA /* DataStore.swift in Sources */,

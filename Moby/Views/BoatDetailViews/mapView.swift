@@ -1,5 +1,5 @@
 //
-//  infoBarView.swift
+//  mapView.swift
 //  Moby
 //
 //  Created by Jonathan on 4/2/17.
@@ -8,13 +8,12 @@
 
 import UIKit
 import Material
+import MapKit
 
-class infoBarView: UIView {
+class mapView: UIView {
     
-    var icon1 = IconView()
-    var icon2 = IconView()
-    var icon3 = IconView()
-    var icon4 = IconView()
+    var myWindow: UIWindow?
+    var map: MKMapView?
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -23,18 +22,14 @@ class infoBarView: UIView {
         // Drawing code
     }
     */
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addSubview(icon1)
-        self.addSubview(icon2)
-        self.addSubview(icon3)
-        self.addSubview(icon4)
-    }
-    
-    func setup(){
+        self.myWindow = UIWindow(frame: UIScreen.main.bounds)
+        self.backgroundColor = THEME_2
         
+        self.map = MKMapView(frame: CGRect(x: 0, y: 20, width: (myWindow?.frame.width)!, height: (myWindow?.frame.height)! * 0.45))
+        self.addSubview(self.map!)
         
     }
     

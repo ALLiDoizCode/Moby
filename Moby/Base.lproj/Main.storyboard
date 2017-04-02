@@ -6,14 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Explore View Controller-->
         <scene sceneID="OrZ-6f-2Di">
             <objects>
-                <viewController id="vQ5-NO-HzT" customClass="ExploreViewController" customModule="Moby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vQ5-NO-HzT" customClass="ExploreViewController" customModule="MobyCharters" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e4T-bJ-ZyO"/>
                         <viewControllerLayoutGuide type="bottom" id="ofV-Jq-W9d"/>
@@ -29,56 +28,12 @@
             </objects>
             <point key="canvasLocation" x="1055.2" y="107.49625187406298"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="YXg-gw-HaX">
-            <objects>
-                <viewController id="bdo-gf-2NT" customClass="ViewController" customModule="Moby" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iCq-x9-bcu"/>
-                        <viewControllerLayoutGuide type="bottom" id="QQR-ZC-fwH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aDL-BV-5pS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="151" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rwc-0G-zlf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="6Av-Up-5p7"/>
-                                    <constraint firstAttribute="height" constant="667" id="rcb-kL-tFj"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CaptinCell" rowHeight="151" id="GrX-GC-K6I" customClass="CaptinCell" customModule="Moby" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="151"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GrX-GC-K6I" id="KR3-dr-WSe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rwc-0G-zlf" secondAttribute="trailing" constant="-16" id="1uO-pj-iOH"/>
-                            <constraint firstItem="Rwc-0G-zlf" firstAttribute="top" secondItem="iCq-x9-bcu" secondAttribute="bottom" constant="-20" id="9We-2w-mt3"/>
-                            <constraint firstItem="Rwc-0G-zlf" firstAttribute="leading" secondItem="aDL-BV-5pS" secondAttribute="leadingMargin" constant="-16" id="ksB-9F-Nxw"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="amH-2e-Hcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2437.5999999999999" y="136.28185907046478"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ora-nJ-bBi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EIu-FS-9UT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" id="X6V-mb-No3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WZE-iM-xkF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WZE-iM-xkF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -87,6 +42,7 @@
                         <segue destination="vQ5-NO-HzT" kind="relationship" relationship="rootViewController" id="jZo-Be-xZS"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIu-FS-9UT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116" y="106.59670164917542"/>
         </scene>
