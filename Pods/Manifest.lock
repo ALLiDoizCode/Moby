@@ -1,61 +1,42 @@
 PODS:
   - Alamofire (4.0.1)
-  - Animo (1.3.0)
   - AWSCore (2.5.0)
   - AWSS3 (2.5.0):
     - AWSCore (= 2.5.0)
-  - Bolts-Swift (1.3.0)
-  - Bolts/Tasks (1.8.4)
   - BubbleTransition (2.0.1)
   - CardIO (5.4.1)
   - Cartography (1.0.1)
+  - CenteredCollectionView (0.9.6)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - GoogleMaps (2.1.0):
-    - GoogleMaps/Maps (= 2.1.0)
-  - GoogleMaps/Base (2.1.0)
-  - GoogleMaps/Maps (2.1.0):
-    - GoogleMaps/Base (= 2.1.0)
+  - Cosmos (8.0.2)
   - IQKeyboardManagerSwift (4.0.7)
   - Material (2.2.5):
     - Material/Core (= 2.2.5)
   - Material/Core (2.2.5)
-  - NVActivityIndicatorView (3.2)
-  - Parse (1.14.2):
-    - Bolts/Tasks (~> 1.8)
-  - ParseLiveQuery (1.1.0):
-    - Bolts-Swift (~> 1.3)
-    - Parse (~> 1.14.2)
-    - SocketRocket (~> 0.5)
   - PlaidClient (0.6)
   - Player (0.2.2)
   - SendBirdSDK (3.0.28)
-  - SocketRocket (0.5.1)
   - Stripe (9.3.0)
-  - SVProgressHUD (2.1.2)
   - SwiftEventBus (2.1.0)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - Alamofire
-  - Animo
   - AWSS3
   - BubbleTransition (~> 2.0.0)
   - CardIO
   - Cartography (~> 1.0.1)
+  - CenteredCollectionView
   - ChameleonFramework/Swift
-  - GoogleMaps
+  - Cosmos (~> 8.0.2)
   - IQKeyboardManagerSwift
   - Material (~> 2.2)
-  - NVActivityIndicatorView
-  - Parse
-  - ParseLiveQuery
   - PlaidClient (from `https://github.com/natemann/PlaidClient.git`)
   - Player (~> 0.2.0)
   - SendBirdSDK
   - Stripe
-  - SVProgressHUD
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `2.1.2`)
   - SwiftyJSON
 
@@ -76,30 +57,23 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  Animo: 1d66c0bedb07157cda7dca10f2ddaf97c03959b9
   AWSCore: e9839d27ceaa2db75934a9c418630ce63c23e347
   AWSS3: 3678dd99006ff77c825fb857fc7cbaca0db848c6
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Bolts-Swift: fa98d1b59fc1acea9b21a21306dcdca1c85e3737
   BubbleTransition: bb24ed389ab672eecf3c87170d0a73f959a8e696
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
+  CenteredCollectionView: 19fd5b1084ce45ebe9519d2f5441132c0a1bbed6
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
+  Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Material: 9d1d084759d908a5bddc37e6e9d22874da296621
-  NVActivityIndicatorView: 28942c18ced111a6a3ce5e6f5b27d9d40116d639
-  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
-  ParseLiveQuery: 4c0f3f571ba0f358a4e592cd7d4b55c95ab9655e
   PlaidClient: 9afd1cb35fa3a273b2c3e25f0b7b240d0368ca60
   Player: 5cff076cc9f13b51f56b6fb7bed24431569b8102
   SendBirdSDK: ea3ee1a1219da90a8f54894a54224b615855fdb8
-  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   Stripe: 0f41a33a6fa3ac76ee668d7df3e2680c28b8ab1a
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 3cd5b1f344142ad5e0129e53247e5b4717b5a272
+PODFILE CHECKSUM: f9a4d0d8b0ab23083e96aabce7769a168b325366
 
 COCOAPODS: 1.1.1

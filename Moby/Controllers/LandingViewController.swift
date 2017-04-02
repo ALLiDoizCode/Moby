@@ -9,7 +9,6 @@
 import UIKit
 import Material
 import Cartography
-import Animo
 import BubbleTransition
 
 class LandingViewController: UIViewController,UIViewControllerTransitioningDelegate {

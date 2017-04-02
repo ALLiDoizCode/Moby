@@ -16,9 +16,10 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
     var filter = FilterView()
     var defaultBar = DefaultBar()
     var tabBar = TabBar()
-    let boats = ["boat_1","boat_2","boat_3","boat_4"]
-    let prices = ["8,520","652","324","514"]
-    let reviews = ["50","32","74","14"]
+    let boats = ["boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4"]
+    let prices = ["8,520","652","324","514","8,520","652","324","514","8,520","652","324","514","8,520","652","324","514","8,520","652","324","514","8,520","652","324","514"]
+    let reviews = ["50","32","74","14","50","32","74","14","50","32","74","14","50","32","74","14","50","32","74","14","50","32","74","14"]
+    let stars = [5,3.2,4,4.3,5,3.2,4,4.3,5,3.2,4,4.3,5,3.2,4,4.3,5,3.2,4,4.3,5,3.2,4,4.3]
     var currentLabel:UILabel!
     var barTopLayout:NSLayoutConstraint!
     var margins:UILayoutGuide!
@@ -26,6 +27,8 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DetailImageCollectionViewCell()
         
         margins = self.view.layoutMarginsGuide
         
@@ -77,7 +80,7 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
         tableView.bottomAnchor.constraint(equalTo: tabBar.topAnchor, constant: 0).isActive = true
         
         tabBar.setup()
-       
+        
         // Do any additional setup after loading the view.
     }
 
@@ -102,7 +105,7 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CardCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardCell
         
         let image = UIImage(named: boats[indexPath.row])
         
@@ -110,6 +113,7 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
         cell.priceLbl.text = "$\(prices[indexPath.row])"
         cell.reviewsLbl.text = "\(reviews[indexPath.row]) Reviews"
         cell.titleLbl.text = "Great boat for a day on the river in"
+        cell.stars.rating = stars[indexPath.row]
         
         return cell
     }
@@ -117,13 +121,21 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        
+        cell.setNeedsLayout()
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.height * 0.45
+        return self.view.height * 0.5
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let controller = BoatDetailViewController()
+        
+        self.present(controller, animated: true, completion: nil)
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

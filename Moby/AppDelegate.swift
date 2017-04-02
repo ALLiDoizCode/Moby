@@ -8,9 +8,6 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import GoogleMaps
-import Parse
-import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
