@@ -26,6 +26,7 @@ let THEME_2 = Color.grey.lighten5
 let THEME_3 = UIColor(red:0.18, green:0.68, blue:0.98, alpha:1.0).lighten(byPercentage: 50)
 
 let TEXT_COLOR = Color.grey.darken2
+let BORDER_COLOR = Color.grey.lighten1
 
 let fontWidth = (UIScreen.main.bounds.width) * 0.034
 let largeFontWidth = (UIScreen.main.bounds.width) * 0.075

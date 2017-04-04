@@ -15,6 +15,9 @@
 		AB0BA4C11DC15F5D003F7802 /* MobyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4C01DC15F5D003F7802 /* MobyTests.swift */; };
 		AB0BA4CC1DC15F5D003F7802 /* MobyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BA4CB1DC15F5D003F7802 /* MobyUITests.swift */; };
 		AB10DF241E8230F20075133D /* IDScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10DF231E8230F20075133D /* IDScannerViewController.swift */; };
+		AB10E5C61E931A21004839C8 /* FeaturedReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5C51E931A21004839C8 /* FeaturedReview.swift */; };
+		AB10E5C81E932BC3004839C8 /* CustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5C71E932BC3004839C8 /* CustomShadow.swift */; };
+		AB10E5CA1E932C08004839C8 /* PayTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5C91E932C08004839C8 /* PayTabView.swift */; };
 		AB20BCD51E632843007DADCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20BCD41E632843007DADCA /* Constants.swift */; };
 		AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495B1E3E3CBB000D3E82 /* RealTime.swift */; };
 		AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEA1E8FFDA400DF97CE /* BarView.swift */; };
@@ -83,6 +86,9 @@
 		AB0BA4CB1DC15F5D003F7802 /* MobyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobyUITests.swift; sourceTree = "<group>"; };
 		AB0BA4CD1DC15F5D003F7802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB10DF231E8230F20075133D /* IDScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDScannerViewController.swift; sourceTree = "<group>"; };
+		AB10E5C51E931A21004839C8 /* FeaturedReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedReview.swift; sourceTree = "<group>"; };
+		AB10E5C71E932BC3004839C8 /* CustomShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShadow.swift; sourceTree = "<group>"; };
+		AB10E5C91E932C08004839C8 /* PayTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayTabView.swift; sourceTree = "<group>"; };
 		AB20BCD41E632843007DADCA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB25495B1E3E3CBB000D3E82 /* RealTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
 		AB261CEA1E8FFDA400DF97CE /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 			children = (
 				AB20BCD41E632843007DADCA /* Constants.swift */,
 				AB524D561E880EAB00575BAA /* DataStore.swift */,
+				AB10E5C71E932BC3004839C8 /* CustomShadow.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -232,6 +239,7 @@
 				AB261CF01E90430900DF97CE /* DefaultBar.swift */,
 				AB261CF21E9081C700DF97CE /* TabBar.swift */,
 				AB7D63FB1E9082A200B924F6 /* IconView.swift */,
+				AB10E5C91E932C08004839C8 /* PayTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +292,7 @@
 				ABA1D3CE1E91638F000719B8 /* TitleView.swift */,
 				ABA1D3D21E9180E4000719B8 /* AboutView.swift */,
 				ABA1D3D41E918530000719B8 /* mapView.swift */,
+				AB10E5C51E931A21004839C8 /* FeaturedReview.swift */,
 			);
 			path = BoatDetailViews;
 			sourceTree = "<group>";
@@ -495,6 +504,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3AA2791DC2CE4C000FC168 /* MobyBoat.swift in Sources */,
+				AB10E5C61E931A21004839C8 /* FeaturedReview.swift in Sources */,
+				AB10E5C81E932BC3004839C8 /* CustomShadow.swift in Sources */,
+				AB10E5CA1E932C08004839C8 /* PayTabView.swift in Sources */,
 				AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */,
 				AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */,
 				AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */,

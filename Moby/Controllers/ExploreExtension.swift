@@ -28,6 +28,8 @@ extension ExploreViewController {
         barTopLayout = bar.topAnchor.constraint(equalTo: filter.bottomAnchor, constant: 0)
         barTopLayout.isActive = true
         
+       
+        
     }
     
     func defaultSetup(){

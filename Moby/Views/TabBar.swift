@@ -52,8 +52,8 @@ class TabBar: UIView {
     func setup() {
         
         self.backgroundColor = THEME_2
-        self.borderColor = TEXT_COLOR
-        self.borderWidth = 0.5
+        self.borderColor = BORDER_COLOR
+        self.borderWidth = 0.2
         
         let margins = self.layoutMarginsGuide
         

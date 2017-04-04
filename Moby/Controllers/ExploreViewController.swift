@@ -81,6 +81,8 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         tabBar.setup()
         
+
+        
         // Do any additional setup after loading the view.
     }
 

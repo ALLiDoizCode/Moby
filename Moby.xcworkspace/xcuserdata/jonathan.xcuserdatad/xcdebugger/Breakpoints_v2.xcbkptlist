@@ -291,11 +291,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Controllers/BoatDetailViewController.swift"
-            timestampString = "512867402.732508"
+            timestampString = "512962997.811129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "constrainViews()"
             landmarkType = "7">
          </BreakpointContent>

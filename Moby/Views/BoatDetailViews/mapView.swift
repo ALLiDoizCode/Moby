@@ -28,7 +28,7 @@ class mapView: UIView {
         self.myWindow = UIWindow(frame: UIScreen.main.bounds)
         self.backgroundColor = THEME_2
         
-        self.map = MKMapView(frame: CGRect(x: 0, y: 20, width: (myWindow?.frame.width)!, height: (myWindow?.frame.height)! * 0.45))
+        self.map = MKMapView(frame: CGRect(x: 0, y: 00, width: (myWindow?.frame.width)!, height: (myWindow?.frame.height)! * 0.45))
         self.addSubview(self.map!)
         
     }

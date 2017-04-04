@@ -22,6 +22,10 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     var aboutHeight:NSLayoutConstraint!
     var map = mapView()
     let container = UIView()
+    var timeBar = TabBar()
+    var depatureTime = UILabel()
+    var featuredReiview = FeaturedReview()
+    var payTab = PayTabView()
     
     let boats = ["boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4"]
 
@@ -55,7 +59,10 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         scrollView.addSubview(backButton)
         scrollView.addSubview(about)
         scrollView.addSubview(map)
-        
+        scrollView.addSubview(timeBar)
+        scrollView.addSubview(depatureTime)
+        scrollView.addSubview(featuredReiview)
+        self.view.addSubview(payTab)
         
         setup()
         constrainViews()
@@ -80,7 +87,15 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         scrollView.topAnchor.constraint(equalTo: margins.topAnchor, constant: -10).isActive = true
         scrollView.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
         scrollView.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
-        scrollView.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 1).isActive = true
+        scrollView.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.9).isActive = true
+        //scrollView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true*/
+        
+        payTab.translatesAutoresizingMaskIntoConstraints = false
+        payTab.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
+        payTab.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
+        payTab.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
+        //payTab.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.10).isActive = true
+        payTab.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
         //scrollView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true*/
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -112,33 +127,66 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         about.translatesAutoresizingMaskIntoConstraints = false
         about.topAnchor.constraint(equalTo: itemBar.bottomAnchor, constant: 0).isActive = true
-        about.bottomAnchor.constraint(equalTo: map.topAnchor, constant: 0).isActive = true
+        aboutHeight = about.bottomAnchor.constraint(equalTo: about.more.bottomAnchor, constant: 0)
         about.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
         about.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
-        aboutHeight = about.heightAnchor.constraint(equalTo: about.body.heightAnchor, multiplier: 1.25)
+        //aboutHeight = about.heightAnchor.constraint(equalTo: about.body.heightAnchor, multiplier: 1)
         aboutHeight.isActive = true
         
+        timeBar.translatesAutoresizingMaskIntoConstraints = false
+        timeBar.topAnchor.constraint(equalTo: about.bottomAnchor, constant: 0).isActive = true
+        timeBar.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
+        timeBar.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
+        timeBar.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.12).isActive = true
+        //timeBar.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
+        
         map.translatesAutoresizingMaskIntoConstraints = false
-        //map.topAnchor.constraint(equalTo: about.bottomAnchor, constant: 0).isActive = true
+        map.topAnchor.constraint(equalTo: timeBar.bottomAnchor, constant: 0).isActive = true
         map.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
         map.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
         map.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.45).isActive = true
-        map.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
+        //map.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
+        
+        depatureTime.translatesAutoresizingMaskIntoConstraints = false
+        depatureTime.topAnchor.constraint(equalTo: map.bottomAnchor, constant: 0).isActive = true
+        depatureTime.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: 0).isActive = true
+        depatureTime.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
+        depatureTime.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.12).isActive = true
+        //depatureTime.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
+        
+        featuredReiview.translatesAutoresizingMaskIntoConstraints = false
+        featuredReiview.topAnchor.constraint(equalTo: depatureTime.bottomAnchor, constant: 0).isActive = true
+        featuredReiview.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 10).isActive = true
+        featuredReiview.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
+        featuredReiview.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
+        featuredReiview.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.45).isActive = true
+       
         
         //self.scrollView.contentSize = CGSize(width: scrollView.frame.width * 2, height: scrollView.frame.height * 2)
         
         self.scrollView.setNeedsLayout()
         self.scrollView.layoutIfNeeded()
         self.scrollView.setNeedsDisplay()
+        
+        
+        let shadow = UIBezierPath(rect: payTab.bounds)
+        
+        payTab.layer.masksToBounds = false
+        payTab.layer.shadowColor = UIColor.black.cgColor
+        payTab.layer.shadowOffset = CGSize(width: -15, height: 20)
+        payTab.layer.shadowOpacity = 0.4
+        payTab.layer.shadowPath = shadow.cgPath
+        
+        
     }
     
     func readMore(){
         
         guard self.about.currnetHeight.isActive == true else {
             
-            aboutHeight.isActive = false
+            /*aboutHeight.isActive = false
             aboutHeight = about.heightAnchor.constraint(equalTo: about.body.heightAnchor, multiplier: 1.25)
-            aboutHeight.isActive = true
+            aboutHeight.isActive = true*/
             
             about.currnetHeight.isActive = true
             
@@ -154,9 +202,9 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
             return
         }
         
-        aboutHeight.isActive = false
+        /*aboutHeight.isActive = false
         aboutHeight = about.heightAnchor.constraint(equalTo: about.body.heightAnchor, multiplier: 1.05)
-        aboutHeight.isActive = true
+        aboutHeight.isActive = true*/
         
         about.currnetHeight.isActive = false
         
@@ -184,6 +232,8 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         let image3 = UIImage(named: "people")
         let image4 = UIImage(named: "tub")
         let image5 = UIImage(named: "year")
+        let timeBarImage = UIImage(named: "time")
+        let amenities = UIImage(named: "amenities")
         
         itemBar.tab1.icon.image = image1
         itemBar.tab1.label.text = "Power"
@@ -199,6 +249,29 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         itemBar.tab5.icon.image = image5
         itemBar.tab5.label.text = "2011"
+        
+        timeBar.tab1.label.text = "2 hour min"
+        timeBar.tab1.icon.image = timeBarImage
+        timeBar.tab3.label.text = "Amenities"
+        timeBar.tab3.icon.image = amenities
+        
+        timeBar.tab2.isHidden = true
+        timeBar.tab4.isHidden = true
+        timeBar.tab5.isHidden = true
+        
+        depatureTime.text = "Departure 8:00AM"
+        depatureTime.textColor = TEXT_COLOR
+        depatureTime.font = RobotoFont.light(with: largeFontWidth)
+        
+        payTab.priceLabel.text = "$225"
+        payTab.subLabel.text = "per hour"
+        
+        featuredReiview.profileImage.image = profileImage
+        featuredReiview.stars.rating = 4.2
+        featuredReiview.reviewName.text = "John"
+        featuredReiview.more.setTitle("Read all 86", for: .normal)
+        featuredReiview.reviewDate.text = "March 2017"
+        featuredReiview.body.text = "I had another great experience renting from Dmitry. I've booked with Dmitry several times now and he is always great to work with. He has also taught me a lot about boating. I like his Sea Ray 245 a lot -- great features and very well maintained. It turned out to be a nice day for a cruise up and down the Potomac -- to Georgetown, down to Old Town, and some other stops along the way. I can't say enough about how great Dmitry is to work with. I'm looking forward to taking Eureka out again."
         
         backButton.image = UIImage(named: "back")
         backButton.imageView?.contentMode = .scaleAspectFit
