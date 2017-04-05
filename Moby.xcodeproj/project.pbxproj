@@ -18,6 +18,9 @@
 		AB10E5C61E931A21004839C8 /* FeaturedReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5C51E931A21004839C8 /* FeaturedReview.swift */; };
 		AB10E5C81E932BC3004839C8 /* CustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5C71E932BC3004839C8 /* CustomShadow.swift */; };
 		AB10E5CA1E932C08004839C8 /* PayTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5C91E932C08004839C8 /* PayTabView.swift */; };
+		AB10E5CD1E945FD0004839C8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5CC1E945FD0004839C8 /* ReviewViewController.swift */; };
+		AB10E5D01E945FF0004839C8 /* ReviewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5CF1E945FF0004839C8 /* ReviewHeader.swift */; };
+		AB10E5D21E94767F004839C8 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D11E94767F004839C8 /* ReviewTableViewCell.swift */; };
 		AB20BCD51E632843007DADCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20BCD41E632843007DADCA /* Constants.swift */; };
 		AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495B1E3E3CBB000D3E82 /* RealTime.swift */; };
 		AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEA1E8FFDA400DF97CE /* BarView.swift */; };
@@ -89,6 +92,9 @@
 		AB10E5C51E931A21004839C8 /* FeaturedReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedReview.swift; sourceTree = "<group>"; };
 		AB10E5C71E932BC3004839C8 /* CustomShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShadow.swift; sourceTree = "<group>"; };
 		AB10E5C91E932C08004839C8 /* PayTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayTabView.swift; sourceTree = "<group>"; };
+		AB10E5CC1E945FD0004839C8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		AB10E5CF1E945FF0004839C8 /* ReviewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewHeader.swift; sourceTree = "<group>"; };
+		AB10E5D11E94767F004839C8 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		AB20BCD41E632843007DADCA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB25495B1E3E3CBB000D3E82 /* RealTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
 		AB261CEA1E8FFDA400DF97CE /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
@@ -220,6 +226,14 @@
 			path = MobyUITests;
 			sourceTree = "<group>";
 		};
+		AB10E5CE1E945FD3004839C8 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				AB10E5CF1E945FF0004839C8 /* ReviewHeader.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
 		AB25495D1E3E673B000D3E82 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +247,7 @@
 		AB261CE91E8FFCA900DF97CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB10E5CE1E945FD3004839C8 /* Review */,
 				ABA1D3CD1E916358000719B8 /* BoatDetailViews */,
 				AB261CEA1E8FFDA400DF97CE /* BarView.swift */,
 				AB261CEE1E90273900DF97CE /* FilterView.swift */,
@@ -282,6 +297,7 @@
 				AB4691C01E85A7DD00266C1E /* BankViewController.swift */,
 				AB261CEC1E8FFFBC00DF97CE /* ExploreExtension.swift */,
 				ABA1D3C91E9157BC000719B8 /* BoatDetailViewController.swift */,
+				AB10E5CC1E945FD0004839C8 /* ReviewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +316,7 @@
 		ABBD9E6E1E63528700BB6AA1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				AB10E5D11E94767F004839C8 /* ReviewTableViewCell.swift */,
 				ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */,
 				AB65030E1E7EB1E600127E9F /* CardCell.swift */,
 				ABA1D3CB1E915B3C000719B8 /* DetailImageCollectionViewCell.swift */,
@@ -505,11 +522,13 @@
 			files = (
 				AB3AA2791DC2CE4C000FC168 /* MobyBoat.swift in Sources */,
 				AB10E5C61E931A21004839C8 /* FeaturedReview.swift in Sources */,
+				AB10E5CD1E945FD0004839C8 /* ReviewViewController.swift in Sources */,
 				AB10E5C81E932BC3004839C8 /* CustomShadow.swift in Sources */,
 				AB10E5CA1E932C08004839C8 /* PayTabView.swift in Sources */,
 				AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */,
 				AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */,
 				AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */,
+				AB10E5D01E945FF0004839C8 /* ReviewHeader.swift in Sources */,
 				AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */,
 				AB261CF11E90430900DF97CE /* DefaultBar.swift in Sources */,
 				ABA1D3CA1E9157BC000719B8 /* BoatDetailViewController.swift in Sources */,
@@ -530,6 +549,7 @@
 				ABA1D3CC1E915B3C000719B8 /* DetailImageCollectionViewCell.swift in Sources */,
 				AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */,
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
+				AB10E5D21E94767F004839C8 /* ReviewTableViewCell.swift in Sources */,
 				AB20BCD51E632843007DADCA /* Constants.swift in Sources */,
 				AB10DF241E8230F20075133D /* IDScannerViewController.swift in Sources */,
 				ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */,

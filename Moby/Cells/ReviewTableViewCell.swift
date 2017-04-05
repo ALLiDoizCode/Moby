@@ -1,8 +1,8 @@
 //
-//  featuredReview.swift
+//  ReviewTableViewCell.swift
 //  Moby
 //
-//  Created by Jonathan on 4/3/17.
+//  Created by Jonathan on 4/4/17.
 //  Copyright © 2017 Jonathan. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import Material
 import Cosmos
 
-class FeaturedReview: FlatButton {
+class ReviewTableViewCell: UITableViewCell {
 
     var reviewName = UILabel()
     var reviewDate = UILabel()
@@ -27,8 +27,10 @@ class FeaturedReview: FlatButton {
      }
      */
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        
         
         self.addSubview(profileImage)
         self.addSubview(reviewName)
@@ -36,7 +38,7 @@ class FeaturedReview: FlatButton {
         self.addSubview(body)
         self.addSubview(more)
         self.addSubview(stars)
-        
+        self.backgroundColor = THEME_2
         
         constrain()
         setup()
@@ -69,14 +71,10 @@ class FeaturedReview: FlatButton {
         body.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 20).isActive = true
         body.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -20).isActive = true
         body.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 10).isActive = true
-        body.bottomAnchor.constraint(equalTo: more.topAnchor, constant: -30).isActive = true
+        body.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -30).isActive = true
         body.clipsToBounds = true
         
-        more.translatesAutoresizingMaskIntoConstraints = false
-        more.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: -30).isActive = true
-        more.topAnchor.constraint(equalTo: body.bottomAnchor, constant: -5).isActive = true
-        more.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -30).isActive = true
-        
+       
         self.layoutIfNeeded()
         self.setNeedsDisplay()
     }
@@ -117,6 +115,12 @@ class FeaturedReview: FlatButton {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
 
 }

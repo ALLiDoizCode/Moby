@@ -291,12 +291,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Moby/Controllers/BoatDetailViewController.swift"
-            timestampString = "512962997.811129"
+            timestampString = "513043904.971732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "constrainViews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Moby/Controllers/BoatDetailViewController.swift"
+            timestampString = "513043804.768817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "gotoReviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

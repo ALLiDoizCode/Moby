@@ -27,6 +27,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     var featuredReiview = FeaturedReview()
     var payTab = PayTabView()
     
+    
     let boats = ["boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4"]
 
     override func viewDidLoad() {
@@ -77,6 +78,15 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    func gotoReviews(){
+        
+        let controller = ReviewViewController()
+        
+        self.present(controller, animated: true) {
+            
+        }
     }
     
     func constrainViews(){
@@ -266,6 +276,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         payTab.priceLabel.text = "$225"
         payTab.subLabel.text = "per hour"
         
+        featuredReiview.addTarget(self, action: #selector(BoatDetailViewController.gotoReviews), for: .touchUpInside)
         featuredReiview.profileImage.image = profileImage
         featuredReiview.stars.rating = 4.2
         featuredReiview.reviewName.text = "John"
