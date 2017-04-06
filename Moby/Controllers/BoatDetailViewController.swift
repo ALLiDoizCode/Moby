@@ -28,8 +28,6 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     var payTab = PayTabView()
     
     
-    let boats = ["boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -264,6 +262,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         timeBar.tab1.icon.image = timeBarImage
         timeBar.tab3.label.text = "Amenities"
         timeBar.tab3.icon.image = amenities
+        timeBar.tab3.gesture.addTarget(self, action: #selector(BoatDetailViewController.showAmenities))
         
         timeBar.tab2.isHidden = true
         timeBar.tab4.isHidden = true
@@ -282,14 +281,20 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         featuredReiview.reviewName.text = "John"
         featuredReiview.more.setTitle("Read all 86", for: .normal)
         featuredReiview.reviewDate.text = "March 2017"
-        featuredReiview.body.text = "I had another great experience renting from Dmitry. I've booked with Dmitry several times now and he is always great to work with. He has also taught me a lot about boating. I like his Sea Ray 245 a lot -- great features and very well maintained. It turned out to be a nice day for a cruise up and down the Potomac -- to Georgetown, down to Old Town, and some other stops along the way. I can't say enough about how great Dmitry is to work with. I'm looking forward to taking Eureka out again."
+        featuredReiview.body.text = FAKE_REVIEW
         
         backButton.image = UIImage(named: "back")
         backButton.imageView?.contentMode = .scaleAspectFit
         backButton.addTarget(self, action: #selector(BoatDetailViewController.back), for: .touchUpInside)
         about.more.addTarget(self, action: #selector(BoatDetailViewController.readMore), for: .touchUpInside)
-        about.body.text = "Motor yacht Paesana is a 76 foot luxury express cruiser motor yacht. Paesana was designed to meet the performance needs for passengers wanting to reach the destination with exhilarating speed while doing so in style.Built to sleep six and cruise comfortably with twelve passengers. Choey Lee yachts have spared no expense or effort in building a yacht that takes every detail into account bringing elegance to function and fun.Motor yacht Paesana is a 76 foot luxury express cruiser motor yacht. Paesana was designed to meet the performance needs for passengers wanting to reach the destination with exhilarating speed while doing so in style.Built to sleep six and cruise comfortably with twelve passengers. Choey Lee yachts have spared no expense or effort in building a yacht that takes every detail into account bringing elegance to function and fun.Motor yacht Paesana is a 76 foot luxury express cruiser motor yacht. Paesana was designed to meet the performance needs for passengers wanting to reach the destination with exhilarating speed while doing so in style.Built to sleep six and cruise comfortably with twelve passengers. Choey Lee yachts have spared no expense or effort in building a yacht that takes every detail into account bringing elegance to function and fun.Motor yacht Paesana is a 76 foot luxury express cruiser motor yacht. Paesana was designed to meet the performance needs for passengers wanting to reach the destination with exhilarating speed while doing so in style.Built to sleep six and cruise comfortably with twelve passengers. Choey Lee yachts have spared no expense or effort in building a yacht that takes every detail into account bringing elegance to function and fun.Motor yacht Paesana is a 76 foot luxury express cruiser motor yacht. Paesana was designed to meet the performance needs for passengers wanting to reach the destination with exhilarating speed while doing so in style.Built to sleep six and cruise comfortably with twelve passengers. Choey Lee yachts have spared no expense or effort in building a yacht that takes every detail into account bringing elegance to function and fun.Motor yacht Paesana is a 76 foot luxury express cruiser motor yacht. Paesana was designed to meet the performance needs for passengers wanting to reach the destination with exhilarating speed while doing so in style.Built to sleep six and cruise comfortably with twelve passengers. Choey Lee yachts have spared no expense or effort in building a yacht that takes every detail into account bringing elegance to function and fun.Motor yacht Paesana is a 76 foot luxury express cruiser motor yacht. Paesana was designed to meet the performance needs for passengers wanting to reach the destination with exhilarating speed while doing so in style.Built to sleep six and cruise comfortably with twelve passengers. Choey Lee yachts have spared no expense or effort in building a yacht that takes every detail into account bringing elegance to function and fun.Motor yacht Paesana is a 76 foot luxury express cruiser motor yacht. Paesana was designed to meet the performance needs for passengers wanting to reach the destination with exhilarating speed while doing so in style.Built to sleep six and cruise comfortably with twelve passengers. Choey Lee yachts have spared no expense or effort in building a yacht that takes every detail into account bringing elegance to function and fun."
+        about.body.text = FAKE_BODY
         
+    }
+    
+    func showAmenities() {
+        
+        let controller = AmenitiesViewController()
+        self.present(controller, animated: true, completion: nil)
     }
     
     func back(){

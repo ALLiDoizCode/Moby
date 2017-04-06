@@ -21,6 +21,10 @@
 		AB10E5CD1E945FD0004839C8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5CC1E945FD0004839C8 /* ReviewViewController.swift */; };
 		AB10E5D01E945FF0004839C8 /* ReviewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5CF1E945FF0004839C8 /* ReviewHeader.swift */; };
 		AB10E5D21E94767F004839C8 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D11E94767F004839C8 /* ReviewTableViewCell.swift */; };
+		AB10E5D41E95B0B0004839C8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D31E95B0B0004839C8 /* BaseViewController.swift */; };
+		AB10E5D61E95B42E004839C8 /* fakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D51E95B42E004839C8 /* fakeData.swift */; };
+		AB10E5D81E95B53D004839C8 /* AmenitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D71E95B53D004839C8 /* AmenitiesViewController.swift */; };
+		AB10E5DA1E95BE5A004839C8 /* AmenitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D91E95BE5A004839C8 /* AmenitiesTableViewCell.swift */; };
 		AB20BCD51E632843007DADCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20BCD41E632843007DADCA /* Constants.swift */; };
 		AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495B1E3E3CBB000D3E82 /* RealTime.swift */; };
 		AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEA1E8FFDA400DF97CE /* BarView.swift */; };
@@ -95,6 +99,10 @@
 		AB10E5CC1E945FD0004839C8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		AB10E5CF1E945FF0004839C8 /* ReviewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewHeader.swift; sourceTree = "<group>"; };
 		AB10E5D11E94767F004839C8 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		AB10E5D31E95B0B0004839C8 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		AB10E5D51E95B42E004839C8 /* fakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fakeData.swift; sourceTree = "<group>"; };
+		AB10E5D71E95B53D004839C8 /* AmenitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesViewController.swift; sourceTree = "<group>"; };
+		AB10E5D91E95BE5A004839C8 /* AmenitiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesTableViewCell.swift; sourceTree = "<group>"; };
 		AB20BCD41E632843007DADCA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB25495B1E3E3CBB000D3E82 /* RealTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
 		AB261CEA1E8FFDA400DF97CE /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
@@ -240,6 +248,7 @@
 				AB20BCD41E632843007DADCA /* Constants.swift */,
 				AB524D561E880EAB00575BAA /* DataStore.swift */,
 				AB10E5C71E932BC3004839C8 /* CustomShadow.swift */,
+				AB10E5D51E95B42E004839C8 /* fakeData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -298,6 +307,8 @@
 				AB261CEC1E8FFFBC00DF97CE /* ExploreExtension.swift */,
 				ABA1D3C91E9157BC000719B8 /* BoatDetailViewController.swift */,
 				AB10E5CC1E945FD0004839C8 /* ReviewViewController.swift */,
+				AB10E5D31E95B0B0004839C8 /* BaseViewController.swift */,
+				AB10E5D71E95B53D004839C8 /* AmenitiesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +331,7 @@
 				ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */,
 				AB65030E1E7EB1E600127E9F /* CardCell.swift */,
 				ABA1D3CB1E915B3C000719B8 /* DetailImageCollectionViewCell.swift */,
+				AB10E5D91E95BE5A004839C8 /* AmenitiesTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -520,11 +532,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB10E5DA1E95BE5A004839C8 /* AmenitiesTableViewCell.swift in Sources */,
 				AB3AA2791DC2CE4C000FC168 /* MobyBoat.swift in Sources */,
 				AB10E5C61E931A21004839C8 /* FeaturedReview.swift in Sources */,
 				AB10E5CD1E945FD0004839C8 /* ReviewViewController.swift in Sources */,
 				AB10E5C81E932BC3004839C8 /* CustomShadow.swift in Sources */,
 				AB10E5CA1E932C08004839C8 /* PayTabView.swift in Sources */,
+				AB10E5D41E95B0B0004839C8 /* BaseViewController.swift in Sources */,
 				AB41EE4F1DC7FCD100B2D71D /* SignupController.swift in Sources */,
 				AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */,
 				AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */,
@@ -555,11 +569,13 @@
 				ABF3DC5D1DC6BF54009D09CC /* LandingViewController.swift in Sources */,
 				AB9201871E8864150042F1E8 /* Trip.swift in Sources */,
 				AB0BA4AC1DC15F5D003F7802 /* AppDelegate.swift in Sources */,
+				AB10E5D61E95B42E004839C8 /* fakeData.swift in Sources */,
 				ABA1D3D31E9180E4000719B8 /* AboutView.swift in Sources */,
 				AB9201891E8864260042F1E8 /* Charge.swift in Sources */,
 				AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */,
 				AB524D571E880EAB00575BAA /* DataStore.swift in Sources */,
 				AB261CF31E9081C700DF97CE /* TabBar.swift in Sources */,
+				AB10E5D81E95B53D004839C8 /* AmenitiesViewController.swift in Sources */,
 				AB4691C11E85A7DD00266C1E /* BankViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,8 @@ class TabBar: UIView {
     var tab3 = IconView()
     var tab4 = IconView()
     var tab5 = IconView()
-
+    
+   
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

@@ -13,6 +13,7 @@ class IconView: UIView {
     
     var icon = UIImageView()
     var label = UILabel()
+    var gesture = UITapGestureRecognizer()
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -24,6 +25,10 @@ class IconView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        gesture.numberOfTapsRequired = 1
+        self.addGestureRecognizer(gesture)
+        
         
         let image = UIImage(named: "heart")
         

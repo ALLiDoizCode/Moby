@@ -9,17 +9,12 @@
 import UIKit
 import Material
 
-class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ExploreViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate {
     
     var tableView = UITableView()
     var bar = BarView()
     var filter = FilterView()
     var defaultBar = DefaultBar()
-    var tabBar = TabBar()
-    let boats = ["boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4","boat_1","boat_2","boat_3","boat_4"]
-    let prices = ["8,520","652","324","514","8,520","652","324","514","8,520","652","324","514","8,520","652","324","514","8,520","652","324","514","8,520","652","324","514"]
-    let reviews = ["50","32","74","14","50","32","74","14","50","32","74","14","50","32","74","14","50","32","74","14","50","32","74","14"]
-    let stars = [5,3.2,4,4.3,5,3.2,4,4.3,5,3.2,4,4.3,5,3.2,4,4.3,5,3.2,4,4.3,5,3.2,4,4.3]
     var currentLabel:UILabel!
     var barTopLayout:NSLayoutConstraint!
     var margins:UILayoutGuide!
@@ -27,9 +22,7 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DetailImageCollectionViewCell()
-        
+
         margins = self.view.layoutMarginsGuide
         
         filter.isHidden = true
@@ -37,7 +30,7 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
         self.view.addSubview(self.tableView)
         self.view.addSubview(bar)
         self.view.addSubview(defaultBar)
-        self.view.addSubview(tabBar)
+        
         
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = THEME_1
@@ -67,12 +60,6 @@ class ExploreViewController: UIViewController,UITableViewDataSource,UITableViewD
         bar.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
         bar.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
         bar.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.068).isActive = true
-        
-        tabBar.translatesAutoresizingMaskIntoConstraints = false
-        tabBar.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -22).isActive = true
-        tabBar.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 22).isActive = true
-        tabBar.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
-        tabBar.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.08).isActive = true
         
         tableView.topAnchor.constraint(equalTo: bar.bottomAnchor, constant: -5).isActive = true
         tableView.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
