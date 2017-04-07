@@ -1,0 +1,553 @@
+{
+ "selection1": [
+  {
+   "name": "AB Inflatables"
+  },
+  {
+   "name": "Achilles Inflatables"
+  },
+  {
+   "name": "Advanced Elements"
+  },
+  {
+   "name": "Alumacraft"
+  },
+  {
+   "name": "Apex Marine"
+  },
+  {
+   "name": "Aqua Patio"
+  },
+  {
+   "name": "Argos Nautic"
+  },
+  {
+   "name": "Ascend Kayaks"
+  },
+  {
+   "name": "Aspen Power Catamarans"
+  },
+  {
+   "name": "Avalon Pontoons"
+  },
+  {
+   "name": "Axis Wake Research"
+  },
+  {
+   "name": "Azimut"
+  },
+  {
+   "name": "Back Cove Yachts"
+  },
+  {
+   "name": "Baja Marine"
+  },
+  {
+   "name": "Bayliner"
+  },
+  {
+   "name": "Belzona Marine"
+  },
+  {
+   "name": "Bennington"
+  },
+  {
+   "name": "Berkshire Pontoons"
+  },
+  {
+   "name": "Bestway USA"
+  },
+  {
+   "name": "Biltmore"
+  },
+  {
+   "name": "Bluewater Sportfishing Boats"
+  },
+  {
+   "name": "Boston Whaler"
+  },
+  {
+   "name": "Brunswick Commercial"
+  },
+  {
+   "name": "Bryant Boats"
+  },
+  {
+   "name": "Campion"
+  },
+  {
+   "name": "Caravelle Powerboats"
+  },
+  {
+   "name": "Carolina Skiff"
+  },
+  {
+   "name": "Carver Yachts"
+  },
+  {
+   "name": "Catalina Yachts"
+  },
+  {
+   "name": "Centurion Boats"
+  },
+  {
+   "name": "Century Boats"
+  },
+  {
+   "name": "Chaparral Boats"
+  },
+  {
+   "name": "Chris Craft"
+  },
+  {
+   "name": "Cigarette Racing"
+  },
+  {
+   "name": "Coach Pontoons"
+  },
+  {
+   "name": "Cobalt Boats"
+  },
+  {
+   "name": "Cobia"
+  },
+  {
+   "name": "Coleman Company"
+  },
+  {
+   "name": "Concept Boats"
+  },
+  {
+   "name": "Contender Boats"
+  },
+  {
+   "name": "Crest Pontoons"
+  },
+  {
+   "name": "Crestliner"
+  },
+  {
+   "name": "Crevalle Boats"
+  },
+  {
+   "name": "Crownline Boats"
+  },
+  {
+   "name": "Cruisers Yachts"
+  },
+  {
+   "name": "Cutwater Boats"
+  },
+  {
+   "name": "Cypress Cay"
+  },
+  {
+   "name": "Dave's Custom Boats"
+  },
+  {
+   "name": "Duckworth"
+  },
+  {
+   "name": "Edgewater Powerboats"
+  },
+  {
+   "name": "Everglades Boats"
+  },
+  {
+   "name": "Fleming Yachts"
+  },
+  {
+   "name": "Flexboat"
+  },
+  {
+   "name": "Formula"
+  },
+  {
+   "name": "Four Winns"
+  },
+  {
+   "name": "G-3 Boats"
+  },
+  {
+   "name": "Glasstream"
+  },
+  {
+   "name": "Glastron"
+  },
+  {
+   "name": "Godfrey Marine"
+  },
+  {
+   "name": "Grady-White"
+  },
+  {
+   "name": "Grand Banks"
+  },
+  {
+   "name": "Harris FloteBote"
+  },
+  {
+   "name": "Hewes"
+  },
+  {
+   "name": "Heyday"
+  },
+  {
+   "name": "Hobie Cat"
+  },
+  {
+   "name": "Hunt Yachts"
+  },
+  {
+   "name": "Hurricane Deckboats"
+  },
+  {
+   "name": "Hustler"
+  },
+  {
+   "name": "HydraSports Custom"
+  },
+  {
+   "name": "Intex"
+  },
+  {
+   "name": "Intrepid"
+  },
+  {
+   "name": "Island Boats"
+  },
+  {
+   "name": "Jilong Plastic Products"
+  },
+  {
+   "name": "Jupiter Marine"
+  },
+  {
+   "name": "Key Largo"
+  },
+  {
+   "name": "Landau Boats"
+  },
+  {
+   "name": "Larson"
+  },
+  {
+   "name": "Legend Boats"
+  },
+  {
+   "name": "Legend Craft"
+  },
+  {
+   "name": "Lowe"
+  },
+  {
+   "name": "Lund"
+  },
+  {
+   "name": "Mako Boats"
+  },
+  {
+   "name": "Malibu Boats"
+  },
+  {
+   "name": "Manitou Pontoon Boats"
+  },
+  {
+   "name": "Marine Technology"
+  },
+  {
+   "name": "Maritimo"
+  },
+  {
+   "name": "Marker One"
+  },
+  {
+   "name": "Marlow Hunter"
+  },
+  {
+   "name": "Marlow Mainship"
+  },
+  {
+   "name": "Marlow Yachts"
+  },
+  {
+   "name": "Marquis Yachts"
+  },
+  {
+   "name": "MasterCraft"
+  },
+  {
+   "name": "Maverick"
+  },
+  {
+   "name": "Medeiros Boat Works Limited"
+  },
+  {
+   "name": "Mercury Inflatables"
+  },
+  {
+   "name": "Meridian"
+  },
+  {
+   "name": "Midnight Express"
+  },
+  {
+   "name": "Mikelson Yachts"
+  },
+  {
+   "name": "MirroCraft"
+  },
+  {
+   "name": "Misty Harbor"
+  },
+  {
+   "name": "MJM Yachts"
+  },
+  {
+   "name": "Montego Bay"
+  },
+  {
+   "name": "Monterey Boats"
+  },
+  {
+   "name": "Moomba"
+  },
+  {
+   "name": "Nautique Boat Company"
+  },
+  {
+   "name": "Neptunus Yachts"
+  },
+  {
+   "name": "Nitro Boats"
+  },
+  {
+   "name": "Nordic Tugs"
+  },
+  {
+   "name": "Northwest Boats"
+  },
+  {
+   "name": "Palm Beach"
+  },
+  {
+   "name": "Parti Kraft"
+  },
+  {
+   "name": "Pathfinder"
+  },
+  {
+   "name": "Pavati"
+  },
+  {
+   "name": "Polar Kraft"
+  },
+  {
+   "name": "Porta-bote International"
+  },
+  {
+   "name": "Premier Marine"
+  },
+  {
+   "name": "Princecraft"
+  },
+  {
+   "name": "Pro-Line Boats"
+  },
+  {
+   "name": "Pursuit"
+  },
+  {
+   "name": "Rampage"
+  },
+  {
+   "name": "Ranger"
+  },
+  {
+   "name": "Ranger Tugs"
+  },
+  {
+   "name": "Razor"
+  },
+  {
+   "name": "Regal Boats"
+  },
+  {
+   "name": "Regency"
+  },
+  {
+   "name": "Regulator"
+  },
+  {
+   "name": "Reinell"
+  },
+  {
+   "name": "Rinker Boat Company"
+  },
+  {
+   "name": "Robalo"
+  },
+  {
+   "name": "Robertson and Caine"
+  },
+  {
+   "name": "Sabre Yachts"
+  },
+  {
+   "name": "Sailfin"
+  },
+  {
+   "name": "Sailfish Boats"
+  },
+  {
+   "name": "Sanpan"
+  },
+  {
+   "name": "Scarab"
+  },
+  {
+   "name": "Schaefer Yachts"
+  },
+  {
+   "name": "Scout"
+  },
+  {
+   "name": "Sea Ark"
+  },
+  {
+   "name": "Sea Chaser"
+  },
+  {
+   "name": "Sea Eagle Inflatables"
+  },
+  {
+   "name": "Sea Ray"
+  },
+  {
+   "name": "Sea Vee"
+  },
+  {
+   "name": "SeaHunter Boats"
+  },
+  {
+   "name": "Sevylor USA Inc"
+  },
+  {
+   "name": "Skeeter"
+  },
+  {
+   "name": "Skiers Choice"
+  },
+  {
+   "name": "Smoker Craft"
+  },
+  {
+   "name": "Solstice"
+  },
+  {
+   "name": "South Bay Pontoons"
+  },
+  {
+   "name": "Southport Boats"
+  },
+  {
+   "name": "Southwind Boats"
+  },
+  {
+   "name": "Splendor Boats"
+  },
+  {
+   "name": "Sportsman Boats"
+  },
+  {
+   "name": "Stamas Yachts"
+  },
+  {
+   "name": "Starcraft Boats"
+  },
+  {
+   "name": "Stingray Boat Co"
+  },
+  {
+   "name": "Stratos"
+  },
+  {
+   "name": "Striper Boats"
+  },
+  {
+   "name": "Sun Chaser"
+  },
+  {
+   "name": "Sun Tracker Boats"
+  },
+  {
+   "name": "Supra"
+  },
+  {
+   "name": "Supreme Boats"
+  },
+  {
+   "name": "Sweetwater"
+  },
+  {
+   "name": "Sylvan"
+  },
+  {
+   "name": "Tahoe Boats"
+  },
+  {
+   "name": "Tahoe Pontoons"
+  },
+  {
+   "name": "Tiara"
+  },
+  {
+   "name": "Tige Ski Boats"
+  },
+  {
+   "name": "Tracker Boats"
+  },
+  {
+   "name": "Trifecta Pontoons"
+  },
+  {
+   "name": "Triton Boats"
+  },
+  {
+   "name": "Twin Anchors Houseboats"
+  },
+  {
+   "name": "Veranda"
+  },
+  {
+   "name": "Walker Bay Boats"
+  },
+  {
+   "name": "Weeres"
+  },
+  {
+   "name": "Weldcraft"
+  },
+  {
+   "name": "Wellcraft"
+  },
+  {
+   "name": "Williams Performance Tenders"
+  },
+  {
+   "name": "World Cat"
+  },
+  {
+   "name": "Xpress Boats"
+  },
+  {
+   "name": "Yamaha Boats"
+  },
+  {
+   "name": "Zar Formenti"
+  },
+  {
+   "name": "Zodiac"
+  }
+ ]
+}

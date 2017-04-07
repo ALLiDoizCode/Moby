@@ -22,6 +22,19 @@ class BaseViewController: UIViewController {
         tabBar.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         tabBar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         tabBar.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.08).isActive = true
+        
+        let profileImage = UIImage(named: "people")
+        tabBar.tab5.icon.image = profileImage
+        tabBar.tab5.label.text = "Profile"
+        tabBar.tab5.gesture.addTarget(self, action: #selector(BaseViewController.profile))
+        
+        let chatImage = UIImage(named: "chat")
+        tabBar.tab4.icon.image = chatImage
+        tabBar.tab4.label.text = "Chat"
+        
+        let experienceImage = UIImage(named: "telescope")
+        tabBar.tab1.icon.image = experienceImage
+        tabBar.tab1.label.text = "ARRR"
 
         // Do any additional setup after loading the view.
     }
@@ -32,6 +45,12 @@ class BaseViewController: UIViewController {
     }
     
 
+    func profile(){
+        
+        let controller = NewBoatViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

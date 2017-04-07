@@ -29,7 +29,6 @@ class IconView: UIView {
         gesture.numberOfTapsRequired = 1
         self.addGestureRecognizer(gesture)
         
-        
         let image = UIImage(named: "heart")
         
         let font = UIScreen.main.bounds.width * 0.03
@@ -54,7 +53,7 @@ class IconView: UIView {
         label.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 0).isActive = true
         
         label.font = RobotoFont.medium(with: font)
-        label.textColor = Color.grey.darken2
+        label.textColor = TEXT_COLOR
         label.text = "Text"
         label.textAlignment = .center
         

@@ -1,0 +1,493 @@
+{
+ "selection1": [
+  {
+   "name": "Airboat"
+  },
+  {
+   "name": "Banana boat"
+  },
+  {
+   "name": "Barge"
+  },
+  {
+   "name": "Bass boat"
+  },
+  {
+   "name": "Boita"
+  },
+  {
+   "name": "Bow rider"
+  },
+  {
+   "name": "Bracera"
+  },
+  {
+   "name": "Cabin cruiser"
+  },
+  {
+   "name": "Cable ferry"
+  },
+  {
+   "name": "Canoe"
+  },
+  {
+   "name": "Cape Islander"
+  },
+  {
+   "name": "Captain's gig"
+  },
+  {
+   "name": "Car-boat"
+  },
+  {
+   "name": "Car float"
+  },
+  {
+   "name": "Catamaran"
+  },
+  {
+   "name": "Center console"
+  },
+  {
+   "name": "Coble"
+  },
+  {
+   "name": "Coracle"
+  },
+  {
+   "name": "Cornish pilot gig"
+  },
+  {
+   "name": "Crash rescue boat"
+  },
+  {
+   "name": "Cruise ship"
+  },
+  {
+   "name": "Cuddy boat"
+  },
+  {
+   "name": "Cutter"
+  },
+  {
+   "name": "Dhow"
+  },
+  {
+   "name": "Dinghy"
+  },
+  {
+   "name": "Dory"
+  },
+  {
+   "name": "Dredging"
+  },
+  {
+   "name": "Dragon boat"
+  },
+  {
+   "name": "Drift boat"
+  },
+  {
+   "name": "Drifter (fishing)"
+  },
+  {
+   "name": "Drifter (naval)"
+  },
+  {
+   "name": "Dugout"
+  },
+  {
+   "name": "Durham boat"
+  },
+  {
+   "name": "Electric boat"
+  },
+  {
+   "name": "Express cruiser"
+  },
+  {
+   "name": "Ferry"
+  },
+  {
+   "name": "Fireboat"
+  },
+  {
+   "name": "Fishing boat"
+  },
+  {
+   "name": "Fishing boat"
+  },
+  {
+   "name": "Float tube"
+  },
+  {
+   "name": "Flyak"
+  },
+  {
+   "name": "Flying boat"
+  },
+  {
+   "name": "Folding boat"
+  },
+  {
+   "name": "Friendship sloop"
+  },
+  {
+   "name": "Full rigged pinnace"
+  },
+  {
+   "name": "Garbage scow"
+  },
+  {
+   "name": "Go-fast boat"
+  },
+  {
+   "name": "Gondola"
+  },
+  {
+   "name": "Gundalow"
+  },
+  {
+   "name": "Great Lakes freighter"
+  },
+  {
+   "name": "Houseboat"
+  },
+  {
+   "name": "Hovercraft"
+  },
+  {
+   "name": "Hydrofoil"
+  },
+  {
+   "name": "Hydroplane"
+  },
+  {
+   "name": "Ice boat"
+  },
+  {
+   "name": "Inflatable boat"
+  },
+  {
+   "name": "Jetboat"
+  },
+  {
+   "name": "Jet ski"
+  },
+  {
+   "name": "Jon boat"
+  },
+  {
+   "name": "Jukung"
+  },
+  {
+   "name": "Junk"
+  },
+  {
+   "name": "Kayak"
+  },
+  {
+   "name": "Keelboat"
+  },
+  {
+   "name": "Ketch"
+  },
+  {
+   "name": "Kettuvallam"
+  },
+  {
+   "name": "Launch"
+  },
+  {
+   "name": "Landing craft"
+  },
+  {
+   "name": "Lifeboat"
+  },
+  {
+   "name": "Lighter"
+  },
+  {
+   "name": "LNG carrier"
+  },
+  {
+   "name": "Log boat"
+  },
+  {
+   "name": "Langschiff"
+  },
+  {
+   "name": "Longboat"
+  },
+  {
+   "name": "Longship"
+  },
+  {
+   "name": "Longtail"
+  },
+  {
+   "name": "Lugger"
+  },
+  {
+   "name": "Luxury yacht"
+  },
+  {
+   "name": "Mackinaw boat"
+  },
+  {
+   "name": "Masula boat"
+  },
+  {
+   "name": "Missile boat"
+  },
+  {
+   "name": "Monitor"
+  },
+  {
+   "name": "Motorboat"
+  },
+  {
+   "name": "Motor Launch (naval)"
+  },
+  {
+   "name": "Narrowboat"
+  },
+  {
+   "name": "Nordland"
+  },
+  {
+   "name": "Norfolk wherry"
+  },
+  {
+   "name": "Oil Tanker"
+  },
+  {
+   "name": "Optimist"
+  },
+  {
+   "name": "Outrigger canoe"
+  },
+  {
+   "name": "Padded V-hull"
+  },
+  {
+   "name": "Paddle steamer"
+  },
+  {
+   "name": "Patrol boat"
+  },
+  {
+   "name": "Pedalo"
+  },
+  {
+   "name": "Personal water craft"
+  },
+  {
+   "name": "Pinnace (ship's boat)"
+  },
+  {
+   "name": "Pirogue"
+  },
+  {
+   "name": "Pleasure barge"
+  },
+  {
+   "name": "Pleasure craft"
+  },
+  {
+   "name": "Police watercraft"
+  },
+  {
+   "name": "Pontoon"
+  },
+  {
+   "name": "Powerboat"
+  },
+  {
+   "name": "Pram (boat)"
+  },
+  {
+   "name": "Pram (ship)"
+  },
+  {
+   "name": "Proa"
+  },
+  {
+   "name": "Pump boat"
+  },
+  {
+   "name": "Punt"
+  },
+  {
+   "name": "Q-ship"
+  },
+  {
+   "name": "Raft"
+  },
+  {
+   "name": "Reaction ferry"
+  },
+  {
+   "name": "Recreational trawler"
+  },
+  {
+   "name": "Reed boat"
+  },
+  {
+   "name": "Rigid-hulled inflatable"
+  },
+  {
+   "name": "Riverboat"
+  },
+  {
+   "name": "Rodney boat"
+  },
+  {
+   "name": "Roll-on/roll-off"
+  },
+  {
+   "name": "Rowboat"
+  },
+  {
+   "name": "Runabout"
+  },
+  {
+   "name": "Sailboat"
+  },
+  {
+   "name": "Sampan"
+  },
+  {
+   "name": "Schooner"
+  },
+  {
+   "name": "Scow"
+  },
+  {
+   "name": "Sea kayak"
+  },
+  {
+   "name": "Shad boat"
+  },
+  {
+   "name": "Shallop"
+  },
+  {
+   "name": "Sharpie"
+  },
+  {
+   "name": "Shikara"
+  },
+  {
+   "name": "Ship"
+  },
+  {
+   "name": "Ship's tender"
+  },
+  {
+   "name": "Ski boat"
+  },
+  {
+   "name": "Skiff"
+  },
+  {
+   "name": "Skipjack"
+  },
+  {
+   "name": "Steam boat"
+  },
+  {
+   "name": "Slipper Launch"
+  },
+  {
+   "name": "Sloop"
+  },
+  {
+   "name": "Speed boat"
+  },
+  {
+   "name": "Submarine"
+  },
+  {
+   "name": "Supertanker"
+  },
+  {
+   "name": "Surf boat"
+  },
+  {
+   "name": "Swift boat"
+  },
+  {
+   "name": "Tarai Bune"
+  },
+  {
+   "name": "Tjotter"
+  },
+  {
+   "name": "Torpedo boat"
+  },
+  {
+   "name": "Towboat"
+  },
+  {
+   "name": "Trailer sailor"
+  },
+  {
+   "name": "Train ferry"
+  },
+  {
+   "name": "Trimaran"
+  },
+  {
+   "name": "Trawler (fishing)"
+  },
+  {
+   "name": "Trawler (naval)"
+  },
+  {
+   "name": "Trawler (recreational)"
+  },
+  {
+   "name": "Tugboat"
+  },
+  {
+   "name": "U-boat"
+  },
+  {
+   "name": "Umiak"
+  },
+  {
+   "name": "Very Slender Vessel"
+  },
+  {
+   "name": "Waka"
+  },
+  {
+   "name": "Wakeboard boat"
+  },
+  {
+   "name": "Walkaround"
+  },
+  {
+   "name": "Water ambulance"
+  },
+  {
+   "name": "Water taxi"
+  },
+  {
+   "name": "Weidling"
+  },
+  {
+   "name": "Whaleboat"
+  },
+  {
+   "name": "Yacht"
+  },
+  {
+   "name": "Yawl"
+  },
+  {
+   "name": "Zille"
+  }
+ ]
+}

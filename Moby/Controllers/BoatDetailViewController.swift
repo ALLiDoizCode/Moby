@@ -130,7 +130,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30).isActive = true
         backButton.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: 10).isActive = true
-        backButton.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.025).isActive = true
+        backButton.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.03).isActive = true
         backButton.widthAnchor.constraint(equalTo: backButton.heightAnchor, multiplier: 1).isActive = true
         
         about.translatesAutoresizingMaskIntoConstraints = false
@@ -242,6 +242,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         let image5 = UIImage(named: "year")
         let timeBarImage = UIImage(named: "time")
         let amenities = UIImage(named: "amenities")
+        let rules = UIImage(named: "rules")
         
         itemBar.tab1.icon.image = image1
         itemBar.tab1.label.text = "Power"
@@ -263,10 +264,12 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         timeBar.tab3.label.text = "Amenities"
         timeBar.tab3.icon.image = amenities
         timeBar.tab3.gesture.addTarget(self, action: #selector(BoatDetailViewController.showAmenities))
+        timeBar.tab5.label.text = "Rules"
+        timeBar.tab5.icon.image =  rules
+        timeBar.tab5.gesture.addTarget(self, action: #selector(BoatDetailViewController.showRules))
         
         timeBar.tab2.isHidden = true
         timeBar.tab4.isHidden = true
-        timeBar.tab5.isHidden = true
         
         depatureTime.text = "Departure 8:00AM"
         depatureTime.textColor = TEXT_COLOR
@@ -292,6 +295,12 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     }
     
     func showAmenities() {
+        
+        let controller = AmenitiesViewController()
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func showRules(){
         
         let controller = AmenitiesViewController()
         self.present(controller, animated: true, completion: nil)
