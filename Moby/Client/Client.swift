@@ -163,6 +163,9 @@ class Client {
             "minTime": "\(boat.minTime!)",
             "lat": "\(boat.lat!)",
             "long": "\(boat.long!)",
+            "power": boat.power,
+            "restRooms": "\(boat.restRooms!)",
+            "rooms": "\(boat.rooms!)",
             "userId": boat.userId
             
             ]

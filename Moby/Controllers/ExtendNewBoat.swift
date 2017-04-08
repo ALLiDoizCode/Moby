@@ -250,7 +250,7 @@ extension NewBoatViewController {
             
         case 10:
             
-            boat.minTime = Int(currentList[row])
+            boat.power = currentList[row]
             optionArray.remove(at: currentIndex)
             optionArray.insert(currentList[row], at: currentIndex)
             tableView.isUserInteractionEnabled = true
@@ -260,7 +260,7 @@ extension NewBoatViewController {
             
         case 11:
             
-            boat.minTime = Int(currentList[row])
+            boat.rooms = Int(currentList[row])
             optionArray.remove(at: currentIndex)
             optionArray.insert("\(currentList[row]) Rm", at: currentIndex)
             tableView.isUserInteractionEnabled = true
@@ -270,7 +270,7 @@ extension NewBoatViewController {
             
         case 12:
             
-            boat.minTime = Int(currentList[row])
+            boat.restRooms = Int(currentList[row])
             optionArray.remove(at: currentIndex)
             optionArray.insert("\(currentList[row]) Restrooms", at: currentIndex)
             tableView.isUserInteractionEnabled = true
