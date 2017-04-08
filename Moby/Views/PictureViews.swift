@@ -13,11 +13,15 @@ import Material
 class PictureViews: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
 
     var collectionView = CenteredCollectionView()
+    var images:[UIImage] = []
+    var controller:NewBoatViewController!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.addSubview(collectionView)
+        let image = UIImage(named:"photo")
+        images.append(image!)
         //setup()
         constrainView()
         
@@ -43,7 +47,7 @@ class PictureViews: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         
-        collectionView.minimumLineSpacing = 1.0
+        collectionView.minimumLineSpacing = 0
         collectionView.scrollDirection = .horizontal
     }
     
@@ -60,16 +64,14 @@ class PictureViews: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return boats.count
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newBoat", for: indexPath) as! DetailImageCollectionViewCell
         
-        let image = UIImage(named: boats[indexPath.row])
-        
-        cell.boatImage.image = image
+        cell.boatImage.image = images[indexPath.row]
         
         return cell
         
@@ -77,6 +79,46 @@ class PictureViews: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
+        let currentCell = cell as! DetailImageCollectionViewCell
+        
+        if indexPath.row == images.count - 1 {
+            
+            currentCell.imageHeight.isActive = false
+            currentCell.imageHeight = currentCell.boatImage.heightAnchor.constraint(equalTo: currentCell.heightAnchor, multiplier: 0.5)
+            currentCell.imageHeight.isActive = true
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                
+                currentCell.setNeedsDisplay()
+            })
+            
+            currentCell.boatImage.contentMode = .scaleAspectFit
+        }else {
+            
+            currentCell.imageHeight.isActive = false
+            currentCell.imageHeight = currentCell.boatImage.heightAnchor.constraint(equalTo: currentCell.heightAnchor, multiplier: 1)
+            currentCell.imageHeight.isActive = true
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                
+                currentCell.setNeedsDisplay()
+            })
+            currentCell.boatImage.contentMode = .scaleAspectFill
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        controller.imagePicker.allowsEditing = false
+        controller.imagePicker.sourceType = .photoLibrary
+        controller.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        controller.present(controller.imagePicker, animated: true, completion: nil)
+        
+         /*controller.imagePicker.allowsEditing = false
+         controller.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+         controller.imagePicker.cameraCaptureMode = .photo
+         controller.imagePicker.modalPresentationStyle = .fullScreen
+         controller.present( controller.imagePicker,animated: true,completion: nil)*/
     }
 
 }

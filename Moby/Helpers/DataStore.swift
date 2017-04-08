@@ -12,6 +12,7 @@ class DataStore {
     
     private static var ACCESS_TOKEN:String!
     private static var USER:Fishermen!
+    private static var newBoat:MobyBoat!
     
     
     func getToken() -> String {
@@ -24,6 +25,11 @@ class DataStore {
         return DataStore.USER
     }
     
+    func getBoat() -> MobyBoat{
+        
+        return DataStore.newBoat
+    }
+    
     static func setToken(ACCESS_TOKEN:String){
         
         self.ACCESS_TOKEN = ACCESS_TOKEN
@@ -32,6 +38,12 @@ class DataStore {
     static func setUser(user:Fishermen){
         
         self.USER = user
+        
+    }
+    
+    static func setBoat(newBoat:MobyBoat){
+        
+        self.newBoat = newBoat
         
     }
 }

@@ -146,26 +146,28 @@ class Client {
 
     }
     
-    func newBoat(size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,activities:String,boatModel:String,lat:Double,long:Double,userId:String,completion:@escaping (_ Id:String) ->Void) {
+    func newBoat(boat:MobyBoat,completion:@escaping (_ Id:String) ->Void) {
         
         let parameters = [
             
-            "size": "\(size)",
-            "type": type,
-            "year": year,
-            "price": "\(price)",
-            "passengers": passengers,
-            "location": location,
-            "description": description,
-            "activities": activities,
-            "boatModel": boatModel,
-            "lat": "\(lat)",
-            "long": "\(long)",
-            "userId": userId
+            "size": "\(boat.size!)",
+            "type": boat.type,
+            "year": boat.year,
+            "price": "\(boat.price!)",
+            "passengers": boat.passengers,
+            "location": boat.location,
+            "description": boat.description,
+            "boatModel": boat.boatModel,
+            "boatMake": boat.boatMake,
+            "boatRules": boat.boatRules,
+            "minTime": "\(boat.minTime!)",
+            "lat": "\(boat.lat!)",
+            "long": "\(boat.long!)",
+            "userId": boat.userId
             
             ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/addBoat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+        Alamofire.request("https://mo-b.herokuapp.com/account/addBoat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).responseString { (response) in
             
             //let json = JSON(data: response.data!)
             
@@ -236,7 +238,7 @@ class Client {
                 
                 //let json = JSON(data: response.data!)
                 
-                print("new charge response is \(response.result.value!)")
+                print("boat iamge id is \(response.result.value!)")
                 
                 completion(response.result.value!)
             }

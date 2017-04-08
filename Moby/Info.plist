@@ -25,6 +25,11 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Moby needs to use your PhotoLibaray</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Moby needs to use your camera</string>
+
     <key>NSAppTransportSecurity</key>
     <dict>
         <!--Include to allow all connections (DANGER)-->

@@ -22,18 +22,31 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        margins = self.view.layoutMarginsGuide
         
-        filter.isHidden = true
         self.view.addSubview(filter)
         self.view.addSubview(self.tableView)
         self.view.addSubview(bar)
         self.view.addSubview(defaultBar)
         
-        
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = THEME_1
+        
+        margins = self.view.layoutMarginsGuide
+        filter.isHidden = true
+        
+        constrainViews()
+        setupViews()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func setupViews(){
+        
         self.tableView.backgroundColor = Color.clear
         
         tableView.delegate = self
@@ -57,6 +70,14 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
         filter.upArrow.addTarget(self, action:  #selector(ExploreViewController.defaultBarAnimation), for: .touchUpInside)
         defaultBar.tap1.addTarget(self, action: #selector(ExploreViewController.filterAnimation))
         
+        
+        tabBar.setup()
+        
+        
+    }
+    
+    func constrainViews(){
+        
         bar.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
         bar.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
         bar.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.068).isActive = true
@@ -65,19 +86,7 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
         tableView.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
         tableView.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
         tableView.bottomAnchor.constraint(equalTo: tabBar.topAnchor, constant: 0).isActive = true
-        
-        tabBar.setup()
-        
-
-        
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -145,19 +154,9 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
         self.lastContentOffset = scrollView.contentOffset.y
     }
     
-    /*override var prefersStatusBarHidden: Bool {
+    override var prefersStatusBarHidden: Bool {
         
         return true
-    }*/
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
 }

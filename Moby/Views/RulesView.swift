@@ -34,7 +34,7 @@ class RulesView: UIView {
         textBox.textColor = TEXT_COLOR
         
         doneButton.backgroundColor = THEME_1
-        doneButton.setTitle("Set Rules", for: .normal)
+        doneButton.setTitle("Save Rules", for: .normal)
     }
     
     func constrainView(){

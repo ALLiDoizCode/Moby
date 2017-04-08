@@ -88,12 +88,15 @@ class SearchClient {
                     let passengers = object.1["passengers"].stringValue
                     let location = object.1["location"].stringValue
                     let description = object.1["description"].stringValue
-                    let activities = object.1["activities"].stringValue
                     let boatModel = object.1["boatModel"].stringValue
+                    let boatMake = object.1["boatMake"].stringValue
+                    let boatRules = object.1["boatRules"].stringValue
+                    let minTime = object.1["minTime"].intValue
                     let lat = object.1["lat"].doubleValue
                     let long = object.1["lat"].doubleValue
+                    
+                    let boat = MobyBoat(id: id, userId: userId, size: size, type: type, year: year, price: price, passengers: passengers, location: location, description: description, boatModel: boatModel, boatMake: boatMake, boatRules: boatRules, minTime: minTime, lat: lat, long: long)
                  
-                    let boat = MobyBoat(id: id, userId: userId, size: size, type: type, year: year, price: price, passengers: passengers, location: location, description: description, activities: activities, boatModel: boatModel, lat: lat, long: long)
                 
                     print("boat price is \(price)")
                     print("boat lat is \(lat)")

@@ -11,6 +11,21 @@ import Material
 
 extension NewBoatViewController {
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        //myImageView.contentMode = .scaleAspectFit
+        //myImageView.image = chosenImage
+        bgImageView.images.insert(chosenImage, at: bgImageView.images.count - 1)
+        bgImageView.collectionView.reloadData()
+        dismiss(animated:true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        dismiss(animated:true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         return bgImageView
@@ -18,7 +33,7 @@ extension NewBoatViewController {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return self.view.frame.height * 0.35
+        return self.view.frame.height * 0.45
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,26 +87,50 @@ extension NewBoatViewController {
             
         case 5:
             
+            saveView.isHidden = true
+            descriptionView.isHidden = false
+            tableView.isUserInteractionEnabled = false
+            
+        case 6:
+            
             currentList = passengers
             picker.reloadAllComponents()
             picker.isHidden = false
             tableView.isUserInteractionEnabled = false
             
-        case 6:
+        case 7:
             
             currentList = sizes
             picker.reloadAllComponents()
             picker.isHidden = false
             tableView.isUserInteractionEnabled = false
             
-        case 7:
+        case 8:
             saveView.isHidden = true
             priceView.textfield.becomeFirstResponder()
             tableView.isUserInteractionEnabled = false
             tableView.isScrollEnabled = false
             priceView.isHidden = false
             
-        case 8:
+        case 9:
+            currentList = minHours
+            picker.reloadAllComponents()
+            picker.isHidden = false
+            tableView.isUserInteractionEnabled = false
+            
+        case 10:
+            currentList = propulsion
+            picker.reloadAllComponents()
+            picker.isHidden = false
+            tableView.isUserInteractionEnabled = false
+            
+        case 11:
+            currentList = minHours
+            picker.reloadAllComponents()
+            picker.isHidden = false
+            tableView.isUserInteractionEnabled = false
+            
+        case 12:
             currentList = minHours
             picker.reloadAllComponents()
             picker.isHidden = false
@@ -150,7 +189,7 @@ extension NewBoatViewController {
         
         switch currentIndex {
         case 0:
-            
+            boat.boatMake = currentList[row]
             optionArray.remove(at: currentIndex)
             optionArray.insert(currentList[row], at: currentIndex)
             tableView.isUserInteractionEnabled = true
@@ -158,11 +197,9 @@ extension NewBoatViewController {
             
             picker.isHidden = true
             
-
-            print("")
-            
         case 1:
             
+            boat.year = currentList[row]
             optionArray.remove(at: currentIndex)
             optionArray.insert(currentList[row], at: currentIndex)
             tableView.isUserInteractionEnabled = true
@@ -171,7 +208,7 @@ extension NewBoatViewController {
             picker.isHidden = true
             
         case 3:
-            
+            boat.type = currentList[row]
             optionArray.remove(at: currentIndex)
             optionArray.insert(currentList[row], at: currentIndex)
             tableView.isUserInteractionEnabled = true
@@ -179,10 +216,10 @@ extension NewBoatViewController {
             
             picker.isHidden = true
             
-            print("")
             
-        case 5:
+        case 6:
             
+            boat.passengers = currentList[row]
             optionArray.remove(at: currentIndex)
             optionArray.insert("\(currentList[row]) passengers", at: currentIndex)
             tableView.isUserInteractionEnabled = true
@@ -190,11 +227,8 @@ extension NewBoatViewController {
             
             picker.isHidden = true
             
-            print("")
-
-            
-        case 6:
-            
+        case 7:
+            boat.size = Int(currentList[row])
             optionArray.remove(at: currentIndex)
             optionArray.insert("\(currentList[row]) ft", at: currentIndex)
             tableView.isUserInteractionEnabled = true
@@ -202,23 +236,74 @@ extension NewBoatViewController {
             
             picker.isHidden = true
             
-            print("")
+           
             
-        case 8:
+        case 9:
             
+            boat.minTime = Int(currentList[row])
             optionArray.remove(at: currentIndex)
             optionArray.insert("\(currentList[row]) Hr", at: currentIndex)
             tableView.isUserInteractionEnabled = true
             tableView.reloadData()
             
             picker.isHidden = true
+            
+        case 10:
+            
+            boat.minTime = Int(currentList[row])
+            optionArray.remove(at: currentIndex)
+            optionArray.insert(currentList[row], at: currentIndex)
+            tableView.isUserInteractionEnabled = true
+            tableView.reloadData()
+            
+            picker.isHidden = true
+            
+        case 11:
+            
+            boat.minTime = Int(currentList[row])
+            optionArray.remove(at: currentIndex)
+            optionArray.insert("\(currentList[row]) Rm", at: currentIndex)
+            tableView.isUserInteractionEnabled = true
+            tableView.reloadData()
+            
+            picker.isHidden = true
+            
+        case 12:
+            
+            boat.minTime = Int(currentList[row])
+            optionArray.remove(at: currentIndex)
+            optionArray.insert("\(currentList[row]) Restrooms", at: currentIndex)
+            tableView.isUserInteractionEnabled = true
+            tableView.reloadData()
+            
+            picker.isHidden = true
            
-            print("")
         default:
             break
         }
         
+        guard completedRows.count == 13 else {
+            
+            return
+        }
         
+        guard priceView.textfield.text != nil else {
+            
+            return
+        }
+        
+        guard rulesView.textBox.text != nil else {
+            
+            return
+        }
+        
+        guard boatModelView.textBox.text != nil else {
+            
+            return
+        }
+        
+        saveView.saveBtn.backgroundColor = THEME_1
+        saveView.saveBtn.isUserInteractionEnabled = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

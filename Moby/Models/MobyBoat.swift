@@ -19,12 +19,18 @@ class MobyBoat {
     var passengers:String!
     var location:String!
     var description:String!
-    var activities:String!
     var boatModel:String!
+    var boatMake:String!
+    var boatRules:String!
+    var minTime:Int!
     var lat:Double!
     var long:Double!
     
-    init(id:String,userId:String,size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,activities:String,boatModel:String,lat:Double,long:Double){
+    init() {
+        
+    }
+    
+    init(id:String,userId:String,size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,boatModel:String,boatMake:String,boatRules:String,minTime:Int,lat:Double,long:Double){
         
         self.id = id
         self.userId = userId
@@ -35,10 +41,12 @@ class MobyBoat {
         self.passengers = passengers
         self.location = location
         self.description = description
-        self.activities = activities
         self.boatModel = boatModel
         self.lat = lat
         self.long = long
+        self.boatMake = boatMake
+        self.boatRules = boatRules
+        self.minTime = minTime
         
         
     }
