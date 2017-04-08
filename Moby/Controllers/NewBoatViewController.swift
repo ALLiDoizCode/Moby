@@ -13,13 +13,16 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     var tableView:UITableView!
     var headerView = UIView()
-    var bgImageView = UIImageView()
+    var bgImageView = PictureViews()
     var addImageIcon = IconView()
     var picker = UIPickerView()
     var currentList:[String] = []
     var currentIndex:Int!
     var priceView = PriceView()
     var rulesView = RulesView()
+    var boatModelView = RulesView()
+    var saveView = SaveView()
+    var backButton = FlatButton()
  
     var optionArray:[String] = ["Make","Year Built","Boat Model","Boat Type","Boat Rules","Passengers","Size","Price","Min Time"]
     
@@ -54,6 +57,7 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
         setup()
         constrainViews()
         
+        
         // Do any additional setup after loading the view.
     }
 
@@ -66,29 +70,16 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: saveView.topAnchor, constant: 0).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         
         picker.translatesAutoresizingMaskIntoConstraints = false
         //picker.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
         picker.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
-        picker.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        picker.bottomAnchor.constraint(equalTo: saveView.topAnchor, constant: 0).isActive = true
         picker.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         picker.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
-        
-        bgImageView.translatesAutoresizingMaskIntoConstraints = false
-        bgImageView.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 0).isActive = true
-        bgImageView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0).isActive = true
-        bgImageView.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 0).isActive = true
-        bgImageView.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: 0).isActive = true
-        
-        addImageIcon.translatesAutoresizingMaskIntoConstraints = false
-        addImageIcon.centerXAnchor.constraint(equalTo: headerView.centerXAnchor, constant: 0).isActive = true
-        addImageIcon.centerYAnchor.constraint(equalTo: headerView.centerYAnchor, constant: 0).isActive = true
-        addImageIcon.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 1).isActive = true
-        addImageIcon.widthAnchor.constraint(equalTo: addImageIcon.heightAnchor, multiplier: 1).isActive = true
-        
         
         priceView.translatesAutoresizingMaskIntoConstraints = false
         priceView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
@@ -98,21 +89,53 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         rulesView.translatesAutoresizingMaskIntoConstraints = false
         rulesView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        rulesView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
         rulesView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         rulesView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
-        rulesView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
+        
+        boatModelView.translatesAutoresizingMaskIntoConstraints = false
+        boatModelView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        boatModelView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        boatModelView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        boatModelView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        
+        saveView.translatesAutoresizingMaskIntoConstraints = false
+        saveView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        saveView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        saveView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        saveView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.15).isActive = true
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
+        backButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        backButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.03).isActive = true
+        backButton.widthAnchor.constraint(equalTo: backButton.heightAnchor, multiplier: 1).isActive = true
+        
+        
+        self.view.setNeedsLayout()
+        self.view.setNeedsDisplay()
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        bgImageView.setup()
     }
     
     func setup(){
         
-        self.view.backgroundColor = THEME_2
+        self.view.backgroundColor = THEME_1
         tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.register(NewBoatTableViewCell.self, forCellReuseIdentifier: "newboat")
         tableView.delegate = self
         tableView.dataSource = self
-        bgImageView.isHidden = true
+        bgImageView.isHidden = false
         priceView.isHidden = true
         rulesView.isHidden = true
+        boatModelView.isHidden = true
+        boatModelView.doneButton.setTitle("Set Model", for: .normal)
         //tableView.frame = self.view.frame
         
         picker.delegate = self
@@ -124,19 +147,29 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
         self.view.addSubview(picker)
         self.view.addSubview(priceView)
         self.view.addSubview(rulesView)
-        headerView.addSubview(bgImageView)
-        headerView.addSubview(addImageIcon)
+        self.view.addSubview(saveView)
+        self.view.addSubview(boatModelView)
+        self.view.addSubview(backButton)
         
         addImageIcon.icon.image = UIImage(named: "photo")
         addImageIcon.label.text = "Add Image"
         addImageIcon.label.font = RobotoFont.bold(with: largeFontWidth)
         
-        let boatImage = UIImage(named: "boat_4")
-        bgImageView.image = boatImage
-        bgImageView.contentMode = .scaleAspectFit
-        
         priceView.doneButton.addTarget(self, action: #selector(NewBoatViewController.setPrice), for: .touchUpInside)
         rulesView.doneButton.addTarget(self, action: #selector(NewBoatViewController.setRules), for: .touchUpInside)
+        boatModelView.doneButton.addTarget(self, action: #selector(NewBoatViewController.setModel), for: .touchUpInside)
+        
+        saveView.saveBtn.backgroundColor = Color.grey.lighten2
+        saveView.saveBtn.isUserInteractionEnabled = false
+        
+        backButton.image = UIImage(named: "back")
+        backButton.imageView?.contentMode = .scaleAspectFit
+        backButton.addTarget(self, action: #selector(NewBoatViewController.back), for: .touchUpInside)
+    }
+    
+    func back(){
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     func donePicker(){
@@ -149,6 +182,22 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
         picker.isHidden = true
     }
     
+    func setModel(){
+        
+        if completedRows.contains(currentIndex) == false {
+            
+            completedRows.append(currentIndex)
+            
+            print("added row \(currentIndex)")
+        }
+        
+        saveView.isHidden = false
+        boatModelView.isHidden = true
+        tableView.isUserInteractionEnabled = true
+        tableView.reloadData()
+        
+    }
+    
     func setRules(){
         
         if completedRows.contains(currentIndex) == false {
@@ -158,6 +207,7 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
             print("added row \(currentIndex)")
         }
         
+        saveView.isHidden = false
         rulesView.isHidden = true
         tableView.isUserInteractionEnabled = true
         tableView.reloadData()
@@ -165,6 +215,11 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func setPrice(){
+        
+        guard priceView.textfield.text != "" else {
+            
+            return
+        }
         
         if completedRows.contains(currentIndex) == false {
             
@@ -181,6 +236,7 @@ class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewD
         optionArray.insert("\(finalNumber)/Hour", at: currentIndex)
         priceView.textfield.text = ""
         priceView.isHidden = true
+        saveView.isHidden = false
         priceView.textfield.resignFirstResponder()
         tableView.isUserInteractionEnabled = true
         tableView.isScrollEnabled = true

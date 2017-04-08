@@ -35,6 +35,7 @@
 		AB10E5E91E96D904004839C8 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5E81E96D904004839C8 /* PriceView.swift */; };
 		AB10E5EB1E971055004839C8 /* ExtendNewBoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5EA1E971055004839C8 /* ExtendNewBoat.swift */; };
 		AB10E5ED1E972FEC004839C8 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5EC1E972FEC004839C8 /* RulesView.swift */; };
+		AB1DA88A1E98737C00EAAF3C /* PictureViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1DA8891E98737C00EAAF3C /* PictureViews.swift */; };
 		AB20BCD51E632843007DADCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20BCD41E632843007DADCA /* Constants.swift */; };
 		AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25495B1E3E3CBB000D3E82 /* RealTime.swift */; };
 		AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261CEA1E8FFDA400DF97CE /* BarView.swift */; };
@@ -53,6 +54,7 @@
 		AB5BFFD81E632FF5004A1820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */; };
 		AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65030E1E7EB1E600127E9F /* CardCell.swift */; };
 		AB6503111E7EB93700127E9F /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ExploreViewController.swift */; };
+		AB6C87271E985F920098188B /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C87261E985F920098188B /* SaveView.swift */; };
 		AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D63FB1E9082A200B924F6 /* IconView.swift */; };
 		AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201821E8850760042F1E8 /* SearchClient.swift */; };
 		AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201841E8850D60042F1E8 /* SearchModel.swift */; };
@@ -121,6 +123,7 @@
 		AB10E5E81E96D904004839C8 /* PriceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		AB10E5EA1E971055004839C8 /* ExtendNewBoat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendNewBoat.swift; sourceTree = "<group>"; };
 		AB10E5EC1E972FEC004839C8 /* RulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		AB1DA8891E98737C00EAAF3C /* PictureViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViews.swift; sourceTree = "<group>"; };
 		AB20BCD41E632843007DADCA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB25495B1E3E3CBB000D3E82 /* RealTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
 		AB261CEA1E8FFDA400DF97CE /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		AB5BFFD71E632FF5004A1820 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB65030E1E7EB1E600127E9F /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		AB6503101E7EB93700127E9F /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		AB6C87261E985F920098188B /* SaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveView.swift; path = NewBoat/SaveView.swift; sourceTree = "<group>"; };
 		AB7D63FB1E9082A200B924F6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		AB9201821E8850760042F1E8 /* SearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
 		AB9201841E8850D60042F1E8 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 			children = (
 				AB10E5E81E96D904004839C8 /* PriceView.swift */,
 				AB10E5EC1E972FEC004839C8 /* RulesView.swift */,
+				AB6C87261E985F920098188B /* SaveView.swift */,
+				AB1DA8891E98737C00EAAF3C /* PictureViews.swift */,
 			);
 			name = NewBoat;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,
 				ABA1D3CC1E915B3C000719B8 /* DetailImageCollectionViewCell.swift in Sources */,
 				AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */,
+				AB1DA88A1E98737C00EAAF3C /* PictureViews.swift in Sources */,
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
 				AB10E5D21E94767F004839C8 /* ReviewTableViewCell.swift in Sources */,
 				AB20BCD51E632843007DADCA /* Constants.swift in Sources */,
@@ -615,6 +622,7 @@
 				AB10E5D61E95B42E004839C8 /* fakeData.swift in Sources */,
 				ABA1D3D31E9180E4000719B8 /* AboutView.swift in Sources */,
 				AB9201891E8864260042F1E8 /* Charge.swift in Sources */,
+				AB6C87271E985F920098188B /* SaveView.swift in Sources */,
 				AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */,
 				AB524D571E880EAB00575BAA /* DataStore.swift in Sources */,
 				AB261CF31E9081C700DF97CE /* TabBar.swift in Sources */,

@@ -18,7 +18,6 @@ class Captin {
     var phone:String!
     var merchantId:String!
     var active:Bool!
-    var boats:[String]!
     
     init(_firstName:String,_lastName:String,_email:String,_Phone:String,_merchantId:String,active:Bool) {
         

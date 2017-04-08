@@ -9,7 +9,6 @@
 import UIKit
 import CenteredCollectionView
 import Material
-import Cartography
 
 class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
@@ -47,7 +46,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         
-        collectionView.minimumLineSpacing = 1.0
+        collectionView.minimumLineSpacing = 0
         collectionView.scrollDirection = .horizontal
         scrollView.frame = self.view.frame
 
@@ -107,11 +106,11 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         //scrollView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true*/
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -10).isActive = true
+        collectionView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive = true
         //collectionView.bottomAnchor.constraint(equalTo: titleView.topAnchor, constant: -10).isActive = true
-        collectionView.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: -20).isActive = true
-        collectionView.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 20).isActive = true
-        collectionView.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.45).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.45).isActive = true
         
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 0).isActive = true

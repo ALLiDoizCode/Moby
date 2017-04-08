@@ -63,6 +63,7 @@ class PayTabView: UIView {
         payBtn.setTitle("Book Boat", for: .normal)
         payBtn.setTitleColor(THEME_2, for: .normal)
         payBtn.cornerRadiusPreset = .cornerRadius2
+        payBtn.titleLabel?.font = RobotoFont.regular(with: largeFontWidth)
         
         priceLabel.textColor = TEXT_COLOR
         priceLabel.font = RobotoFont.bold(with: largeFontWidth)

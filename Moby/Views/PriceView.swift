@@ -69,6 +69,7 @@ class PriceView: UIView,UITextFieldDelegate {
         
         doneButton.backgroundColor = THEME_1
         doneButton.setTitle("Set Price", for: .normal)
+        doneButton.titleLabel?.font = RobotoFont.regular(with: largeFontWidth)
         
     }
     

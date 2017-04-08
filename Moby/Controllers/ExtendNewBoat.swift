@@ -13,7 +13,7 @@ extension NewBoatViewController {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        return headerView
+        return bgImageView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -52,6 +52,12 @@ extension NewBoatViewController {
             picker.isHidden = false
             tableView.isUserInteractionEnabled = false
             
+        case 2:
+            
+            saveView.isHidden = true
+            boatModelView.isHidden = false
+            tableView.isUserInteractionEnabled = false
+            
         case 3:
             
             currentList = BOAT_Type()
@@ -60,7 +66,7 @@ extension NewBoatViewController {
             tableView.isUserInteractionEnabled = false
             
         case 4:
-            
+            saveView.isHidden = true
             rulesView.isHidden = false
             tableView.isUserInteractionEnabled = false
             
@@ -79,6 +85,7 @@ extension NewBoatViewController {
             tableView.isUserInteractionEnabled = false
             
         case 7:
+            saveView.isHidden = true
             priceView.textfield.becomeFirstResponder()
             tableView.isUserInteractionEnabled = false
             tableView.isScrollEnabled = false

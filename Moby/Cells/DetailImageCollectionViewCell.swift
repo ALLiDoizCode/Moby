@@ -17,12 +17,12 @@ class DetailImageCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.addSubview(boatImage)
-        let margin = self.layoutMarginsGuide
+        //let margin = self.layoutMarginsGuide
         boatImage.translatesAutoresizingMaskIntoConstraints = false
-        boatImage.topAnchor.constraint(equalTo: margin.topAnchor, constant: 0).isActive = true
-        boatImage.leftAnchor.constraint(equalTo: margin.leftAnchor, constant: -10).isActive = true
-        boatImage.rightAnchor.constraint(equalTo: margin.rightAnchor, constant: 10).isActive = true
-        boatImage.heightAnchor.constraint(equalTo: margin.heightAnchor, multiplier: 1).isActive = true
+        boatImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        boatImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
+        boatImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+        boatImage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1).isActive = true
         
         boatImage.contentMode = .scaleAspectFill
         boatImage.clipsToBounds = true
