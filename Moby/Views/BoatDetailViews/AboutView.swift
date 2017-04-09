@@ -14,7 +14,7 @@ class AboutView: UIView {
     var header = UILabel()
     var body = UILabel()
     var more = FlatButton()
-    var currnetHeight:NSLayoutConstraint!
+    //var currnetHeight:NSLayoutConstraint!
     
     /*
     // Only override draw() if you perform custom drawing.
@@ -48,8 +48,8 @@ class AboutView: UIView {
         body.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 20).isActive = true
         body.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -20).isActive = true
         body.topAnchor.constraint(equalTo: header.topAnchor, constant: 40).isActive = true
-        currnetHeight = body.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.45)
-        currnetHeight.isActive = true
+        //currnetHeight = body.heightAnchor.constraint(equalTo: body.heightAnchor, multiplier: 0.5)
+        //currnetHeight.isActive = true
         body.clipsToBounds = true
         
         more.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +68,7 @@ class AboutView: UIView {
         
         body.font = RobotoFont.light(with: fontWidth + 3)
         body.textColor = TEXT_COLOR
-        body.numberOfLines = 0
+        body.numberOfLines = 5
         body.lineBreakMode = .byTruncatingTail
         
         more.setTitle("More", for: .normal)

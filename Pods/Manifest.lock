@@ -7,9 +7,6 @@ PODS:
   - CardIO (5.4.1)
   - Cartography (1.0.1)
   - CenteredCollectionView (0.9.6)
-  - ChameleonFramework/Default (2.1.0)
-  - ChameleonFramework/Swift (2.1.0):
-    - ChameleonFramework/Default
   - Cosmos (8.0.2)
   - IQKeyboardManagerSwift (4.0.7)
   - Material (2.2.5):
@@ -17,9 +14,13 @@ PODS:
   - Material/Core (2.2.5)
   - PlaidClient (0.6)
   - Player (0.2.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SendBirdSDK (3.0.28)
   - Stripe (9.3.0)
   - SwiftEventBus (2.1.0)
+  - SwiftLocation (1.1.1)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
@@ -29,15 +30,16 @@ DEPENDENCIES:
   - CardIO
   - Cartography (~> 1.0.1)
   - CenteredCollectionView
-  - ChameleonFramework/Swift
   - Cosmos (~> 8.0.2)
   - IQKeyboardManagerSwift
   - Material (~> 2.2)
   - PlaidClient (from `https://github.com/natemann/PlaidClient.git`)
   - Player (~> 0.2.0)
+  - SDWebImage (~> 4.0.0)
   - SendBirdSDK
   - Stripe
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `2.1.2`)
+  - SwiftLocation (~> 1.1.1)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -63,17 +65,18 @@ SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   CenteredCollectionView: 19fd5b1084ce45ebe9519d2f5441132c0a1bbed6
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Material: 9d1d084759d908a5bddc37e6e9d22874da296621
   PlaidClient: 9afd1cb35fa3a273b2c3e25f0b7b240d0368ca60
   Player: 5cff076cc9f13b51f56b6fb7bed24431569b8102
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SendBirdSDK: ea3ee1a1219da90a8f54894a54224b615855fdb8
   Stripe: 0f41a33a6fa3ac76ee668d7df3e2680c28b8ab1a
   SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
+  SwiftLocation: aac16955b508c46b82bf07fcceb7e2a3b382b8d5
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: f9a4d0d8b0ab23083e96aabce7769a168b325366
+PODFILE CHECKSUM: f7cae36493fa5790e60b1716b47298078b66ad66
 
 COCOAPODS: 1.1.1

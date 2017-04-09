@@ -14,6 +14,8 @@ class IconView: UIView {
     var icon = UIImageView()
     var label = UILabel()
     var gesture = UITapGestureRecognizer()
+    var widthConstraint: NSLayoutConstraint!
+    var margins:UILayoutGuide!
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -41,11 +43,12 @@ class IconView: UIView {
         icon.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        let margins = self.layoutMarginsGuide
+        margins = self.layoutMarginsGuide
         
         icon.centerXAnchor.constraint(equalTo: margins.centerXAnchor, constant: 0).isActive = true
         icon.centerYAnchor.constraint(equalTo: margins.centerYAnchor, constant: -10).isActive = true
-        icon.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.3).isActive = true
+        widthConstraint = icon.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.3)
+        widthConstraint.isActive = true
         icon.heightAnchor.constraint(equalTo: icon.widthAnchor, multiplier: 1).isActive = true
         
         label.topAnchor.constraint(equalTo: icon.bottomAnchor, constant: 0).isActive = true

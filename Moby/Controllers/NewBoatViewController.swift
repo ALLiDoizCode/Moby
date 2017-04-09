@@ -413,41 +413,10 @@ UINavigationControllerDelegate {
         boat.long = 83.65
         boat.location = "my house"
         
-    
-        Client().token { (token) in
-
-            DataStore.setToken(ACCESS_TOKEN:token)
+        NewBoatPrensenter().saveBoat(boat: self.boat, images: self.bgImageView.images) {
             
-            Client().auth(token: DataStore().getToken()) { (success) in
-                
-                guard success == true else {
-                    
-                    return
-                }
-                
-                Client().newBoat(boat: self.boat, completion: { (boatId) in
-                    
-                    for i in 0..<self.bgImageView.images.count - 1 {
-                        
-                        if i == 0 {
-                            
-                            Client().newboatImage(boatId: boatId, image: self.bgImageView.images[i], main: true, path: "\(boatId)\(i)", completion: { (boatImageId) in
-                                
-                            })
-                            
-                        }else {
-                            
-                            Client().newboatImage(boatId: boatId, image: self.bgImageView.images[i], main: true, path: "\(boatId)\(i)", completion: { (boatImageId) in
-                                
-                            })
-                            
-                        }
-                    }
-                    
-                })
-            }
+            print("alert the user taht the boat as been saved")
         }
-        
         
     }
     

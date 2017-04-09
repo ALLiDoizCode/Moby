@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import SDWebImage
 
 class ExploreViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -19,10 +20,12 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
     var barTopLayout:NSLayoutConstraint!
     var margins:UILayoutGuide!
     var lastContentOffset: CGFloat = 0
+    var boats:[(MobyBoat,[String])] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         self.view.addSubview(filter)
         self.view.addSubview(self.tableView)
         self.view.addSubview(bar)
@@ -105,12 +108,26 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardCell
         
-        let image = UIImage(named: boats[indexPath.row])
+        var url:URL!
         
-        cell.bgImageView.image = image
-        cell.priceLbl.text = "$\(prices[indexPath.row])"
+        if boats[indexPath.row].1.count > 0 {
+            
+            url = URL(string: boats[indexPath.row].1[0])
+            print("cell Image is \(boats[indexPath.row].1[0])")
+            cell.bgImageView.sd_setImage(with: url)
+        }else {
+            
+            cell.bgImageView.image = UIImage(named: "bluewhale")
+            
+        }
+        
+        let boat = boats[indexPath.row].0
+        let number = Int(boat.price!)
+        let finalNumber = NumberFormatter.localizedString(from: NSNumber(value: number), number: NumberFormatter.Style.currency)
+        
+        cell.priceLbl.text = finalNumber
         cell.reviewsLbl.text = "\(reviews[indexPath.row]) Reviews"
-        cell.titleLbl.text = "Great boat for a day on the river in"
+        cell.titleLbl.text = boat.description
         cell.stars.rating = stars[indexPath.row]
         
         return cell
@@ -132,6 +149,8 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let controller = BoatDetailViewController()
+        
+        controller.boat = boats[indexPath.row]
         
         self.present(controller, animated: true, completion: nil)
     }

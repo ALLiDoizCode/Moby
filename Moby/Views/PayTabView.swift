@@ -32,7 +32,7 @@ class PayTabView: UIView {
         self.addSubview(payBtn)
         self.addSubview(priceLabel)
         self.addSubview(subLabel)
-        
+        subLabel.isHidden = true
         constrain()
         setup()
     }

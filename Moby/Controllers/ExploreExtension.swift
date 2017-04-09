@@ -63,10 +63,40 @@ extension ExploreViewController {
     }
     
     func tapText2(){
-        print("text2")
-        currentLabel = bar.text2
-        barAnimation(nextView: bar.text2)
-        tableView.isHidden = false
+        
+        guard DataStore().getBoatList().count == 0 else {
+            
+            self.boats = DataStore().getBoatList()
+            
+            DispatchQueue.main.async {
+                print("will reload table")
+                
+                self.currentLabel = self.bar.text2
+                self.barAnimation(nextView: self.bar.text2)
+                self.tableView.isHidden = false
+                self.tableView.reloadData()
+            }
+            
+            return
+        }
+        
+        ExplorePresenter().boats { (boats) in
+            
+            DataStore.setBoatList(boatList: boats)
+            self.boats = DataStore().getBoatList()
+            
+            // Bounce back to the main thread to update the UI
+            DispatchQueue.main.async {
+                print("will reload table")
+                
+                self.currentLabel = self.bar.text2
+                self.barAnimation(nextView: self.bar.text2)
+                self.tableView.isHidden = false
+                self.tableView.reloadData()
+            }
+            
+        }
+       
     }
     
     func tapText3(){

@@ -9,6 +9,7 @@
 import UIKit
 import CenteredCollectionView
 import Material
+import SDWebImage
 
 class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
@@ -25,7 +26,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     var depatureTime = UILabel()
     var featuredReiview = FeaturedReview()
     var payTab = PayTabView()
-    
+    var boat:(MobyBoat,[String])!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,13 +190,13 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     func readMore(){
         
-        guard self.about.currnetHeight.isActive == true else {
+        guard about.body.numberOfLines == 5 else {
             
             /*aboutHeight.isActive = false
             aboutHeight = about.heightAnchor.constraint(equalTo: about.body.heightAnchor, multiplier: 1.25)
             aboutHeight.isActive = true*/
             
-            about.currnetHeight.isActive = true
+            about.body.numberOfLines = 5
             
             UIView.animate(withDuration: 0.5, animations: {
                 
@@ -213,7 +214,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         aboutHeight = about.heightAnchor.constraint(equalTo: about.body.heightAnchor, multiplier: 1.05)
         aboutHeight.isActive = true*/
         
-        about.currnetHeight.isActive = false
+        about.body.numberOfLines = 0
         
         UIView.animate(withDuration: 0.5, animations: {
             
@@ -228,13 +229,25 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     func setup(){
         
         let profileImage = UIImage(named: "guy")
-        
+        var image1:UIImage!
         titleView.profileImage.image = profileImage
         titleView.boatTitle.text = "Great boat for a day on the river in DC!"
         titleView.nameLabel.text = "Jonathan Green"
         titleView.subTitle.text = "Fishing"
         
-        let image1 = UIImage(named: "power")
+        if boat.0.power! == "Sail" {
+            
+            image1 = UIImage(named: "sail")
+            
+        }else if boat.0.power! == "Paddle" {
+            
+            image1 = UIImage(named: "rowing")
+            
+        }else {
+            
+            image1 = UIImage(named: "power")
+        }
+    
         let image2 = UIImage(named: "door")
         let image3 = UIImage(named: "people")
         let image4 = UIImage(named: "tub")
@@ -244,21 +257,21 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         let rules = UIImage(named: "rules")
         
         itemBar.tab1.icon.image = image1
-        itemBar.tab1.label.text = "Power"
+        itemBar.tab1.label.text = boat.0.power!
         
         itemBar.tab2.icon.image = image2
-        itemBar.tab2.label.text = "1 Room"
+        itemBar.tab2.label.text = "\(boat.0.rooms!) Room"
         
         itemBar.tab3.icon.image = image3
-        itemBar.tab3.label.text = "1-3"
+        itemBar.tab3.label.text = "1-\(boat.0.passengers!)"
         
         itemBar.tab4.icon.image = image4
-        itemBar.tab4.label.text = "1 Bath"
+        itemBar.tab4.label.text = "\(boat.0.restRooms!) Bath"
         
         itemBar.tab5.icon.image = image5
-        itemBar.tab5.label.text = "2011"
+        itemBar.tab5.label.text = boat.0.year
         
-        timeBar.tab1.label.text = "2 hour min"
+        timeBar.tab1.label.text = "\(boat.0.minTime!) hour min"
         timeBar.tab1.icon.image = timeBarImage
         timeBar.tab3.label.text = "Amenities"
         timeBar.tab3.icon.image = amenities
@@ -274,7 +287,9 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         depatureTime.textColor = TEXT_COLOR
         depatureTime.font = RobotoFont.light(with: largeFontWidth)
         
-        payTab.priceLabel.text = "$225"
+        let number = boat.0.price!
+        
+        payTab.priceLabel.text = "\(number.currency)hr"
         payTab.subLabel.text = "per hour"
         
         featuredReiview.addTarget(self, action: #selector(BoatDetailViewController.gotoReviews), for: .touchUpInside)
@@ -289,7 +304,7 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         backButton.imageView?.contentMode = .scaleAspectFit
         backButton.addTarget(self, action: #selector(BoatDetailViewController.back), for: .touchUpInside)
         about.more.addTarget(self, action: #selector(BoatDetailViewController.readMore), for: .touchUpInside)
-        about.body.text = FAKE_BODY
+        about.body.text = boat.0.description
         
     }
     
@@ -312,16 +327,17 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return boats.count
+        return boat.1.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detail", for: indexPath) as! DetailImageCollectionViewCell
         
-        let image = UIImage(named: boats[indexPath.row])
+        var url:URL!
         
-        cell.boatImage.image = image
+        url = URL(string: boat.1[indexPath.row])
+        cell.boatImage.sd_setImage(with: url)
         
         return cell
         

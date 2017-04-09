@@ -28,12 +28,15 @@ class MobyBoat {
     var rooms:Int!
     var restRooms:Int!
     var power:String!
+    var title:String!
+    var tripType:String!
+    var instant:Bool!
     
     init() {
         
     }
     
-    init(id:String,userId:String,size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,boatModel:String,boatMake:String,boatRules:String,minTime:Int,lat:Double,long:Double,rooms:Int,restRooms:Int,power:String){
+    init(id:String,userId:String,size:Int,type:String,year:String,price:Int,passengers:String,location:String,description:String,boatModel:String,boatMake:String,boatRules:String,minTime:Int,lat:Double,long:Double,rooms:Int,restRooms:Int,power:String,title:String,tripType:String,instant:Bool){
         
         self.id = id
         self.userId = userId
@@ -53,6 +56,9 @@ class MobyBoat {
         self.rooms = rooms
         self.restRooms = restRooms
         self.power = power
+        self.title = title
+        self.tripType = tripType
+        self.instant = instant
         
         
     }

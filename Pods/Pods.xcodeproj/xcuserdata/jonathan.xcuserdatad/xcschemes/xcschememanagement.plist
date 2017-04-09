@@ -34,11 +34,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ChameleonFramework.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Cosmos.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -79,6 +74,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Stripe-Stripe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -90,6 +90,11 @@
 			<false/>
 		</dict>
 		<key>SwiftEventBus.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftLocation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -117,7 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>12814C4236DD3F7C367EF4F9802F128E</key>
+		<key>13660632E893799B9B560849C6FE15BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>32CC984E63B14CE2C4786E490FBC0372</key>
+		<key>5AC7B90FCDA997C5DB5552E78296CCFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<key>71966B24A02FA2F055A998E3F8DEE302</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,17 +162,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9AC025EF0BFA08E0424154E588EF8E39</key>
+		<key>95FF0FAF829785E12075E51627326B15</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9471FBA26F8194EB3DC94ED3508DD1B</key>
+		<key>A3F1446F2A86E8ECDBCA32FF854A499F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A995787462BC8557FFBE51B108953BE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD140CC7ED0A2AC1E50B3D4A8D467AE8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,7 +192,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D0943E27C1B4FA816A255F42F050C222</key>
+		<key>ECF92A73DAD17FECEAAACC40AFF79C3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

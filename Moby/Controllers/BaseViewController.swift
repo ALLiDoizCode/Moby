@@ -32,9 +32,14 @@ class BaseViewController: UIViewController {
         tabBar.tab4.icon.image = chatImage
         tabBar.tab4.label.text = "Chat"
         
+        let blueWhaleImage = UIImage(named: "bluewhale")
+        tabBar.tab3.icon.image = blueWhaleImage
+        tabBar.tab3.label.text = "Trips"
+        
         let experienceImage = UIImage(named: "telescope")
         tabBar.tab1.icon.image = experienceImage
         tabBar.tab1.label.text = "ARRR"
+        tabBar.tab1.gesture.addTarget(self, action: #selector(BaseViewController.explore))
 
         // Do any additional setup after loading the view.
     }
@@ -44,10 +49,15 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func explore()  {
+        
+        let controller = ExploreViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 
     func profile(){
         
-        let controller = NewBoatViewController()
+        let controller = ProfileViewController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

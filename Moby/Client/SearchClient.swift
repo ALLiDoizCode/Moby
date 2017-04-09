@@ -44,24 +44,24 @@ class SearchClient {
             
             let json = JSON(data: response.data!)
             
-            print("query response JSON is \(json)")
-            print("response is \(response.result.value)")
-            print("response degub is \(response.debugDescription)")
-            print("response request is \(response.request)")
-            print("response reponse is \(response.response)")
+            //print("query response JSON is \(json)")
+            //print("response is \(response.result.value)")
+            //print("response degub is \(response.debugDescription)")
+            //print("response request is \(response.request)")
+            //print("response reponse is \(response.response)")
             
             let count = json.count
             
-            print("number of objects found \(count)")
+            //print("number of objects found \(count)")
             
             for object in json {
                 
             switch collection {
                  
-                 case "user":
-                    print("Got User")
+                 case USER_COLLECTION:
+                   // print("Got User")
                  
-                    let id = object.1["id"].stringValue
+                    let id = object.1["_id"].stringValue
                     let connectId = object.1["connectId"].stringValue
                     let customerId = object.1["customerId"].stringValue
                     let email = object.1["email"].stringValue
@@ -75,11 +75,11 @@ class SearchClient {
                  
                     objects.append(fishermen)
                 
-                    completion(objects)
-                 case "boat":
-                    print("Got Boat")
+                
+                 case BOAT_COLLECTION:
+                   // print("Got Boat")
                  
-                    let id = object.1["id"].stringValue
+                    let id = object.1["_id"].stringValue
                     let userId = object.1["userId"].stringValue
                     let size = object.1["size"].intValue
                     let type = object.1["type"].stringValue
@@ -97,22 +97,24 @@ class SearchClient {
                     let power = object.1["power"].stringValue
                     let rooms = object.1["rooms"].intValue
                     let restRooms = object.1["restRooms"].intValue
+                    let title = object.1["title"].stringValue
+                    let tripType = object.1["tripType"].stringValue
+                    let instant = object.1["instant"].boolValue
                     
-                    let boat = MobyBoat(id: id, userId: userId, size: size, type: type, year: year, price: price, passengers: passengers, location: location, description: description, boatModel: boatModel, boatMake: boatMake, boatRules: boatRules, minTime: minTime, lat: lat, long: long,rooms:rooms,restRooms:restRooms,power:power)
+                    let boat = MobyBoat(id: id, userId: userId, size: size, type: type, year: year, price: price, passengers: passengers, location: location, description: description, boatModel: boatModel, boatMake: boatMake, boatRules: boatRules, minTime: minTime, lat: lat, long: long,rooms:rooms,restRooms:restRooms,power:power,title:title,tripType:tripType,instant:instant)
                  
                 
-                    print("boat price is \(price)")
-                    print("boat lat is \(lat)")
-                    print("boat lat is \(long)")
+                    //print("boat price is \(price)")
+                    //print("boat lat is \(lat)")
+                    //print("boat lat is \(long)")
                   
                     objects.append(boat)
-                    completion(objects)
                 
-                 case "images":
+                 case IMAGES_COLLECTION:
                     
-                    print("Got Boat")
+                    //print("Got Boat images")
                  
-                    let id = object.1["id"].stringValue
+                    let id = object.1["_id"].stringValue
                     let boatId = object.1["boatId"].stringValue
                     let main = object.1["main"].boolValue
                     let Image = object.1["boatImage"].stringValue
@@ -120,12 +122,11 @@ class SearchClient {
                  
                     let boatImage = BoatImages(id: id, boatId: boatId, main: main, Image: Image)
                     objects.append(boatImage)
-                    completion(objects)
                 
-                 case "trip":
-                    print("Got Trip")
+                 case TRIP_COLLECTION:
+                    //print("Got Trip")
                  
-                    let id = object.1["id"].stringValue
+                    let id = object.1["_id"].stringValue
                     let captin = object.1["captin"].stringValue
                     let boat = object.1["boat"].stringValue
                     let charge = object.1["charge"].stringValue
@@ -133,24 +134,24 @@ class SearchClient {
                  
                     let trip = Trip(id: id, captin: captin, boat: boat, charge: charge, duration: duration)
                     objects.append(trip)
-                    completion(objects)
                 
-                 case "charge":
-                    print("Got Charge")
+                 case CHARGE_COLLECTION:
+                    //print("Got Charge")
                  
-                    let id = object.1["id"].stringValue
+                    let id = object.1["_id"].stringValue
                     let customer = object.1["customer"].stringValue
                     let chargeId = object.1["charge"].stringValue
                  
                     let charge = Charge(id: id, customer: customer, charge: chargeId)
                     objects.append(charge)
-                    
-                    completion(objects)
+                
                 
                  default:
                     break
                 }
             }
+            
+            completion(objects)
             
         }
     }
