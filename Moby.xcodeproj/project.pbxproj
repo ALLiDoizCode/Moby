@@ -23,8 +23,8 @@
 		AB10E5D21E94767F004839C8 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D11E94767F004839C8 /* ReviewTableViewCell.swift */; };
 		AB10E5D41E95B0B0004839C8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D31E95B0B0004839C8 /* BaseViewController.swift */; };
 		AB10E5D61E95B42E004839C8 /* fakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D51E95B42E004839C8 /* fakeData.swift */; };
-		AB10E5D81E95B53D004839C8 /* AmenitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D71E95B53D004839C8 /* AmenitiesViewController.swift */; };
-		AB10E5DA1E95BE5A004839C8 /* AmenitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D91E95BE5A004839C8 /* AmenitiesTableViewCell.swift */; };
+		AB10E5D81E95B53D004839C8 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D71E95B53D004839C8 /* RulesViewController.swift */; };
+		AB10E5DA1E95BE5A004839C8 /* RulesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5D91E95BE5A004839C8 /* RulesTableViewCell.swift */; };
 		AB10E5DC1E968580004839C8 /* NewBoatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5DB1E968580004839C8 /* NewBoatViewController.swift */; };
 		AB10E5DE1E968A58004839C8 /* NewBoatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10E5DD1E968A58004839C8 /* NewBoatTableViewCell.swift */; };
 		AB10E5E21E96C423004839C8 /* Manufactures.json in Resources */ = {isa = PBXBuildFile; fileRef = AB10E5E11E96C423004839C8 /* Manufactures.json */; };
@@ -61,6 +61,7 @@
 		AB6503111E7EB93700127E9F /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6503101E7EB93700127E9F /* ExploreViewController.swift */; };
 		AB6C87271E985F920098188B /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C87261E985F920098188B /* SaveView.swift */; };
 		AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D63FB1E9082A200B924F6 /* IconView.swift */; };
+		AB9126401E9B30AF0037799E /* UpdateProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91263F1E9B30AF0037799E /* UpdateProfileImage.swift */; };
 		AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201821E8850760042F1E8 /* SearchClient.swift */; };
 		AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201841E8850D60042F1E8 /* SearchModel.swift */; };
 		AB9201871E8864150042F1E8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201861E8864150042F1E8 /* Trip.swift */; };
@@ -119,8 +120,8 @@
 		AB10E5D11E94767F004839C8 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		AB10E5D31E95B0B0004839C8 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AB10E5D51E95B42E004839C8 /* fakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fakeData.swift; sourceTree = "<group>"; };
-		AB10E5D71E95B53D004839C8 /* AmenitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesViewController.swift; sourceTree = "<group>"; };
-		AB10E5D91E95BE5A004839C8 /* AmenitiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesTableViewCell.swift; sourceTree = "<group>"; };
+		AB10E5D71E95B53D004839C8 /* RulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		AB10E5D91E95BE5A004839C8 /* RulesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesTableViewCell.swift; sourceTree = "<group>"; };
 		AB10E5DB1E968580004839C8 /* NewBoatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBoatViewController.swift; sourceTree = "<group>"; };
 		AB10E5DD1E968A58004839C8 /* NewBoatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBoatTableViewCell.swift; sourceTree = "<group>"; };
 		AB10E5E11E96C423004839C8 /* Manufactures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Manufactures.json; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		AB6503101E7EB93700127E9F /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		AB6C87261E985F920098188B /* SaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveView.swift; path = NewBoat/SaveView.swift; sourceTree = "<group>"; };
 		AB7D63FB1E9082A200B924F6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		AB91263F1E9B30AF0037799E /* UpdateProfileImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileImage.swift; sourceTree = "<group>"; };
 		AB9201821E8850760042F1E8 /* SearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
 		AB9201841E8850D60042F1E8 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		AB9201861E8864150042F1E8 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		AB261CE91E8FFCA900DF97CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB91263E1E9B30820037799E /* Profile */,
 				AB10E5E71E96D811004839C8 /* NewBoat */,
 				AB10E5CE1E945FD3004839C8 /* Review */,
 				ABA1D3CD1E916358000719B8 /* BoatDetailViews */,
@@ -367,13 +370,21 @@
 				ABA1D3C91E9157BC000719B8 /* BoatDetailViewController.swift */,
 				AB10E5CC1E945FD0004839C8 /* ReviewViewController.swift */,
 				AB10E5D31E95B0B0004839C8 /* BaseViewController.swift */,
-				AB10E5D71E95B53D004839C8 /* AmenitiesViewController.swift */,
+				AB10E5D71E95B53D004839C8 /* RulesViewController.swift */,
 				AB10E5DB1E968580004839C8 /* NewBoatViewController.swift */,
 				AB10E5EA1E971055004839C8 /* ExtendNewBoat.swift */,
 				AB1DA88C1E99AD4300EAAF3C /* ProfileViewController.swift */,
 				AB541B301E9AB77A00B84AD9 /* SetBoatLocationViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB91263E1E9B30820037799E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AB91263F1E9B30AF0037799E /* UpdateProfileImage.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		ABA1D3CD1E916358000719B8 /* BoatDetailViews */ = {
@@ -394,7 +405,7 @@
 				ABBD9E6F1E6352C500BB6AA1 /* CaptinCell.swift */,
 				AB65030E1E7EB1E600127E9F /* CardCell.swift */,
 				ABA1D3CB1E915B3C000719B8 /* DetailImageCollectionViewCell.swift */,
-				AB10E5D91E95BE5A004839C8 /* AmenitiesTableViewCell.swift */,
+				AB10E5D91E95BE5A004839C8 /* RulesTableViewCell.swift */,
 				AB10E5DD1E968A58004839C8 /* NewBoatTableViewCell.swift */,
 				AB1DA88E1E99AFA200EAAF3C /* ProfileTableViewCell.swift */,
 				AB541B321E9AC47300B84AD9 /* LocationTableViewCell.swift */,
@@ -603,7 +614,7 @@
 				AB10E5E61E96C7B1004839C8 /* BoatType.json in Sources */,
 				AB10E5E31E96C453004839C8 /* Manufactures.json in Sources */,
 				AB541B331E9AC47300B84AD9 /* LocationTableViewCell.swift in Sources */,
-				AB10E5DA1E95BE5A004839C8 /* AmenitiesTableViewCell.swift in Sources */,
+				AB10E5DA1E95BE5A004839C8 /* RulesTableViewCell.swift in Sources */,
 				AB3AA2791DC2CE4C000FC168 /* MobyBoat.swift in Sources */,
 				AB10E5C61E931A21004839C8 /* FeaturedReview.swift in Sources */,
 				AB10E5CD1E945FD0004839C8 /* ReviewViewController.swift in Sources */,
@@ -618,6 +629,7 @@
 				AB25495C1E3E3CBB000D3E82 /* RealTime.swift in Sources */,
 				AB261CF11E90430900DF97CE /* DefaultBar.swift in Sources */,
 				AB10E5DC1E968580004839C8 /* NewBoatViewController.swift in Sources */,
+				AB9126401E9B30AF0037799E /* UpdateProfileImage.swift in Sources */,
 				ABA1D3CA1E9157BC000719B8 /* BoatDetailViewController.swift in Sources */,
 				AB65030F1E7EB1E600127E9F /* CardCell.swift in Sources */,
 				AB541B351E9ADB8D00B84AD9 /* LocationHelper.swift in Sources */,
@@ -657,7 +669,7 @@
 				AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */,
 				AB524D571E880EAB00575BAA /* DataStore.swift in Sources */,
 				AB261CF31E9081C700DF97CE /* TabBar.swift in Sources */,
-				AB10E5D81E95B53D004839C8 /* AmenitiesViewController.swift in Sources */,
+				AB10E5D81E95B53D004839C8 /* RulesViewController.swift in Sources */,
 				AB4691C11E85A7DD00266C1E /* BankViewController.swift in Sources */,
 				AB10E5DE1E968A58004839C8 /* NewBoatTableViewCell.swift in Sources */,
 				ABE0F4911E9AEB2A000F4CE9 /* NewTitleView.swift in Sources */,

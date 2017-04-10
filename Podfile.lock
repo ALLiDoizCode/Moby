@@ -3,7 +3,6 @@ PODS:
   - AWSCore (2.5.0)
   - AWSS3 (2.5.0):
     - AWSCore (= 2.5.0)
-  - BubbleTransition (2.0.1)
   - CardIO (5.4.1)
   - Cartography (1.0.1)
   - CenteredCollectionView (0.9.6)
@@ -12,6 +11,7 @@ PODS:
   - Material (2.2.5):
     - Material/Core (= 2.2.5)
   - Material/Core (2.2.5)
+  - NVActivityIndicatorView (3.2)
   - PlaidClient (0.6)
   - Player (0.2.2)
   - SDWebImage (4.0.0):
@@ -26,13 +26,13 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AWSS3
-  - BubbleTransition (~> 2.0.0)
   - CardIO
   - Cartography (~> 1.0.1)
   - CenteredCollectionView
   - Cosmos (~> 8.0.2)
   - IQKeyboardManagerSwift
   - Material (~> 2.2)
+  - NVActivityIndicatorView
   - PlaidClient (from `https://github.com/natemann/PlaidClient.git`)
   - Player (~> 0.2.0)
   - SDWebImage (~> 4.0.0)
@@ -61,13 +61,13 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AWSCore: e9839d27ceaa2db75934a9c418630ce63c23e347
   AWSS3: 3678dd99006ff77c825fb857fc7cbaca0db848c6
-  BubbleTransition: bb24ed389ab672eecf3c87170d0a73f959a8e696
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   CenteredCollectionView: 19fd5b1084ce45ebe9519d2f5441132c0a1bbed6
   Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Material: 9d1d084759d908a5bddc37e6e9d22874da296621
+  NVActivityIndicatorView: 28942c18ced111a6a3ce5e6f5b27d9d40116d639
   PlaidClient: 9afd1cb35fa3a273b2c3e25f0b7b240d0368ca60
   Player: 5cff076cc9f13b51f56b6fb7bed24431569b8102
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
@@ -77,6 +77,6 @@ SPEC CHECKSUMS:
   SwiftLocation: aac16955b508c46b82bf07fcceb7e2a3b382b8d5
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: f7cae36493fa5790e60b1716b47298078b66ad66
+PODFILE CHECKSUM: f2d7d8cd6c54eb688d83262cf96aa88900631b45
 
 COCOAPODS: 1.1.1

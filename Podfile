@@ -12,12 +12,12 @@ pod 'PlaidClient', :git => 'https://github.com/natemann/PlaidClient.git'
 pod 'SwiftyJSON'
 pod 'Alamofire'
 pod 'SendBirdSDK'
-pod 'BubbleTransition', '~> 2.0.0'
 pod 'AWSS3'
 pod "Player", "~> 0.2.0"
 pod 'Cosmos', '~> 8.0.2'
 pod "CenteredCollectionView"
 pod 'SDWebImage', '~> 4.0.0'
 pod 'SwiftLocation', '~> 1.1.1'
+pod 'NVActivityIndicatorView'
 
 

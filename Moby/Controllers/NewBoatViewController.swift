@@ -189,7 +189,7 @@ UINavigationControllerDelegate {
     
     func back(){
         
-        let controller = ExploreViewController()
+        let controller = SetBoatLocationViewController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -229,17 +229,17 @@ UINavigationControllerDelegate {
             return
         }
         
-        guard priceView.textfield.text != nil else {
+        guard priceView.textfield.text != "" else {
             
             return
         }
         
-        guard rulesView.textBox.text != nil else {
+        guard rulesView.textBox.text != "" else {
             
             return
         }
         
-        guard boatModelView.textBox.text != nil else {
+        guard boatModelView.textBox.text != "" else {
             
             return
         }
@@ -275,17 +275,17 @@ UINavigationControllerDelegate {
             return
         }
         
-        guard priceView.textfield.text != nil else {
+        guard priceView.textfield.text != "" else {
             
             return
         }
         
-        guard rulesView.textBox.text != nil else {
+        guard rulesView.textBox.text != "" else {
             
             return
         }
         
-        guard boatModelView.textBox.text != nil else {
+        guard boatModelView.textBox.text != "" else {
             
             return
         }
@@ -301,7 +301,7 @@ UINavigationControllerDelegate {
         descriptionView.isHidden = true
         tableView.isUserInteractionEnabled = true
         
-        guard descriptionView.textBox.text != nil else {
+        guard descriptionView.textBox.text != "" else {
             
             return
         }
@@ -321,17 +321,17 @@ UINavigationControllerDelegate {
             return
         }
         
-        guard priceView.textfield.text != nil else {
+        guard priceView.textfield.text != "" else {
             
             return
         }
         
-        guard rulesView.textBox.text != nil else {
+        guard rulesView.textBox.text != "" else {
             
             return
         }
         
-        guard boatModelView.textBox.text != nil else {
+        guard boatModelView.textBox.text != "" else {
             
             return
         }
@@ -377,17 +377,17 @@ UINavigationControllerDelegate {
             return
         }
         
-        guard priceView.textfield.text != nil else {
+        guard priceView.textfield.text != "" else {
             
             return
         }
         
-        guard rulesView.textBox.text != nil else {
+        guard rulesView.textBox.text != "" else {
             
             return
         }
         
-        guard boatModelView.textBox.text != nil else {
+        guard boatModelView.textBox.text != "" else {
             
             return
         }

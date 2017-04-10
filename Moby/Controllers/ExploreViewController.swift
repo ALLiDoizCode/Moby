@@ -9,8 +9,9 @@
 import UIKit
 import Material
 import SDWebImage
+import NVActivityIndicatorView
 
-class ExploreViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate {
+class ExploreViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,NVActivityIndicatorViewable {
     
     var tableView = UITableView()
     var bar = BarView()

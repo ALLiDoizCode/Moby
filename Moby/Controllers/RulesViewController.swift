@@ -9,17 +9,18 @@
 import UIKit
 import Material
 
-class AmenitiesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class RulesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var tableView:UITableView!
     var headerView = UIView()
     var headerLabel = UILabel()
     var backButton = FlatButton()
+    var rules:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView = UITableView(frame: self.view.frame, style: .grouped)
-        tableView.register(AmenitiesTableViewCell.self, forCellReuseIdentifier: "amenities")
+        tableView.register(RulesTableViewCell.self, forCellReuseIdentifier: "rules")
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,14 +29,14 @@ class AmenitiesViewController: UIViewController,UITableViewDelegate,UITableViewD
         headerView.addSubview(headerLabel)
         headerView.addSubview(backButton)
         
-        headerLabel.text = "Amenities"
+        headerLabel.text = "Rules"
         headerLabel.font = RobotoFont.medium(with: largeFontWidth - 5)
         headerLabel.textColor = TEXT_COLOR
         headerView.backgroundColor = THEME_2
         let backImage = UIImage(named: "back2")
         backButton.image = backImage
         backButton.imageView?.contentMode = .scaleAspectFill
-        backButton.addTarget(self, action: #selector(AmenitiesViewController.back), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(RulesViewController.back), for: .touchUpInside)
         
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor, constant: 0).isActive = true
@@ -77,22 +78,25 @@ class AmenitiesViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.height * 0.1
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 20
+        return rules.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "amenities", for: indexPath) as! AmenitiesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rules", for: indexPath) as! RulesTableViewCell
         
-        cell.textLabel?.font = RobotoFont.medium(with: largeFontWidth)
-        cell.textLabel?.text = "Food"
-        cell.textLabel?.textColor = TEXT_COLOR
+        cell.rulesLabel.text = rules[indexPath.row]
         
         return cell
     }

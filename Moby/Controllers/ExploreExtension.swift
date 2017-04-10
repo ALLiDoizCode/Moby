@@ -8,6 +8,7 @@
 
 import Foundation
 import Material
+import NVActivityIndicatorView
 
 extension ExploreViewController {
     
@@ -64,6 +65,8 @@ extension ExploreViewController {
     
     func tapText2(){
         
+        startAnimating(self.view.frame.size, message: "Finding Boats", messageFont: RobotoFont.bold(with: largeFontWidth), type: .ballScale , color: THEME_1, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 0, backgroundColor: Color.black.withAlphaComponent(0.6))
+        
         guard DataStore().getBoatList().count == 0 else {
             
             self.boats = DataStore().getBoatList()
@@ -75,6 +78,7 @@ extension ExploreViewController {
                 self.barAnimation(nextView: self.bar.text2)
                 self.tableView.isHidden = false
                 self.tableView.reloadData()
+                self.stopAnimating()
             }
             
             return
@@ -93,6 +97,7 @@ extension ExploreViewController {
                 self.barAnimation(nextView: self.bar.text2)
                 self.tableView.isHidden = false
                 self.tableView.reloadData()
+                self.stopAnimating()
             }
             
         }

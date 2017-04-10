@@ -109,9 +109,9 @@ class ReviewHeader: UIView {
         let margins = self.layoutMarginsGuide
         
         backBtn.translatesAutoresizingMaskIntoConstraints = false
-        backBtn.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: 20).isActive = true
+        backBtn.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: 0).isActive = true
         backBtn.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
-        backBtn.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.05).isActive = true
+        backBtn.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.07).isActive = true
         backBtn.heightAnchor.constraint(equalTo: backBtn.widthAnchor, multiplier: 1).isActive = true
         
         reviewTitle.translatesAutoresizingMaskIntoConstraints = false

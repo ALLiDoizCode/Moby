@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>BubbleTransition.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Cartography.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -55,6 +50,11 @@
 			<false/>
 		</dict>
 		<key>Material.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -112,6 +112,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>070374204E491EF7E794313D14C6950B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>08C670F14C5E0F92D52B4FD40051294F</key>
 		<dict>
 			<key>primary</key>
@@ -122,7 +127,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13660632E893799B9B560849C6FE15BD</key>
+		<key>0E66DC67CDBD017AF34D70D323105649</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,17 +147,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5AC7B90FCDA997C5DB5552E78296CCFB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>71966B24A02FA2F055A998E3F8DEE302</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7372CA79CE92E7AC032175441663EBE4</key>
+		<key>798F3C54A737186A99D71C3C2A18C765</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,12 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95FF0FAF829785E12075E51627326B15</key>
+		<key>9738236DDC90938F99DB421FA3925D84</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A3F1446F2A86E8ECDBCA32FF854A499F</key>
+		<key>986DB742B565C9AB7D2A094825EEDF92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,7 +172,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD140CC7ED0A2AC1E50B3D4A8D467AE8</key>
+		<key>AF718E9F081F5430E3C28D52C54251BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,12 +182,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BAAF8E1B5B0FE6E4F70B99B960789F63</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C1E63A1BF93FD336FEC6B7950AA018F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ECF92A73DAD17FECEAAACC40AFF79C3F</key>
+		<key>D2EBA64FAFB0C37E23AD4DFBC54CEEA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

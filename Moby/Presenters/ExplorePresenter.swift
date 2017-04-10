@@ -15,7 +15,8 @@ class ExplorePresenter {
         var boats:[(MobyBoat,[String])] = []
         
         // Move to a background thread to do some long running work
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).sync {
+            
             SearchClient().findCollections(collection: BOAT_COLLECTION, search: SearchModel()) { (objects) in
                 
                 var urls:[String] = []
@@ -45,9 +46,13 @@ class ExplorePresenter {
                         
                         boats.append((boat,urls))
                         
+                        urls = []
+                        
                         if boat.id == boatObjects.last?.id {
                             
-                             completion(boats)
+                            print("boat count is \(boats.count)")
+                            
+                            completion(boats)
                         }
                     })
                     
@@ -55,6 +60,7 @@ class ExplorePresenter {
                 
             }
         }
+        
     }
 }
 

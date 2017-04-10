@@ -129,8 +129,8 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30).isActive = true
-        backButton.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: 10).isActive = true
-        backButton.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.03).isActive = true
+        backButton.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: 0).isActive = true
+        backButton.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.045).isActive = true
         backButton.widthAnchor.constraint(equalTo: backButton.heightAnchor, multiplier: 1).isActive = true
         
         about.translatesAutoresizingMaskIntoConstraints = false
@@ -273,13 +273,14 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         timeBar.tab1.label.text = "\(boat.0.minTime!) hour min"
         timeBar.tab1.icon.image = timeBarImage
-        timeBar.tab3.label.text = "Amenities"
-        timeBar.tab3.icon.image = amenities
-        timeBar.tab3.gesture.addTarget(self, action: #selector(BoatDetailViewController.showAmenities))
-        timeBar.tab5.label.text = "Rules"
-        timeBar.tab5.icon.image =  rules
-        timeBar.tab5.gesture.addTarget(self, action: #selector(BoatDetailViewController.showRules))
+        //timeBar.tab3.label.text = "Amenities"
+        //timeBar.tab3.icon.image = amenities
+        //timeBar.tab3.gesture.addTarget(self, action: #selector(BoatDetailViewController.showAmenities))
+        timeBar.tab3.label.text = "Rules"
+        timeBar.tab3.icon.image =  rules
+        timeBar.tab3.gesture.addTarget(self, action: #selector(BoatDetailViewController.showRules))
         
+        timeBar.tab5.isHidden = true
         timeBar.tab2.isHidden = true
         timeBar.tab4.isHidden = true
         
@@ -310,13 +311,14 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     func showAmenities() {
         
-        let controller = AmenitiesViewController()
+        let controller = RulesViewController()
         self.present(controller, animated: true, completion: nil)
     }
     
     func showRules(){
         
-        let controller = AmenitiesViewController()
+        let controller = RulesViewController()
+        controller.rules.append(boat.0.boatRules)
         self.present(controller, animated: true, completion: nil)
     }
     

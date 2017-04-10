@@ -35,7 +35,7 @@ class LocationTableViewCell: UITableViewCell {
         
         name.textColor = TEXT_COLOR
         name.numberOfLines = 0
-        name.font = RobotoFont.bold(with: largeFontWidth)
+        name.font = RobotoFont.bold(with: largeFontWidth - 5)
         
         address.textColor = THEME_1
         address.numberOfLines = 0
@@ -46,13 +46,13 @@ class LocationTableViewCell: UITableViewCell {
     func constainViews(){
         
         name.translatesAutoresizingMaskIntoConstraints = false
-        name.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        name.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
         name.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         name.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
         
         address.translatesAutoresizingMaskIntoConstraints = false
         address.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 10).isActive = true
-        address.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        address.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
         address.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         address.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
         
