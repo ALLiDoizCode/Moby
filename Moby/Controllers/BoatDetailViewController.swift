@@ -231,9 +231,9 @@ class BoatDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         let profileImage = UIImage(named: "guy")
         var image1:UIImage!
         titleView.profileImage.image = profileImage
-        titleView.boatTitle.text = "Great boat for a day on the river in DC!"
+        titleView.boatTitle.text = boat.0.title
         titleView.nameLabel.text = "Jonathan Green"
-        titleView.subTitle.text = "Fishing"
+        titleView.subTitle.text = boat.0.tripType
         
         if boat.0.power! == "Sail" {
             

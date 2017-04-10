@@ -127,7 +127,7 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
         
         cell.priceLbl.text = finalNumber
         cell.reviewsLbl.text = "\(reviews[indexPath.row]) Reviews"
-        cell.titleLbl.text = boat.description
+        cell.titleLbl.text = boat.title
         cell.stars.rating = stars[indexPath.row]
         
         return cell

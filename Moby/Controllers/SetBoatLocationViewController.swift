@@ -15,19 +15,40 @@ class SetBoatLocationViewController: UIViewController,UITableViewDelegate,UITabl
     var matchingItems:[MKMapItem] = []
     var mapView: MKMapView? = nil
     var tableView:UITableView!
+    var newTitle = NewTitleView()
+    var boatTypeView = BoatType()
     
     let regionRadius: CLLocationDistance = 1000 * 30
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
         tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
+        self.view.addSubview(newTitle)
+        self.view.addSubview(boatTypeView)
+        newTitle.frame = self.view.frame
+        boatTypeView.frame = self.view.frame
+        tableView.isHidden = true
+        newTitle.isHidden = true
         tableView.register(LocationTableViewCell.self, forCellReuseIdentifier: "landing")
+        newTitle.save.addTarget(self, action: #selector(SetBoatLocationViewController.saveTitle), for: .touchUpInside)
         
-        setupLocation()
+        boatTypeView.button1.addTarget(self, action: #selector(SetBoatLocationViewController.saveFishing), for: .touchUpInside)
+        boatTypeView.button2.addTarget(self, action: #selector(SetBoatLocationViewController.saveCruise), for: .touchUpInside)
+        boatTypeView.button3.addTarget(self, action: #selector(SetBoatLocationViewController.saveParty), for: .touchUpInside)
         
+        LocationHelper().setupLocation { (items) in
+            
+            self.matchingItems = items
+            self.tableView.reloadData()
+            
+            print("we have \(self.matchingItems.count) locations ")
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -37,67 +58,45 @@ class SetBoatLocationViewController: UIViewController,UITableViewDelegate,UITabl
         // Dispose of any resources that can be recreated.
     }
     
-    func setupLocation(){
+    func saveFishing(){
         
-        Location.getLocation(withAccuracy: .city, onSuccess: { (location) in
+        DataStore.setNewType(type: "Fishing")
+        boatTypeView.isHidden = true
+        newTitle.isHidden = false
+        
+    }
+    
+    func saveCruise(){
+        
+        DataStore.setNewType(type: "Cruise")
+        boatTypeView.isHidden = true
+        newTitle.isHidden = false
+        
+    }
+    
+    func saveParty(){
+        
+        DataStore.setNewType(type: "Party")
+        boatTypeView.isHidden = true
+        newTitle.isHidden = false
+        
+    }
+    
+    func saveTitle(){
+        
+        guard newTitle.newTitle.text != "" else {
             
-            print("location sucess")
+            print("Alert the users taht they need a title")
             
-            let request = MKLocalSearchRequest()
-            request.naturalLanguageQuery = "boat landing"
-            request.region.center = CLLocationCoordinate2DMake(32.921898, -79.900247)
-            let search = MKLocalSearch(request: request)
-            search.start { response, _ in
-                guard let response = response else {
-                    return
-                }
-                self.matchingItems = response.mapItems
-                
-                self.tableView.reloadData()
-                
-                for place in self.matchingItems {
-                    
-                    print("place name is \(place.name!)")
-                    print("\(self.parseAddress(selectedItem: place.placemark))")
-                }
-                
-            }
-            
-            
-        }) { (location, error) in
-            
-            print("location failed")
-            
-            let request = MKLocalSearchRequest()
-            request.naturalLanguageQuery = "boat landing"
-            request.region.center = CLLocationCoordinate2DMake(32.921898, -79.900247)
-            let search = MKLocalSearch(request: request)
-            search.start { response, _ in
-                guard let response = response else {
-                    return
-                }
-                self.matchingItems = response.mapItems
-                
-                self.tableView.reloadData()
-                
-                for place in self.matchingItems {
-                    
-                    print("place name is \(place.name!)")
-                    print("\(self.parseAddress(selectedItem: place.placemark))")
-                }
-                
-            }
+            return
         }
-    }
-    
-    func getDirections(place:MKPlacemark){
         
-        let mapItem = MKMapItem(placemark: place)
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
-        mapItem.openInMaps(launchOptions: launchOptions)
-        
+        newTitle.newTitle.resignFirstResponder()
+        DataStore.setTitle(title:newTitle.newTitle.text!)
+        newTitle.isHidden = true
+        tableView.isHidden = false
     }
-    
+
     func parseAddress(selectedItem:MKPlacemark) -> String {
         // put a space between "4" and "Melrose Place"
         let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
@@ -127,48 +126,6 @@ class SetBoatLocationViewController: UIViewController,UITableViewDelegate,UITabl
         return matchingItems.count
     }
     
-    func canOpenWaze(url:URL) -> Bool{
-    
-        
-        if UIApplication.shared.openURL(url)
-        {
-            return true
-            
-        } else {
-            
-            return false
-        }
-    }
-    
-    func viewWaze(location : CLLocation) {
-        
-        let latitude:Double = location.coordinate.latitude;
-        let longitude:Double = location.coordinate.longitude;
-        
-        let location2D = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        //var link:String = "waze://"
-        let url:URL = URL(string: "waze://?ll=\(latitude),\(longitude)&navigate=yes")!
-        
-        if UIApplication.shared.canOpenURL(url) {
-            
-            UIApplication.shared.open(url)
-            UIApplication.shared.isIdleTimerDisabled = true
-            
-        } else {
-            
-            /*link = "http://itunes.apple.com/us/app/id323229106"
-            UIApplication.shared.open(url, completionHandler: nil)
-            UIApplication.shared.isIdleTimerDisabled = true*/
-            
-            let place = MKPlacemark(coordinate: location2D)
-            
-            getDirections(place: place)
-        }
-        
-    }
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "landing", for: indexPath) as! LocationTableViewCell
@@ -194,7 +151,17 @@ class SetBoatLocationViewController: UIViewController,UITableViewDelegate,UITabl
         
         let mapItem = matchingItems[indexPath.row]
         
-        viewWaze(location: CLLocation(latitude: mapItem.placemark.coordinate.latitude, longitude: mapItem.placemark.coordinate.longitude))
+        DataStore.setLocation(location: mapItem.name!)
+        DataStore.setLong(long: mapItem.placemark.coordinate.longitude)
+        DataStore.setLat(lat: mapItem.placemark.coordinate.latitude)
+        
+        let controller = NewBoatViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        
+        return true
     }
     
     /*

@@ -409,9 +409,18 @@ UINavigationControllerDelegate {
         }
         
         boat.userId = "5E43B945-ACBA-4398-81E3-F3177C30F546"
-        boat.lat = 83.65
-        boat.long = 83.65
-        boat.location = "my house"
+        boat.lat = DataStore().getLat()
+        boat.long = DataStore().getLong()
+        boat.location = DataStore().getLocation()
+        boat.title = DataStore().getTitle()
+        boat.tripType = DataStore().getNewType()
+        
+        print(boat.lat)
+        print(boat.long)
+        print(boat.location)
+        print(boat.title)
+        print(boat.size)
+        
         
         NewBoatPrensenter().saveBoat(boat: self.boat, images: self.bgImageView.images) {
             

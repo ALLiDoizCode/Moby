@@ -13,8 +13,38 @@ class DataStore {
     private static var ACCESS_TOKEN:String!
     private static var USER:Fishermen!
     private static var newBoat:MobyBoat!
+    private static var lat:Double!
+    private static var long:Double!
+    private static var location:String!
+    private static var newTitle:String!
+    private static var newType:String!
     private static var boatList:[(MobyBoat,[String])] = []
     
+    
+    func getTitle() -> String {
+        
+        return DataStore.newTitle
+    }
+    
+    func getNewType() -> String {
+        
+        return DataStore.newType
+    }
+    
+    func getLat() -> Double {
+        
+        return DataStore.lat
+    }
+    
+    func getLong() -> Double {
+        
+        return DataStore.long
+    }
+    
+    func getLocation() -> String {
+        
+        return DataStore.location
+    }
     
     func getToken() -> String {
         
@@ -44,6 +74,36 @@ class DataStore {
     static func setUser(user:Fishermen){
         
         self.USER = user
+        
+    }
+    
+    static func setLat(lat:Double){
+        
+        self.lat = lat
+        
+    }
+    
+    static func setLong(long:Double){
+        
+        self.long = long
+        
+    }
+    
+    static func setLocation(location:String){
+        
+        self.location = location
+        
+    }
+    
+    static func setTitle(title:String){
+        
+        self.newTitle = title
+        
+    }
+    
+    static func setNewType(type:String){
+        
+        self.newType = type
         
     }
     

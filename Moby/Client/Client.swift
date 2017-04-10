@@ -148,27 +148,27 @@ class Client {
     
     func newBoat(boat:MobyBoat,completion:@escaping (_ Id:String) ->Void) {
         
-        let parameters = [
-            
-            "size": "\(boat.size!)",
-            "type": boat.type,
-            "year": boat.year,
-            "price": "\(boat.price!)",
-            "passengers": boat.passengers,
-            "location": boat.location,
-            "description": boat.description,
-            "boatModel": boat.boatModel,
-            "boatMake": boat.boatMake,
-            "boatRules": boat.boatRules,
-            "minTime": "\(boat.minTime!)",
-            "lat": "\(boat.lat!)",
-            "long": "\(boat.long!)",
-            "power": boat.power,
-            "restRooms": "\(boat.restRooms!)",
-            "rooms": "\(boat.rooms!)",
-            "userId": boat.userId
-            
-            ]
+        var parameters:[String:String]! = [:]
+        
+        parameters["size"] = "\(boat.size!)"
+        parameters["type"] = "\(boat.type!)"
+        parameters["year"] = "\(boat.year!)"
+        parameters["price"] = "\(boat.price!)"
+        parameters["passengers"] = "\(boat.passengers!)"
+        parameters["location"] = "\(boat.location!)"
+        parameters["description"] = "\(boat.description!)"
+        parameters["boatModel"] = "\(boat.boatModel!)"
+        parameters["boatMake"] = "\(boat.boatMake!)"
+        parameters["boatRules"] = "\(boat.boatRules!)"
+        parameters["minTime"] = "\(boat.minTime!)"
+        parameters["lat"] = "\(boat.lat!)"
+        parameters["long"] = "\(boat.long!)"
+        parameters["power"] = "\(boat.power!)"
+        parameters["restRooms"] = "\(boat.restRooms!)"
+        parameters["rooms"] = "\(boat.rooms!)"
+        parameters["userId"] = "\(boat.userId!)"
+        parameters["title"] = "\(boat.title!)"
+        parameters["tripType"] = "\(boat.tripType!)"
         
         Alamofire.request("https://mo-b.herokuapp.com/account/addBoat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).responseString { (response) in
             
