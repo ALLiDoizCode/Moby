@@ -69,9 +69,12 @@ class SearchClient {
                     let lastName = object.1["lastName"].stringValue
                     let phone = object.1["phone"].stringValue
                     let profileImage = object.1["profileImage"].stringValue
-                    let rating = object.1["rating"].string
+                    let rating = object.1["rating"].stringValue
+                    let isCaptin = object.1["isCaptin"].boolValue
                  
-                    let fishermen = Fishermen(id: id, firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating!)
+                    let fishermen = Fishermen(firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating,isCaptin:isCaptin)
+                    
+                    fishermen.id = id
                  
                     objects.append(fishermen)
                 
@@ -100,8 +103,9 @@ class SearchClient {
                     let title = object.1["title"].stringValue
                     let tripType = object.1["tripType"].stringValue
                     let instant = object.1["instant"].boolValue
+                    let active = object.1["active"].boolValue
                     
-                    let boat = MobyBoat(id: id, userId: userId, size: size, type: type, year: year, price: price, passengers: passengers, location: location, description: description, boatModel: boatModel, boatMake: boatMake, boatRules: boatRules, minTime: minTime, lat: lat, long: long,rooms:rooms,restRooms:restRooms,power:power,title:title,tripType:tripType,instant:instant)
+                    let boat = MobyBoat(id: id, userId: userId, size: size, type: type, year: year, price: price, passengers: passengers, location: location, description: description, boatModel: boatModel, boatMake: boatMake, boatRules: boatRules, minTime: minTime, lat: lat, long: long,rooms:rooms,restRooms:restRooms,power:power,title:title,tripType:tripType,instant:instant,active:active)
                  
                 
                     //print("boat price is \(price)")

@@ -13,8 +13,8 @@ import Stripe
 
 class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelegate {
     
-    //var email:String!
-    //var password:String!
+    var password:String!
+    var newUser:Fishermen!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,16 +66,22 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
                                     print("card1\(token.stripeID)")
                                     print("card2\(token2.stripeID)")
                                     
-                                    /*Client().token(completion: { (authToken) in
+                                    Client().token(completion: { (authToken) in
+                                        
+                                        DataStore.setToken(ACCESS_TOKEN: authToken)
                                         
                                         Client().auth(token: authToken, completion: { (success) in
                                             
                                             if success == true {
                                                 
-                                                Client().newUser(firstName: "Jonathan", lastName: "Green", phone: "5555555555", email: "amber@amber.com", password: "123", rating: 4.2, active: false, rules: "no rules", Image: image!, card1: token.stripeID, card2: token2.stripeID)
+                                                Client().newUser(user: self.newUser, password: self.password, Image: self.newUser.rawImage, card1: token.stripeID, card2: token2.stripeID, completion: {
+                                                    
+                                                    let controller = ExploreViewController()
+                                                    self.navigationController?.pushViewController(controller, animated: true)
+                                                })
                                             }
                                         })
-                                    })*/
+                                    })
                                 }
                                 
                             }else {

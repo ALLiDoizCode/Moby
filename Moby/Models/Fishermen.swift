@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Fishermen {
     
@@ -19,10 +20,11 @@ class Fishermen {
     var customerId:String!
     var email:String!
     var rating:String!
+    var isCaptin:Bool!
+    var rawImage:UIImage!
     
-    init(id:String,firstName:String,lastName:String,image:String,phone:String,connectId:String,customerId:String,email:String,rating:String){
-        
-        self.id = id
+    init(firstName:String,lastName:String,image:String,phone:String,connectId:String,customerId:String,email:String,rating:String,isCaptin:Bool){
+    
         self.firstName = firstName
         self.lastName = lastName
         self.image = image
@@ -31,6 +33,7 @@ class Fishermen {
         self.customerId = customerId
         self.email = email
         self.rating = rating
+        self.isCaptin = isCaptin
         
     }
     

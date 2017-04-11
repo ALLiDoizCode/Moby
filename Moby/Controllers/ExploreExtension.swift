@@ -71,14 +71,16 @@ extension ExploreViewController {
             
             self.boats = DataStore().getBoatList()
             
+            self.currentLabel = self.bar.text2
+            self.barAnimation(nextView: self.bar.text2)
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+            self.stopAnimating()
+            
             DispatchQueue.main.async {
                 print("will reload table")
                 
-                self.currentLabel = self.bar.text2
-                self.barAnimation(nextView: self.bar.text2)
-                self.tableView.isHidden = false
-                self.tableView.reloadData()
-                self.stopAnimating()
+               
             }
             
             return
@@ -89,15 +91,17 @@ extension ExploreViewController {
             DataStore.setBoatList(boatList: boats)
             self.boats = DataStore().getBoatList()
             
+            self.currentLabel = self.bar.text2
+            self.barAnimation(nextView: self.bar.text2)
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+            self.stopAnimating()
+            
             // Bounce back to the main thread to update the UI
             DispatchQueue.main.async {
                 print("will reload table")
                 
-                self.currentLabel = self.bar.text2
-                self.barAnimation(nextView: self.bar.text2)
-                self.tableView.isHidden = false
-                self.tableView.reloadData()
-                self.stopAnimating()
+                
             }
             
         }

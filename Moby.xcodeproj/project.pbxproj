@@ -62,6 +62,8 @@
 		AB6C87271E985F920098188B /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C87261E985F920098188B /* SaveView.swift */; };
 		AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D63FB1E9082A200B924F6 /* IconView.swift */; };
 		AB9126401E9B30AF0037799E /* UpdateProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91263F1E9B30AF0037799E /* UpdateProfileImage.swift */; };
+		AB9126421E9C71580037799E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9126411E9C71580037799E /* LandingViewController.swift */; };
+		AB9126441E9C7EDB0037799E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9126431E9C7EDB0037799E /* SignUpViewController.swift */; };
 		AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201821E8850760042F1E8 /* SearchClient.swift */; };
 		AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201841E8850D60042F1E8 /* SearchModel.swift */; };
 		AB9201871E8864150042F1E8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9201861E8864150042F1E8 /* Trip.swift */; };
@@ -158,6 +160,8 @@
 		AB6C87261E985F920098188B /* SaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveView.swift; path = NewBoat/SaveView.swift; sourceTree = "<group>"; };
 		AB7D63FB1E9082A200B924F6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		AB91263F1E9B30AF0037799E /* UpdateProfileImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileImage.swift; sourceTree = "<group>"; };
+		AB9126411E9C71580037799E /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		AB9126431E9C7EDB0037799E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AB9201821E8850760042F1E8 /* SearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
 		AB9201841E8850D60042F1E8 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		AB9201861E8864150042F1E8 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -375,6 +379,8 @@
 				AB10E5EA1E971055004839C8 /* ExtendNewBoat.swift */,
 				AB1DA88C1E99AD4300EAAF3C /* ProfileViewController.swift */,
 				AB541B301E9AB77A00B84AD9 /* SetBoatLocationViewController.swift */,
+				AB9126411E9C71580037799E /* LandingViewController.swift */,
+				AB9126431E9C7EDB0037799E /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -621,6 +627,7 @@
 				AB541B2D1E9A946E00B84AD9 /* Currency.swift in Sources */,
 				AB10E5C81E932BC3004839C8 /* CustomShadow.swift in Sources */,
 				AB10E5CA1E932C08004839C8 /* PayTabView.swift in Sources */,
+				AB9126441E9C7EDB0037799E /* SignUpViewController.swift in Sources */,
 				AB10E5D41E95B0B0004839C8 /* BaseViewController.swift in Sources */,
 				AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */,
 				AB1DA88D1E99AD4300EAAF3C /* ProfileViewController.swift in Sources */,
@@ -654,6 +661,7 @@
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
 				AB10E5D21E94767F004839C8 /* ReviewTableViewCell.swift in Sources */,
 				AB20BCD51E632843007DADCA /* Constants.swift in Sources */,
+				AB9126421E9C71580037799E /* LandingViewController.swift in Sources */,
 				AB10DF241E8230F20075133D /* IDScannerViewController.swift in Sources */,
 				AB541B2F1E9AA5BB00B84AD9 /* NewBoatPrensenter.swift in Sources */,
 				AB10E5EB1E971055004839C8 /* ExtendNewBoat.swift in Sources */,

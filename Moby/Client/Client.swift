@@ -59,7 +59,7 @@ class Client {
         
     }
     
-    func login(email:String,password:String){
+    func login(email:String,password:String,completion:@escaping () -> Void){
         
         let parameters = [
         
@@ -87,43 +87,47 @@ class Client {
             let phone = json["phone"].stringValue
             let profileImage = json["profileImage"].stringValue
             let rating = json["rating"].stringValue
+            let isCaptin = json["isCaptin"].boolValue
             
-            let fishermen = Fishermen(id: id, firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating)
+            let fishermen = Fishermen(firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating,isCaptin:isCaptin)
+            
+            fishermen.id = id
             
             DataStore.setUser(user: fishermen)
+            
+            completion()
         }
     }
     
-    func newUser(firstName:String,lastName:String,phone:String,email:String,password:String,rating:Double,active:Bool,rules:String,Image:UIImage,card1:String,card2:String) {
+    func newUser(user:Fishermen,password:String,Image:UIImage,card1:String,card2:String,completion:@escaping () -> Void) {
         
         //let data = UIImagePNGRepresentation(img) as Data?
         saveImageDocumentDirectory(image: Image, path: "guy2.jpg")
         let url = upload(path: "guy2.jpg", completion: { (imageUrl) in
             
-            let parameters = [
-                "firstName": firstName,
-                "lastName": lastName,
-                "phone": phone,
-                "email": email,
-                "password": password,
-                "rating": "\(rating)",
-                "active": "\(active)",
-                "rules": rules,
-                "Image": imageUrl,
-                "card1":card1,
-                "card2":card2
-                
-                ] as [String : Any]
+            var parameters:[String:String] = [:]
+            
+            parameters["firstName"] = user.firstName!
+            parameters["lastName"] = user.lastName!
+            parameters["phone"] = user.phone!
+            parameters["email"] = user.email!
+            parameters["password"] = password
+            parameters["rating"] = user.rating!
+            parameters["Image"] = imageUrl
+            parameters["card1"] = card1
+            parameters["card2"] = card2
+            parameters["isCaptin"] = "\(user.isCaptin!)"
             
             Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON{ (response) in
                 
-                let json = JSON(response.result.value!)
-                
-                print("user response JSON is \(json)")
                 print("response is \(response)")
                 print("response degub is \(response.debugDescription)")
                 print("response request is \(response.request)")
                 print("response reponse is \(response.response)")
+                
+                let json = JSON(response.result.value!)
+                
+                print("user response JSON is \(json)")
                 
                 let id = json["id"].stringValue
                 let connectId = json["connectId"].stringValue
@@ -134,10 +138,15 @@ class Client {
                 let phone = json["phone"].stringValue
                 let profileImage = json["profileImage"].stringValue
                 let rating = json["rating"].stringValue
+                let isCaptin = json["isCaptin"].boolValue
                 
-                let fishermen = Fishermen(id: id, firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating)
+                let fishermen = Fishermen(firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating,isCaptin:isCaptin)
+                
+                fishermen.id = id
                 
                 DataStore.setUser(user: fishermen)
+                
+                completion()
             }
             
         })

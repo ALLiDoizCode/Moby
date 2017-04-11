@@ -21,7 +21,7 @@ let CHARGE_COLLECTION = "charge"
 
 let THEME_1 = UIColor(red:0.18, green:0.68, blue:0.98, alpha:1.0)
 let THEME_2 = Color.grey.lighten5
-let THEME_3 = UIColor(red:0.18, green:0.66, blue:0.98, alpha:1.0)
+let THEME_3 = UIColor(red:0.18, green:0.64, blue:0.98, alpha:1.0)
 
 let TEXT_COLOR = Color.grey.darken1
 let BORDER_COLOR = Color.grey.lighten1
