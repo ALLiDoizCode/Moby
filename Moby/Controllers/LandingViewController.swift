@@ -8,8 +8,10 @@
 
 import UIKit
 import Material
+import NVActivityIndicatorView
+import CDAlertView
 
-class LandingViewController: UIViewController {
+class LandingViewController: UIViewController,NVActivityIndicatorViewable {
     
     var icon = UIImageView()
     var emailTextField = TextField()
@@ -67,6 +69,7 @@ class LandingViewController: UIViewController {
         loginBtn.borderWidthPreset = .border2
         loginBtn.setTitle("Login", for: .normal)
         loginBtn.titleLabel?.font = RobotoFont.bold(with: largeFontWidth)
+        loginBtn.addTarget(self, action: #selector(LandingViewController.login), for: .touchUpInside)
         
         signUpBtn.backgroundColor = THEME_2
         signUpBtn.setTitle("Sign Up", for: .normal)
@@ -128,12 +131,31 @@ class LandingViewController: UIViewController {
     
     func login(){
         
+        startAnimating(self.view.frame.size, message: "Logging In", messageFont: RobotoFont.bold(with: largeFontWidth), type: .ballScale , color: THEME_1, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 0, backgroundColor: Color.black.withAlphaComponent(0.6))
+        
+        let alertEmptyFields = CDAlertView(title: "Fields Can't Be Empty", message: "", type: .notification)
+        var doneAction:CDAlertViewAction!
+        doneAction = CDAlertViewAction(title: "OK 😑",  handler: { (action) in
+            
+            self.stopAnimating()
+            
+        })
+        alertEmptyFields.add(action: doneAction)
+        
         guard emailTextField.text != "" else {
+            
+            stopAnimating()
+           
+            alertEmptyFields.show()
             
             return
         }
         
         guard passwordTextField.text != "" else {
+            
+            stopAnimating()
+            
+            alertEmptyFields.show()
             
             return
         }
@@ -149,12 +171,30 @@ class LandingViewController: UIViewController {
                     return
                 }
                 
-                Client().login(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: {
+                Client().login(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (success, message) in
                     
+                    guard success == true else {
+                        
+                        let alert = CDAlertView(title: "Login Attemp Failed", message: message, type: .notification)
+                        var doneAction:CDAlertViewAction!
+                        doneAction = CDAlertViewAction(title: "OK 😑",  handler: { (action) in
+                            
+                            self.stopAnimating()
+                            
+                        })
+                        alert.add(action: doneAction)
+                        //let nevermindAction = CDAlertViewAction(title: "Nevermind 😑")
+                        // alert.add(action: nevermindAction)
+                        alert.show()
+                        
+                        return
+                    }
+                    
+                    self.stopAnimating()
                     let controller = ExploreViewController()
                     self.navigationController?.pushViewController(controller, animated: true)
-                    
                 })
+                
             }
         }
     }

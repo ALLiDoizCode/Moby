@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import CDAlertView
 
 class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
@@ -162,9 +163,28 @@ UINavigationControllerDelegate {
         switch indexPath.row {
         case 1:
             
-            print("")
+            guard DataStore().getUser().isCaptin == true else {
+                
+                print("inform users that they need to be a captin to use this feature and promt to become a captin")
+                
+                let alert = CDAlertView(title: "You Need To Be A Captin To Do This", message: "Are you in?!", type: .notification)
+                let doneAction = CDAlertViewAction(title: "Sure! 💪")
+                alert.add(action: doneAction)
+                let nevermindAction = CDAlertViewAction(title: "Nevermind 😑")
+                alert.add(action: nevermindAction)
+                alert.show()
+                
+                return
+            }
             
         case 4:
+            
+            guard DataStore().getUser().isCaptin == true else {
+                
+                print("inform users that they need to be a captin to use this feature and promt to become a captin")
+                
+                return
+            }
             
             let controller = SetBoatLocationViewController()
             self.navigationController?.pushViewController(controller, animated: true)

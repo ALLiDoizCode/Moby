@@ -10,8 +10,9 @@ import UIKit
 import Cartography
 import Material
 import Stripe
+import NVActivityIndicatorView
 
-class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelegate {
+class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelegate,NVActivityIndicatorViewable {
     
     var password:String!
     var newUser:Fishermen!
@@ -47,6 +48,8 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
             
         //Send to Stripe
             
+             startAnimating(self.view.frame.size, message: "Logging In", messageFont: RobotoFont.bold(with: largeFontWidth), type: .ballScale , color: THEME_1, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 0, backgroundColor: Color.black.withAlphaComponent(0.6))
+            
            let STP = STPAPIClient(publishableKey: "pk_test_mZhuo10GuRr7kztp40vrBe8m")
             
             STP.createToken(withCard: card, completion: { (token, error) in
@@ -76,6 +79,7 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
                                                 
                                                 Client().newUser(user: self.newUser, password: self.password, Image: self.newUser.rawImage, card1: token.stripeID, card2: token2.stripeID, completion: {
                                                     
+                                                    self.stopAnimating()
                                                     let controller = ExploreViewController()
                                                     self.navigationController?.pushViewController(controller, animated: true)
                                                 })

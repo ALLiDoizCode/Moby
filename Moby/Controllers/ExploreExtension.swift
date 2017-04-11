@@ -65,7 +65,7 @@ extension ExploreViewController {
     
     func tapText2(){
         
-        startAnimating(self.view.frame.size, message: "Finding Boats", messageFont: RobotoFont.bold(with: largeFontWidth), type: .ballScale , color: THEME_1, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 0, backgroundColor: Color.black.withAlphaComponent(0.6))
+        startAnimating(self.view.frame.size, message: "Logging In", messageFont: RobotoFont.bold(with: largeFontWidth), type: .ballScale , color: THEME_1, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 0, backgroundColor: Color.black.withAlphaComponent(0.6))
         
         guard DataStore().getBoatList().count == 0 else {
             

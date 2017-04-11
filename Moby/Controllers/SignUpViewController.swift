@@ -9,9 +9,10 @@
 import UIKit
 import Material
 import PhoneNumberKit
+import NVActivityIndicatorView
 
 class SignUpViewController: UIViewController,UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+UINavigationControllerDelegate,NVActivityIndicatorViewable {
     
     var profileImageView = FlatButton()
     var firstName = TextField()

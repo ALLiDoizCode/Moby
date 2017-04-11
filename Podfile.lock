@@ -5,6 +5,7 @@ PODS:
     - AWSCore (= 2.5.0)
   - CardIO (5.4.1)
   - Cartography (1.0.1)
+  - CDAlertView (0.4.0)
   - CenteredCollectionView (0.9.6)
   - Cosmos (8.0.2)
   - IQKeyboardManagerSwift (4.0.7)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - AWSS3
   - CardIO
   - Cartography (~> 1.0.1)
+  - CDAlertView
   - CenteredCollectionView
   - Cosmos (~> 8.0.2)
   - IQKeyboardManagerSwift
@@ -70,6 +72,7 @@ SPEC CHECKSUMS:
   AWSS3: 3678dd99006ff77c825fb857fc7cbaca0db848c6
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
+  CDAlertView: 0a664b2d5f764080367b8e6c30657e44b254ad7a
   CenteredCollectionView: 19fd5b1084ce45ebe9519d2f5441132c0a1bbed6
   Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
@@ -85,6 +88,6 @@ SPEC CHECKSUMS:
   SwiftLocation: aac16955b508c46b82bf07fcceb7e2a3b382b8d5
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 7608e02a2368adac98f4479459e79b7ee1ebfe42
+PODFILE CHECKSUM: ae3c9b416f18b258bffb95266057df727e86c23f
 
 COCOAPODS: 1.1.1

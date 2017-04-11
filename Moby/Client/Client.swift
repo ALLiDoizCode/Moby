@@ -59,7 +59,7 @@ class Client {
         
     }
     
-    func login(email:String,password:String,completion:@escaping () -> Void){
+    func login(email:String,password:String,completion:@escaping (_ Success:Bool,_ message:String) -> Void){
         
         let parameters = [
         
@@ -78,7 +78,21 @@ class Client {
             print("response request is \(response.request)")
             print("response reponse is \(response.response)")
             
-            let id = json["id"].stringValue
+            let id = json["_id"].stringValue
+            
+            let accountIssue = "user does not exist or incorrect login credentials"
+            
+            print("id is \(id)")
+            
+            guard id != accountIssue else {
+                
+                print("login issue")
+                
+                completion(false, id)
+                
+                return
+            }
+            
             let connectId = json["connectId"].stringValue
             let customerId = json["customerId"].stringValue
             let email = json["email"].stringValue
@@ -95,7 +109,7 @@ class Client {
             
             DataStore.setUser(user: fishermen)
             
-            completion()
+            completion(true, "login successful")
         }
     }
     

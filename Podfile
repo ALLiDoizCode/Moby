@@ -20,5 +20,6 @@ pod 'SDWebImage', '~> 4.0.0'
 pod 'SwiftLocation', '~> 1.1.1'
 pod 'NVActivityIndicatorView'
 pod 'PhoneNumberKit', '~> 1.2.2'
+pod "CDAlertView"
 
 
