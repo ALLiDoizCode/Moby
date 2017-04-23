@@ -15,15 +15,14 @@ import AWSCore
 
 class Client {
     
-    let awsAccessKey = "AKIAIGOX2DGD7LBX7I7Q"
-    let awsSecretKey = "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"
+    let awsAccessKey = "AKIAJLNT4NSFWFXFNQAA"
+    let awsSecretKey = "76tCyL1lyCGxdZBeg/MPvs1DlAHGBE2mhRwJJtQj"
     
     // Add default headers if needed.(As per your web-service requirement)
     let headers: HTTPHeaders = [
         //"Content-Length": "68",
         "Content-Type" : "application/json"
     ]
-
     
     func token(completion:@escaping (_ token:String) -> Void){
         
@@ -48,7 +47,7 @@ class Client {
                 
                 ]
             
-        Alamofire.request("https://mo-b.herokuapp.com/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request(baseURL(endpoint:"auth"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             
             let json = JSON(response.result.value!).boolValue
             
@@ -61,24 +60,44 @@ class Client {
     
     func login(email:String,password:String,completion:@escaping (_ Success:Bool,_ message:String) -> Void){
         
+        print("email is \(email.lowercased())")
+        print("password is \(password)")
+        
         let parameters = [
         
-            "email": email,
+            "email": email.lowercased(),
             "password": password
             
-            ] as [String : Any]
+            ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON{ (response) in
+        Alamofire.request(baseURL(endpoint:"account/login"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON{ (response) in
             
-            let json = JSON(response.result.value!)
-            
-            print("user response JSON is \(json)")
+            print("user response JSON is \(response.result.value)")
             print("response is \(response)")
             print("response degub is \(response.debugDescription)")
             print("response request is \(response.request)")
             print("response reponse is \(response.response)")
             
-            let id = json["_id"].stringValue
+            
+            let json = JSON(response.result.value!)
+            
+            let message = json["message"].stringValue
+            let resultString = json["result"].stringValue
+            let success = json["success"].boolValue
+            
+            print("login success is \(resultString)")
+            
+            guard success == true else {
+                
+                completion(success, message)
+                
+                return
+            }
+            
+            let resultObject = JSON.parse(resultString)
+            
+            let id = resultObject["_id"].stringValue
+            
             
             let accountIssue = "user does not exist or incorrect login credentials"
             
@@ -93,15 +112,15 @@ class Client {
                 return
             }
             
-            let connectId = json["connectId"].stringValue
-            let customerId = json["customerId"].stringValue
-            let email = json["email"].stringValue
-            let firstName = json["firstName"].stringValue
-            let lastName = json["lastName"].stringValue
-            let phone = json["phone"].stringValue
-            let profileImage = json["profileImage"].stringValue
-            let rating = json["rating"].stringValue
-            let isCaptin = json["isCaptin"].boolValue
+            let connectId = resultObject["connectId"].stringValue
+            let customerId = resultObject["customerId"].stringValue
+            let email = resultObject["email"].stringValue
+            let firstName = resultObject["firstName"].stringValue
+            let lastName = resultObject["lastName"].stringValue
+            let phone = resultObject["phone"].stringValue
+            let profileImage = resultObject["profileImage"].stringValue
+            let rating = resultObject["rating"].stringValue
+            let isCaptin = resultObject["isCaptin"].boolValue
             
             let fishermen = Fishermen(firstName: firstName, lastName: lastName, image: profileImage, phone: phone, connectId: connectId, customerId: customerId, email: email,rating:rating,isCaptin:isCaptin)
             
@@ -132,7 +151,7 @@ class Client {
             parameters["card2"] = card2
             parameters["isCaptin"] = "\(user.isCaptin!)"
             
-            Alamofire.request("https://mo-b.herokuapp.com/account/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON{ (response) in
+            Alamofire.request(baseURL(endpoint:"account/user"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).responseJSON{ (response) in
                 
                 print("response is \(response)")
                 print("response degub is \(response.debugDescription)")
@@ -193,7 +212,7 @@ class Client {
         parameters["title"] = "\(boat.title!)"
         parameters["tripType"] = "\(boat.tripType!)"
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/addBoat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).responseString { (response) in
+        Alamofire.request(baseURL(endpoint:"addBoat"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).responseString { (response) in
             
             //let json = JSON(data: response.data!)
             

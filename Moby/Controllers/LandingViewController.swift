@@ -175,7 +175,7 @@ class LandingViewController: UIViewController,NVActivityIndicatorViewable {
                     
                     guard success == true else {
                         
-                        let alert = CDAlertView(title: "Login Attemp Failed", message: message, type: .notification)
+                        let alert = CDAlertView(title: "Login Failed", message: message, type: .notification)
                         var doneAction:CDAlertViewAction!
                         doneAction = CDAlertViewAction(title: "OK 😑",  handler: { (action) in
                             

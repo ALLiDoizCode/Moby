@@ -48,7 +48,7 @@ class ExplorePresenter {
                         
                         urls = []
                         
-                        if boat.id == boatObjects.last?.id {
+                        if boats.count == boatObjects.count{
                             
                             print("boat count is \(boats.count)")
                             

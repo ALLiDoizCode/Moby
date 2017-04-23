@@ -91,6 +91,8 @@ extension ExploreViewController {
             DataStore.setBoatList(boatList: boats)
             self.boats = DataStore().getBoatList()
             
+            print("presenting \(self.boats.count) boats")
+            
             self.currentLabel = self.bar.text2
             self.barAnimation(nextView: self.bar.text2)
             self.tableView.isHidden = false

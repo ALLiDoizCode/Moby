@@ -123,10 +123,8 @@ UINavigationControllerDelegate {
         backButton.heightAnchor.constraint(equalTo: bgImageView.heightAnchor, multiplier: 0.1).isActive = true
         backButton.widthAnchor.constraint(equalTo: backButton.heightAnchor, multiplier: 1).isActive = true
         
-        
         self.view.setNeedsLayout()
         self.view.setNeedsDisplay()
-        
         
     }
     
@@ -424,7 +422,7 @@ UINavigationControllerDelegate {
         
         NewBoatPrensenter().saveBoat(boat: self.boat, images: self.bgImageView.images) {
             
-            print("alert the user taht the boat as been saved")
+            print("alert the user that the boat as been saved")
         }
         
     }

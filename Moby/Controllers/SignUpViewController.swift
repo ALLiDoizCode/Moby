@@ -10,6 +10,7 @@ import UIKit
 import Material
 import PhoneNumberKit
 import NVActivityIndicatorView
+import CDAlertView
 
 class SignUpViewController: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,NVActivityIndicatorViewable {
@@ -157,36 +158,62 @@ UINavigationControllerDelegate,NVActivityIndicatorViewable {
     
     func signUp(){
         
+        let alertEmptyField = CDAlertView(title: "Fields Can't Be Empty", message: "", type: .notification)
+        let alertImage = CDAlertView(title: "Image Can't Be Empty", message: "", type: .notification)
+        let alertPhone = CDAlertView(title: "Invalid Phone Number", message: "", type: .notification)
+        var doneAction:CDAlertViewAction!
+        doneAction = CDAlertViewAction(title: "OK 😑",  handler: { (action) in
+            
+            self.stopAnimating()
+            
+        })
+        
+        alertEmptyField.add(action: doneAction)
+        alertImage.add(action: doneAction)
+        alertPhone.add(action: doneAction)
+        
         let phoneNumberKit = PhoneNumberKit()
         
         var phoneNumber:PhoneNumber!
         
         guard profileImageView.image != profileImage else {
             
+            alertImage.show()
+            
             return
         }
         
         guard firstName.text != "" else {
+            
+            alertEmptyField.show()
             
             return
         }
         
         guard lastName.text != "" else {
             
+            alertEmptyField.show()
+            
             return
         }
         
         guard email.text != "" else {
+            
+            alertEmptyField.show()
             
             return
         }
         
         guard password.text != "" else {
             
+            alertEmptyField.show()
+            
             return
         }
         
         guard phone.text != "" else {
+            
+            alertEmptyField.show()
             
             return
         }
@@ -194,6 +221,8 @@ UINavigationControllerDelegate,NVActivityIndicatorViewable {
         guard phone.isValidNumber == true else {
             
             print("bad phone number")
+            
+            alertPhone.show()
             
             return
         }

@@ -168,7 +168,12 @@ UINavigationControllerDelegate {
                 print("inform users that they need to be a captin to use this feature and promt to become a captin")
                 
                 let alert = CDAlertView(title: "You Need To Be A Captin To Do This", message: "Are you in?!", type: .notification)
-                let doneAction = CDAlertViewAction(title: "Sure! 💪")
+                var doneAction = CDAlertViewAction()
+                doneAction = CDAlertViewAction(title: "Sure! 💪", handler: { (action) in
+                    
+                    self.makeCaptin()
+                    
+                })
                 alert.add(action: doneAction)
                 let nevermindAction = CDAlertViewAction(title: "Nevermind 😑")
                 alert.add(action: nevermindAction)
@@ -192,6 +197,12 @@ UINavigationControllerDelegate {
         default:
             break
         }
+    }
+    
+    func makeCaptin(){
+        
+        let controller = SetBoatLocationViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -19,6 +19,14 @@ let IMAGES_COLLECTION = "images"
 let TRIP_COLLECTION = "trip"
 let CHARGE_COLLECTION = "charge"
 
+let STAGING = "https://moby-staging.herokuapp.com/"
+let PRODUCTION = "https://mo-b.herokuapp.com/"
+
+func baseURL(endpoint:String) -> String{
+    
+    return "\(STAGING)\(endpoint)"
+}
+
 let THEME_1 = UIColor(red:0.18, green:0.68, blue:0.98, alpha:1.0)
 let THEME_2 = Color.grey.lighten5
 let THEME_3 = UIColor(red:0.18, green:0.64, blue:0.98, alpha:1.0)
