@@ -161,6 +161,8 @@ UINavigationControllerDelegate,NVActivityIndicatorViewable {
         let alertEmptyField = CDAlertView(title: "Fields Can't Be Empty", message: "", type: .notification)
         let alertImage = CDAlertView(title: "Image Can't Be Empty", message: "", type: .notification)
         let alertPhone = CDAlertView(title: "Invalid Phone Number", message: "", type: .notification)
+        let alertEmail = CDAlertView(title: "Invalid Email", message: "", type: .notification)
+        let alertEmailExist = CDAlertView(title: "Email Already Exist", message: "", type: .notification)
         var doneAction:CDAlertViewAction!
         doneAction = CDAlertViewAction(title: "OK 😑",  handler: { (action) in
             
@@ -171,6 +173,8 @@ UINavigationControllerDelegate,NVActivityIndicatorViewable {
         alertEmptyField.add(action: doneAction)
         alertImage.add(action: doneAction)
         alertPhone.add(action: doneAction)
+        alertEmail.add(action: doneAction)
+        alertEmailExist.add(action: doneAction)
         
         let phoneNumberKit = PhoneNumberKit()
         
@@ -227,17 +231,37 @@ UINavigationControllerDelegate,NVActivityIndicatorViewable {
             return
         }
         
+        Client().emailIsValid(email: email.text!) { (success) in
+            
+            guard success == true else {
+                
+                alertEmail.show()
+                
+                return
+            }
+            
+            Client().emailExist(email: self.email.text!, completion: { (success) in
+                
+                guard success == false else {
+                    
+                    alertEmailExist.show()
+                    
+                    return
+                }
+                
+                let newUser = Fishermen(firstName: self.firstName.text!, lastName: self.lastName.text!, image: "", phone: self.phone.text!, connectId: "", customerId: "", email: self.email.text!, rating: "0.0", isCaptin: false)
+                
+                newUser.rawImage = self.profileImageView.image
+                
+                let controller = ScanCardViewController()
+                
+                controller.password = self.password.text
+                controller.newUser = newUser
+                
+                self.navigationController?.pushViewController(controller, animated: true)
+            })
+        }
         
-        let newUser = Fishermen(firstName: firstName.text!, lastName: lastName.text!, image: "", phone: phone.text!, connectId: "", customerId: "", email: email.text!, rating: "0.0", isCaptin: false)
-    
-        newUser.rawImage = profileImageView.image
-        
-        let controller = ScanCardViewController()
-        
-        controller.password = password.text
-        controller.newUser = newUser
-        
-        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

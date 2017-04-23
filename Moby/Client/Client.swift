@@ -58,6 +58,44 @@ class Client {
         
     }
     
+    func emailIsValid(email:String,completion:@escaping (_ success:Bool) -> Void){
+        
+        let parameters = [
+            
+            "email": email.lowercased()
+            
+        ]
+        
+        Alamofire.request(baseURL(endpoint:"account/validateEmail"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            
+            let json = JSON(response.result.value!).boolValue
+            
+            print("success is \(json)")
+            
+            completion(json)
+        }
+        
+    }
+    
+    func emailExist(email:String,completion:@escaping (_ success:Bool) -> Void){
+        
+        let parameters = [
+            
+            "email": email.lowercased()
+            
+        ]
+        
+        Alamofire.request(baseURL(endpoint:"account/emailExist"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            
+            let json = JSON(response.result.value!).boolValue
+            
+            print("success is \(json)")
+            
+            completion(json)
+        }
+        
+    }
+    
     func login(email:String,password:String,completion:@escaping (_ Success:Bool,_ message:String) -> Void){
         
         print("email is \(email.lowercased())")
@@ -153,13 +191,12 @@ class Client {
             
             Alamofire.request(baseURL(endpoint:"account/user"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).responseJSON{ (response) in
                 
+                let json = JSON(response.result.value!)
+                
                 print("response is \(response)")
                 print("response degub is \(response.debugDescription)")
                 print("response request is \(response.request)")
                 print("response reponse is \(response.response)")
-                
-                let json = JSON(response.result.value!)
-                
                 print("user response JSON is \(json)")
                 
                 let id = json["id"].stringValue

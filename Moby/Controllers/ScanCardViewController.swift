@@ -20,6 +20,7 @@ class ScanCardViewController: UIViewController,CardIOPaymentViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = THEME_2
                 
         //open cardIO controller to scan the card
         let cardIOVC = CardIOPaymentViewController(paymentDelegate: self)
