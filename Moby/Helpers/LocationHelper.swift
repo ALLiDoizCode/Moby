@@ -49,8 +49,8 @@ class LocationHelper {
                 print("location success")
                 
                 let request = MKLocalSearchRequest()
-                request.naturalLanguageQuery = "boat landing"
-                request.region.center = CLLocationCoordinate2DMake(32.921898, -79.900247)
+                request.naturalLanguageQuery = "boat"
+                request.region.center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
                 let search = MKLocalSearch(request: request)
                 search.start { response, _ in
                     

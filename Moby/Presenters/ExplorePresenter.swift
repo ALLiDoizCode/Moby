@@ -53,11 +53,13 @@ class ExplorePresenter {
                             print("boat count is \(boats.count)")
                             
                             completion(boats)
+                            
                         }
                     })
                     
                 }
                 
+                completion(boats)
             }
         }
         

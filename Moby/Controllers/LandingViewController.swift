@@ -19,6 +19,7 @@ class LandingViewController: UIViewController,NVActivityIndicatorViewable {
     var loginBtn = FlatButton()
     var signUpBtn = FlatButton()
     var agreement = FlatButton()
+    var forgotPassword = FlatButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class LandingViewController: UIViewController,NVActivityIndicatorViewable {
         self.view.addSubview(loginBtn)
         self.view.addSubview(signUpBtn)
         self.view.addSubview(agreement)
+        self.view.addSubview(forgotPassword)
         
         self.view.backgroundColor = THEME_1
         self.navigationController?.isNavigationBarHidden = true
@@ -82,6 +84,12 @@ class LandingViewController: UIViewController,NVActivityIndicatorViewable {
         agreement.titleLabel?.font = RobotoFont.regular(with: fontWidth)
         agreement.pulseOpacity = 0
         
+        forgotPassword.setTitle("Forgot Password", for: .normal)
+        forgotPassword.setTitleColor(THEME_2, for: .normal)
+        forgotPassword.titleLabel?.font = RobotoFont.regular(with: fontWidth)
+        forgotPassword.pulseOpacity = 0
+        forgotPassword.addTarget(self, action: "forgot", for: .touchUpInside)
+        
     }
     
     func constrainViews(){
@@ -116,11 +124,23 @@ class LandingViewController: UIViewController,NVActivityIndicatorViewable {
         signUpBtn.topAnchor.constraint(equalTo: loginBtn.bottomAnchor, constant: 20).isActive = true
         signUpBtn.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.10).isActive = true
         
+        forgotPassword.translatesAutoresizingMaskIntoConstraints = false
+        forgotPassword.topAnchor.constraint(equalTo: signUpBtn.bottomAnchor, constant: 10).isActive = true
+        forgotPassword.centerXAnchor.constraint(equalTo: signUpBtn.centerXAnchor, constant: 0).isActive = true
+        forgotPassword.widthAnchor.constraint(equalTo: signUpBtn.widthAnchor, multiplier: 1).isActive = true
+        forgotPassword.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.02).isActive = true
+        
         agreement.translatesAutoresizingMaskIntoConstraints = false
-        agreement.topAnchor.constraint(equalTo: signUpBtn.bottomAnchor, constant: 10).isActive = true
+        agreement.topAnchor.constraint(equalTo: forgotPassword.bottomAnchor, constant: 10).isActive = true
         agreement.centerXAnchor.constraint(equalTo: signUpBtn.centerXAnchor, constant: 0).isActive = true
         agreement.widthAnchor.constraint(equalTo: signUpBtn.widthAnchor, multiplier: 1).isActive = true
         agreement.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.02).isActive = true
+    }
+    
+    func forgot(){
+        
+        let controller = NewPasswordViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func signUp(){

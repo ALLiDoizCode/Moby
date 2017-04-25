@@ -8,9 +8,11 @@
 
 import UIKit
 import Material
+import NVActivityIndicatorView
+import CDAlertView
 
 class NewBoatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+UINavigationControllerDelegate,NVActivityIndicatorViewable {
     
     var tableView:UITableView!
     var headerView = UIView()
@@ -398,7 +400,18 @@ UINavigationControllerDelegate {
     
     func saveBoat(){
         
-        guard bgImageView.images.count > 1 else {
+        let alert = CDAlertView(title: "Boat Saved Successfully", message: "", type: .notification)
+        var doneAction:CDAlertViewAction!
+        doneAction = CDAlertViewAction(title: "OK 😑",  handler: { (action) in
+
+            let controller = ExploreViewController()
+            controller.tapText2()
+            self.navigationController?.pushViewController(controller, animated: true)
+            
+        })
+        alert.add(action: doneAction)
+        
+        guard bgImageView.images.count > 0 else {
             
             print("Alert the user to upload at least 1 image")
             
@@ -419,8 +432,12 @@ UINavigationControllerDelegate {
         print(boat.title)
         print(boat.size)
         
+        startAnimating(self.view.frame.size, message: "Logging In", messageFont: RobotoFont.bold(with: largeFontWidth), type: .ballScale , color: THEME_1, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 0, backgroundColor: Color.black.withAlphaComponent(0.6))
         
         NewBoatPrensenter().saveBoat(boat: self.boat, images: self.bgImageView.images) {
+            
+            self.stopAnimating()
+            alert.show()
             
             print("alert the user that the boat as been saved")
         }

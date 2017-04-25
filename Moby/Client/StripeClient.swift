@@ -131,7 +131,7 @@ class StripeClient {
             "amount":amount
         ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/stripe/charge", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+        Alamofire.request(baseURL(endpoint: "stripe/charge"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
             //let json = JSON(data: response.data!)
             
@@ -148,7 +148,7 @@ class StripeClient {
             "charge": charge
         ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/stripe/refund", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+        Alamofire.request(baseURL(endpoint: "stripe/refund"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
             //let json = JSON(data: response.data!)
             
@@ -167,7 +167,7 @@ class StripeClient {
 
         ] as [String : Any]
         
-        Alamofire.request("https://mo-b.herokuapp.com/stripe/transfer", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+        Alamofire.request(baseURL(endpoint: "stripe/transfer"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
             //let json = JSON(data: response.data!)
             
@@ -186,7 +186,7 @@ class StripeClient {
         
         ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/stripe/identity", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request(baseURL(endpoint: "stripe/identity"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             
             let json = JSON(data: response.data!)
             

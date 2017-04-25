@@ -156,15 +156,25 @@ class ExploreViewController: BaseViewController,UITableViewDataSource,UITableVie
         self.present(controller, animated: true, completion: nil)
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        
-        if (self.lastContentOffset > scrollView.contentOffset.y) {
+        if (scrollView.contentOffset.y == 0) {
             // move up
             filterAnimation()
             
         }
-        else if (self.lastContentOffset < scrollView.contentOffset.y) {
+    }
+    
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        
+        /*if (scrollView.contentOffset.y == 0) {
+            // move up
+            filterAnimation()
+            
+        }*/
+        /*else*/ if (self.lastContentOffset < scrollView.contentOffset.y) {
             // move down
             defaultBarAnimation()
             

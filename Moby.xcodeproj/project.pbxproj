@@ -79,6 +79,9 @@
 		ABC010061E834FB900293E6B /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC010051E834FB900293E6B /* StripeClient.swift */; };
 		ABE0F4911E9AEB2A000F4CE9 /* NewTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE0F4901E9AEB2A000F4CE9 /* NewTitleView.swift */; };
 		ABE0F4931E9AF9A0000F4CE9 /* BoatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE0F4921E9AF9A0000F4CE9 /* BoatType.swift */; };
+		ABE549161EAEF84A00CD54A5 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE549151EAEF84A00CD54A5 /* NewPasswordViewController.swift */; };
+		ABE549181EAEFD3300CD54A5 /* PasswordClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE549171EAEFD3300CD54A5 /* PasswordClient.swift */; };
+		ABE5491A1EAEFE2400CD54A5 /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE549191EAEFE2400CD54A5 /* PasswordPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +180,9 @@
 		ABC010051E834FB900293E6B /* StripeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
 		ABE0F4901E9AEB2A000F4CE9 /* NewTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewTitleView.swift; path = NewBoat/NewTitleView.swift; sourceTree = "<group>"; };
 		ABE0F4921E9AF9A0000F4CE9 /* BoatType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatType.swift; sourceTree = "<group>"; };
+		ABE549151EAEF84A00CD54A5 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		ABE549171EAEFD3300CD54A5 /* PasswordClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordClient.swift; sourceTree = "<group>"; };
+		ABE549191EAEFE2400CD54A5 /* PasswordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
 		DD01DC8344D68B8FF8FF3850 /* Pods-Moby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moby/Pods-Moby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -350,6 +356,7 @@
 				AB33AF071E824A83005AFA6F /* MultiPartUpload.swift */,
 				ABC010051E834FB900293E6B /* StripeClient.swift */,
 				AB9201821E8850760042F1E8 /* SearchClient.swift */,
+				ABE549171EAEFD3300CD54A5 /* PasswordClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -359,6 +366,7 @@
 			children = (
 				AB541B2A1E9A6EB600B84AD9 /* ExplorePresenter.swift */,
 				AB541B2E1E9AA5BB00B84AD9 /* NewBoatPrensenter.swift */,
+				ABE549191EAEFE2400CD54A5 /* PasswordPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -381,6 +389,7 @@
 				AB541B301E9AB77A00B84AD9 /* SetBoatLocationViewController.swift */,
 				AB9126411E9C71580037799E /* LandingViewController.swift */,
 				AB9126431E9C7EDB0037799E /* SignUpViewController.swift */,
+				ABE549151EAEF84A00CD54A5 /* NewPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -630,6 +639,7 @@
 				AB9126441E9C7EDB0037799E /* SignUpViewController.swift in Sources */,
 				AB10E5D41E95B0B0004839C8 /* BaseViewController.swift in Sources */,
 				AB9201831E8850760042F1E8 /* SearchClient.swift in Sources */,
+				ABE549161EAEF84A00CD54A5 /* NewPasswordViewController.swift in Sources */,
 				AB1DA88D1E99AD4300EAAF3C /* ProfileViewController.swift in Sources */,
 				AB9201851E8850D60042F1E8 /* SearchModel.swift in Sources */,
 				AB10E5D01E945FF0004839C8 /* ReviewHeader.swift in Sources */,
@@ -656,6 +666,7 @@
 				ABE0F4931E9AF9A0000F4CE9 /* BoatType.swift in Sources */,
 				AB3AA27D1DC2CE7D000FC168 /* Fishermen.swift in Sources */,
 				ABA1D3CC1E915B3C000719B8 /* DetailImageCollectionViewCell.swift in Sources */,
+				ABE5491A1EAEFE2400CD54A5 /* PasswordPresenter.swift in Sources */,
 				AB261CEB1E8FFDA400DF97CE /* BarView.swift in Sources */,
 				AB1DA88A1E98737C00EAAF3C /* PictureViews.swift in Sources */,
 				AB3AA27B1DC2CE62000FC168 /* Captin.swift in Sources */,
@@ -675,6 +686,7 @@
 				AB6C87271E985F920098188B /* SaveView.swift in Sources */,
 				AB541B311E9AB77A00B84AD9 /* SetBoatLocationViewController.swift in Sources */,
 				AB7D63FC1E9082A200B924F6 /* IconView.swift in Sources */,
+				ABE549181EAEFD3300CD54A5 /* PasswordClient.swift in Sources */,
 				AB524D571E880EAB00575BAA /* DataStore.swift in Sources */,
 				AB261CF31E9081C700DF97CE /* TabBar.swift in Sources */,
 				AB10E5D81E95B53D004839C8 /* RulesViewController.swift in Sources */,

@@ -26,7 +26,7 @@ class Client {
     
     func token(completion:@escaping (_ token:String) -> Void){
         
-        Alamofire.request("https://mo-b.herokuapp.com/token", method: .get,encoding: JSONEncoding.default).responseString{ (response) in
+        Alamofire.request(baseURL(endpoint: "token"), method: .get,encoding: JSONEncoding.default).responseString{ (response) in
             
             let json = JSON(response.result.value!).stringValue
             
@@ -70,7 +70,7 @@ class Client {
             
             let json = JSON(response.result.value!).boolValue
             
-            print("success is \(json)")
+            print("email is valid is \(json)")
             
             completion(json)
         }
@@ -89,7 +89,7 @@ class Client {
             
             let json = JSON(response.result.value!).boolValue
             
-            print("success is \(json)")
+            print("email exist is \(json)")
             
             completion(json)
         }
@@ -249,7 +249,7 @@ class Client {
         parameters["title"] = "\(boat.title!)"
         parameters["tripType"] = "\(boat.tripType!)"
         
-        Alamofire.request(baseURL(endpoint:"addBoat"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).responseString { (response) in
+        Alamofire.request(baseURL(endpoint:"account/addBoat"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).responseString { (response) in
             
             //let json = JSON(data: response.data!)
             
@@ -271,7 +271,7 @@ class Client {
             
             ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/addTrip", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+        Alamofire.request(baseURL(endpoint:"account/addTrip"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
             //let json = JSON(data: response.data!)
             
@@ -290,7 +290,7 @@ class Client {
             
             ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/account/addCharge", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+        Alamofire.request(baseURL(endpoint: "account/addCharge"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
             
             //let json = JSON(data: response.data!)
             
@@ -316,11 +316,11 @@ class Client {
                 
             ]
             
-            Alamofire.request("https://mo-b.herokuapp.com/account/addBoatImage", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
+            Alamofire.request(baseURL(endpoint:"account/addBoatImage"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString { (response) in
                 
                 //let json = JSON(data: response.data!)
                 
-                print("boat iamge id is \(response.result.value!)")
+                print("boat image id is \(response.result.value!)")
                 
                 completion(response.result.value!)
             }

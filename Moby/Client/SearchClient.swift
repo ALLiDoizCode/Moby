@@ -40,7 +40,7 @@ class SearchClient {
         
         ] as [String : Any]
         
-        Alamofire.request("https://mo-b.herokuapp.com/water/find", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString{ (response) in
+        Alamofire.request(baseURL(endpoint: "water/find"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseString{ (response) in
             
             let json = JSON(data: response.data!)
             
@@ -193,7 +193,7 @@ class SearchClient {
             
             ]
         
-        Alamofire.request("https://mo-b.herokuapp.com/water/update", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON{ (response) in
+        Alamofire.request(baseURL(endpoint: "water/update"), method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate().responseJSON{ (response) in
             
             let json = JSON(response.result.value!)
             
